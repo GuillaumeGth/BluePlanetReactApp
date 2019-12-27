@@ -6,6 +6,8 @@ import SectionParagraph from './components/SectionParagraph.js';
 import styled from 'styled-components';
 import Text from 'react-text';
 import dictionary from './data/texts';
+import Accordion from './components/Accordion';
+import SectionContent from './components/SectionContent';
 
 function App() {
 
@@ -35,8 +37,11 @@ function App() {
           <BackgroundImg src="img/background.jpg" alt="logo" />
         </WelcomeImages>
         <Section title="diving">
-          <SectionParagraph title="divingSectionTitle" content="divingSectionContent"></SectionParagraph>
+          <SectionContent>
+            <SectionParagraph title="divingSectionTitle" content="divingSectionContent"></SectionParagraph>                      
+          </SectionContent>         
         </Section>
+        <Accordion></Accordion>
         <Section title="bira"></Section>
         <Section title="contact"></Section>
       </Text>
