@@ -1,0 +1,5 @@
+.mask-container > span{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}

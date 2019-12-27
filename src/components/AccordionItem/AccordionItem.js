@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import './accordion-item-style.css';
 
 
 const AccordionItem = (props) =>{
-  const [activeState, setActiveState] = useState(false);
-
   const StyledLazyLoadImage = styled(LazyLoadImage)`
-      height: 100%;
-      overflow: hidden;`;
+      height: 100%;`;
 
   const MaskImage = styled(LazyLoadImage)`
-    position: absolute;
-    width: 150px;
-    border: 5px solid white;
+    width: 60%;
+    border: 3px solid white;
     padding: 10px;
     transition: .4s;
     border-radius: 50%;
-    left: 18px;
-    top: 120px;`;
+`;
 
   const AccordionItemControl = styled.li`
     position: relative;
@@ -55,10 +51,8 @@ const AccordionItem = (props) =>{
      //setActiveState(false);
     }
     return (
-    <AccordionItemControl tabindex="0" onMouseEnter={AccordionItemMouseEnterHandler}
-    onMouseLeave={AccordionItemMouseLeaveHandler}
-     className={activeState? "active" : ""}>
-      <Mask>
+    <AccordionItemControl tabindex="0" onMouseEnter={AccordionItemMouseEnterHandler} onMouseLeave={AccordionItemMouseLeaveHandler}>
+      <Mask className="mask-container">
         <MaskImage
           className="mask-image"
           alt={props.logoAlt}
@@ -70,10 +64,8 @@ const AccordionItem = (props) =>{
         alt={props.alt}
         effect="blur"
         // height={image.height}
-        src={`img/${props.src}.jpg`} // use normal <img> attributes as props
-        // width={image.width}
+        src={`img/${props.src}.jpg`} 
         />
-      {/* <span>{image.caption}</span> */}
     </AccordionItemControl>
   )
 }

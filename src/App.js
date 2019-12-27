@@ -8,9 +8,10 @@ import Text from 'react-text';
 import dictionary from './data/texts';
 import Accordion from './components/Accordion';
 import SectionContent from './components/SectionContent';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 function App() {
-
+  const DivImages = styled.div`
+    display: flex;`;
   const BackgroundImg = styled.img`
     top: 0;
     left: 0;
@@ -42,7 +43,12 @@ function App() {
           </SectionContent>         
         </Section>
         <Accordion></Accordion>
-        <Section title="bira"></Section>
+        <Section title="bira">
+          <SectionContent>
+            <SectionParagraph title="biraSectionTitle" content="biraSectionContent"></SectionParagraph>    
+            <DivImages><LazyLoadImage src="img/bira2.jpg"/><LazyLoadImage src="img/bira.jpeg"/></DivImages>               
+          </SectionContent>
+        </Section>
         <Section title="contact"></Section>
       </Text>
     </div>

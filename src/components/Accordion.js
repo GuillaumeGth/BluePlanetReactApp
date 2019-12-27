@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import AccordionItem from './AccordionItem';
+import AccordionItem from './AccordionItem/AccordionItem';
 
 const Accordion = (propr) =>{
   const AccordionContainer = styled.div`
-  display: flex;
-  width: 100%;`;
+    display: flex;
+    width: 100%;`;
   const AccordionControl = styled.ul`
     justify-content: center;
     overflow: hidden;
@@ -14,12 +14,7 @@ const Accordion = (propr) =>{
     flex-direction: row;
     width: 100%;
     margin: 0;
-    padding: 0;
-    &:hover .mask-image {
-      width: 80px;
-      border-width: 3px;
-    }
-    `;
+    padding: 0; `;
   return (
     <AccordionContainer>
       <AccordionControl>
