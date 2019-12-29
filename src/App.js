@@ -8,6 +8,7 @@ import Text from 'react-text';
 import dictionary from './data/texts';
 import Accordion from './components/Accordion';
 import SectionContent from './components/SectionContent';
+import Form from './components/Form.js';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 function App() {
   const DivImages = styled.div`
@@ -49,7 +50,9 @@ function App() {
             <DivImages><LazyLoadImage src="img/bira2.jpg"/><LazyLoadImage src="img/bira.jpeg"/></DivImages>               
           </SectionContent>
         </Section>
-        <Section title="contact"></Section>
+        <Section title="contact">
+          <Form></Form>
+        </Section>
       </Text>
     </div>
   );
