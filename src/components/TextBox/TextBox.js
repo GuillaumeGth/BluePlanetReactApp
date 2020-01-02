@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
@@ -10,8 +10,9 @@ const styles = theme => ({
     color: ['#252627', '!important'],
     fontSize: ['1.2rem', '!important']
   },
-  filledLabel:{
-    fontSize: ['1.2rem', '!important']
+  shrinkedLabel:{
+    fontSize: ['1.4rem', '!important'],
+    fontWeight: '600'
   },
   focusedLabel: {
     color: ['#e5a900', '!important'],
@@ -35,7 +36,13 @@ const styles = theme => ({
 })
 
 const TextBox = (props) =>{
-  const {multiline, label, required, classes} = props;
+  const getValue = () => {
+    return value;
+  }
+  const [value, setValue] = useState();
+  const [error, setError] = useState(false);
+  // const [selected, setSelected] = useState(false);
+  const {multiline, label, required, classes, type} = props;
   const getIcon = (icon) => {
     if(icon){
       const resolvedIcon = require(`@material-ui/icons/${props.icon}`).default;
@@ -43,28 +50,54 @@ const TextBox = (props) =>{
     }
     return null;
   };
-  const GridContainer = styled(Grid)
-  `margin: 5px 0 !important;
+  const GridContainer = styled(Grid)`
+    margin: 10px 0 !important;
   `;
+
+  const validate = (input) => {    
+    if(input.getAttribute('required') !== null && input.value.trim().length === 0){
+      setError(true);
+      return false;
+    }
+    setError(false);
+    return true;
+  }
+
   return (
+    <div 
+    // key={`${props.id}_control`} 
+    // id={`${props.id}_control`}
+    >
     <GridContainer container spacing={1} alignItems="flex-end" className="textfield-grid">
       <Grid item className="textfield-icon">
         { getIcon(props.icon) }
       </Grid>
       <Grid item>
-        <TextField 
+        <TextField
+        error={error}
+        type={type || 'text'}
         color="green"
         multiline = {multiline ? true: false}
         required={required ? true : false}
         label={label}
+        defaultValue={value}
+        onBlur={(e) => {
+            setValue(e.target.value);
+            if(validate(e.target)){
+              props.onChange(e.target.value);
+            }
+          }
+        }
         InputLabelProps={
           {classes: {
-            filled: classes.filledLabel,
+            shrink: classes.shrinkedLabel,
             root: classes.label, 
             focused: classes.focusedLabel
             }
           }}
         InputProps={{
+          // key: `${props.id}_controlfield`,
+          // id: `${props.id}_controlfield`,
           classes: {             
             underline:  classes.underline,
             root: classes.textField
@@ -72,8 +105,7 @@ const TextBox = (props) =>{
         }}/>
       </Grid>
     </GridContainer>
-
-      
+    </div>
   )
 }
 

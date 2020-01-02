@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header.js';
-import Section from './components/Section.js';
-import SectionParagraph from './components/SectionParagraph.js';
+import Header from './components/Header';
+import Section from './components/Section';
+import SectionParagraph from './components/Section/SectionParagraph';
 import styled from 'styled-components';
 import Text from 'react-text';
 import dictionary from './data/texts';
 import Accordion from './components/Accordion';
-import SectionContent from './components/SectionContent';
-import Form from './components/Form.js';
+import SectionContent from './components/Section/SectionContent';
+import SectionContentTitle from './components/Section/SectionContentTitle';
+import Form from './components/Form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 function App() {
   const DivImages = styled.div`
@@ -40,18 +41,23 @@ function App() {
         </WelcomeImages>
         <Section title="diving">
           <SectionContent>
-            <SectionParagraph title="divingSectionTitle" content="divingSectionContent"></SectionParagraph>                      
+            <SectionContentTitle label="divingSectionTitle" />
+            <SectionParagraph content="divingSectionContent"></SectionParagraph>                      
           </SectionContent>         
         </Section>
         <Accordion></Accordion>
         <Section title="bira">
           <SectionContent>
+            <SectionContentTitle label="biraSectionTitle" />
             <SectionParagraph title="biraSectionTitle" content="biraSectionContent"></SectionParagraph>    
             <DivImages><LazyLoadImage src="img/bira2.jpg"/><LazyLoadImage src="img/bira.jpeg"/></DivImages>               
           </SectionContent>
         </Section>
         <Section title="contact">
-          <Form></Form>
+          <SectionContent>
+            <SectionContentTitle label="sendUsAMessage" />
+            <Form></Form>
+          </SectionContent>
         </Section>
       </Text>
     </div>
