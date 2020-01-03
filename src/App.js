@@ -11,9 +11,12 @@ import SectionContent from './components/Section/SectionContent';
 import SectionContentTitle from './components/Section/SectionContentTitle';
 import Form from './components/Form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import GoogleMap from './components/GoogleMap';
+
 function App() {
   const DivImages = styled.div`
     display: flex;`;
+    
   const BackgroundImg = styled.img`
     top: 0;
     left: 0;
@@ -29,7 +32,7 @@ function App() {
   const WelcomeImages = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;`
+    align-items: center;`;
 
   return (
     <div className="App">
@@ -51,6 +54,19 @@ function App() {
             <SectionContentTitle label="biraSectionTitle" />
             <SectionParagraph title="biraSectionTitle" content="biraSectionContent"></SectionParagraph>    
             <DivImages><LazyLoadImage src="img/bira2.jpg"/><LazyLoadImage src="img/bira.jpeg"/></DivImages>               
+          </SectionContent>
+        </Section>
+        <Section title="aboutUsMenu">
+          <SectionContent>
+            <SectionContentTitle label="aboutUsSectionSubTitle" />
+            <SectionParagraph content="aboutUsSectionContentP1" />
+            <SectionParagraph content="aboutUsSectionContentP2" />
+          </SectionContent>
+        </Section>
+        <GoogleMap />
+        <Section title="otherActivities">
+          <SectionContent>
+            <SectionContentTitle label="otherActivitiesSubTitle" />            
           </SectionContent>
         </Section>
         <Section title="contact">

@@ -24,9 +24,9 @@ const MenuItem = (props) =>{
     text-decoration: none;`;
 
   return (
-    <MenuItemControl data-link="index" data-anchor="index">
+    <MenuItemControl>
       <StyledLink to={props.link}>
-        <MenuItemLabelControl>{ props.text }</MenuItemLabelControl>
+        <MenuItemLabelControl className="menu-item-label">{ props.text }</MenuItemLabelControl>
         <Underline></Underline>
       </StyledLink>
       { props.children }

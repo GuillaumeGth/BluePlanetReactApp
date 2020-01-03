@@ -20,7 +20,7 @@ const AccordionItem = (props) =>{
     position: relative;
     transition: all 500ms ease;
     height: 450px;
-    width: 11.5%;
+    width: 12.5%;
     cursor: pointer;
     overflow: hidden;
     & .lazy-load-image-loaded{

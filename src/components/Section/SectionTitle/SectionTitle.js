@@ -5,6 +5,7 @@ import Text from 'react-text';
 const SectionTitle = (props) =>{
   const SectionTitleControl = styled.div`
     display: flex;
+    min-width: 500px;
     width: 500px;
     height: 500px;
     background: #252627;
@@ -17,11 +18,14 @@ const SectionTitle = (props) =>{
     cursor: pointer`;
   const SectionChevron = styled.div`
     align-self: flex-end;
+    display: flex;
     background: #e5a900;`;
+  const Title = styled.p`
+    text-align: end;`;
     
   return (
     <SectionTitleControl>      
-      <p><Text id={props.label} /></p>            
+      <Title><Text id={props.label} /></Title>            
       <SectionChevron>
         <img src="img/icon/raquo.svg" alt="chevron right"/>
       </SectionChevron>

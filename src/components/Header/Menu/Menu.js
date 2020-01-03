@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../MenuItem';
+import MenuItem from './MenuItem';
 import styled from 'styled-components';
 import {
   BrowserRouter as Router
@@ -32,7 +32,7 @@ const Menu = (propr) =>{
           <MenuItem link="index" text="Home"></MenuItem>
           <MenuItem link="diving" text="Diving"></MenuItem>
           <MenuItem link="bira" text="Bira"></MenuItem>
-          <MenuItem link="aboutus" text="About Us"></MenuItem>
+          
           <MenuItem link="gallery" text="Gallery"></MenuItem>
           <MenuItem link="prices" text="Prices"></MenuItem>
           <MenuItem link="accommodation" text="Accomodations"></MenuItem>

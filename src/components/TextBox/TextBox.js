@@ -36,9 +36,6 @@ const styles = theme => ({
 })
 
 const TextBox = (props) =>{
-  const getValue = () => {
-    return value;
-  }
   const [value, setValue] = useState();
   const [error, setError] = useState(false);
   // const [selected, setSelected] = useState(false);
@@ -64,10 +61,6 @@ const TextBox = (props) =>{
   }
 
   return (
-    <div 
-    // key={`${props.id}_control`} 
-    // id={`${props.id}_control`}
-    >
     <GridContainer container spacing={1} alignItems="flex-end" className="textfield-grid">
       <Grid item className="textfield-icon">
         { getIcon(props.icon) }
@@ -76,7 +69,6 @@ const TextBox = (props) =>{
         <TextField
         error={error}
         type={type || 'text'}
-        color="green"
         multiline = {multiline ? true: false}
         required={required ? true : false}
         label={label}
@@ -105,7 +97,6 @@ const TextBox = (props) =>{
         }}/>
       </Grid>
     </GridContainer>
-    </div>
   )
 }
 
