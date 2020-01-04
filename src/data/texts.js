@@ -1,4 +1,5 @@
 export default {    
+    lang: {en: 'Lang: ', fr: 'Langue: '},
     langEn: {en: 'en', fr: 'en'},
     langFr: {en: 'fr', fr: 'fr'},
     homeMenu: {en: 'Home', fr: 'Acceuil'},
