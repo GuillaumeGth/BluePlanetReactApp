@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Menu from "./Menu";
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnchor } from '@fortawesome/free-solid-svg-icons'
 
 const Header = (props) =>{
 
@@ -24,7 +26,9 @@ const Header = (props) =>{
     &.scrolled {      
       background: white !important;
       box-shadow: 0 15px 40px -12px rgba(0, 0, 0, 0.45);
-      & .menu-item-label, ${AppName}{
+      & .menu-item-label,
+        ${AppName},
+        .anchor-icon {
         color: #252627 !important;
       }
     }
@@ -48,10 +52,9 @@ const Header = (props) =>{
   const headerElement = React.createRef();
   return (
     <HeaderControl 
-    ref={headerElement} 
-    //className={scrolled ? "scrolled" : null}
-    >
+    ref={headerElement}>
       <AppName>Blue Planet Dive Resort</AppName>
+      <FontAwesomeIcon className="anchor-icon" icon={faAnchor} size="lg" />
       <Menu></Menu>
     </HeaderControl>
 

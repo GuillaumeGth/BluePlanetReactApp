@@ -9,6 +9,9 @@ const Menu = (propr) =>{
     flex-direction: row;
     padding: 0;
     margin: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
   `;
 
   const NavControl = styled.nav`

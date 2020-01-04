@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const MenuItem = (props) =>{
   const MenuItemControl = styled.li`
     margin: 0 15px;  
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   const Underline = styled.div`
@@ -21,7 +25,12 @@ const MenuItem = (props) =>{
     text-decoration: none;
   `;
   const StyledLink = styled(Link)`
-    text-decoration: none;`;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;`;
 
   return (
     <MenuItemControl>
