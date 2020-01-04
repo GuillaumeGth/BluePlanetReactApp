@@ -12,6 +12,8 @@ import SectionContentTitle from './components/Section/SectionContentTitle';
 import Form from './components/Form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import GoogleMap from './components/GoogleMap';
+import CardControl from './components/Card';
+import FlexContainer from './components/FlexContainer';
 
 function App() {
   const DivImages = styled.div`
@@ -49,14 +51,14 @@ function App() {
           </SectionContent>         
         </Section>
         <Accordion></Accordion>
-        <Section title="bira">
+        <Section title="bira" color="blue">
           <SectionContent>
             <SectionContentTitle label="biraSectionTitle" />
             <SectionParagraph title="biraSectionTitle" content="biraSectionContent"></SectionParagraph>    
             <DivImages><LazyLoadImage src="img/bira2.jpg"/><LazyLoadImage src="img/bira.jpeg"/></DivImages>               
           </SectionContent>
         </Section>
-        <Section title="aboutUsMenu">
+        <Section title="aboutUsMenu" color="turquoise">
           <SectionContent>
             <SectionContentTitle label="aboutUsSectionSubTitle" />
             <SectionParagraph content="aboutUsSectionContentP1" />
@@ -64,9 +66,14 @@ function App() {
           </SectionContent>
         </Section>
         <GoogleMap />
-        <Section title="otherActivities">
+        <Section title="otherActivities" color="yellow">
           <SectionContent>
-            <SectionContentTitle label="otherActivitiesSubTitle" />            
+            <SectionContentTitle label="otherActivitiesSubTitle" />
+            <FlexContainer direction="row">       
+              <CardControl image="paddle.jpg" title="standUpPaddle" content="standUpPaddleDesc"/>
+              <CardControl image="snorkeling.jpg" title="snorkeling" content="snorkelingDesc"/>
+              <CardControl image="scooter.jpg" title="scooter" content="scooterDesc"/>
+            </FlexContainer>
           </SectionContent>
         </Section>
         <Section title="contact">

@@ -5,7 +5,8 @@ import GoogleMapReact from 'google-map-react';
 const GoogleMap = (props) =>{  
   const MapContainer = styled.div`
     width: 100%;
-    height: 500px;`;
+    height: 500px;
+    padding: 0 0 100px 0;`;
 
   const maps = {
     lat: -5.599116,
