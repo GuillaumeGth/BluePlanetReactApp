@@ -3,8 +3,7 @@ import Menu from "./Menu";
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnchor } from '@fortawesome/free-solid-svg-icons';
-import Text from 'react-text';
-import FlexContainer from '../FlexContainer';
+import FlexContainer from '../Layout/FlexContainer';
 
 const Header = (props) =>{
 
@@ -39,6 +38,7 @@ const Header = (props) =>{
   useEffect(() => {
     window.addEventListener('scroll', scrollhandler)
   });
+
   const getNewLang = () => {
     return props.lang === 'en' ? 'fr' : 'en'
   }
@@ -59,9 +59,12 @@ const Header = (props) =>{
       }
     }
   }
+
   const headerElement = React.createRef();
+
   const Flag = styled.img`width: 30px; cursor: pointer !important;
   margin: 0 150px;`;
+
   const LangContainer = styled(FlexContainer)`
     margin: 0 150px !important;`;
 
@@ -76,7 +79,6 @@ const Header = (props) =>{
       <LangContainer direction="row"><Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" /></LangContainer>
       <Menu></Menu>
     </HeaderControl>
-
   )
 }
 

@@ -9,7 +9,7 @@ import Form from '../../components/Form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import GoogleMap from '../../components/GoogleMap';
 import CardControl from '../../components/Card';
-import FlexContainer from '../../components/FlexContainer';
+import FlexContainer from '../../components/Layout/FlexContainer';
 
 const IndexPage = (props) => {  
   const DivImages = styled.div`

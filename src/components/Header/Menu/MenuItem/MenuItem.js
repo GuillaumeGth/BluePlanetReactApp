@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
+import Text from 'react-text';
 
 const MenuItem = (props) =>{
   const MenuItemControl = styled.li`
@@ -35,7 +36,7 @@ const MenuItem = (props) =>{
   return (
     <MenuItemControl>
       <StyledLink to={props.link}>
-        <MenuItemLabelControl className="menu-item-label">{ props.text }</MenuItemLabelControl>
+        <MenuItemLabelControl className="menu-item-label"><Text id={props.text}></Text></MenuItemLabelControl>
         <Underline></Underline>
       </StyledLink>
       { props.children }

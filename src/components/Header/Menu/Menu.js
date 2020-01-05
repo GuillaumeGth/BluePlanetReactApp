@@ -28,15 +28,14 @@ const Menu = (propr) =>{
   return (
     <NavControl className="nav-wrap" role="navigation">
       <MenuControl className="header-nav">
-        <MenuItem link="" text="Home"></MenuItem>
-        <MenuItem link="diving" text="Diving"></MenuItem>
-        <MenuItem link="bira" text="Bira"></MenuItem>
-        
-        <MenuItem link="gallery" text="Gallery"></MenuItem>
-        <MenuItem link="prices" text="Prices"></MenuItem>
-        <MenuItem link="accommodation" text="Accomodations"></MenuItem>
-        <MenuItem link="contactus" text="Contact Us"></MenuItem>
-        <MenuItem link="biraproject" text="The Bira Project"></MenuItem>
+        <MenuItem link="" text="homeMenu"></MenuItem>
+        <MenuItem link="diving" text="diveMenu"></MenuItem>
+        <MenuItem link="bira" text="biraMenu"></MenuItem>
+        <MenuItem link="gallery" text="galleryMenu"></MenuItem>
+        <MenuItem link="prices" text="pricesMenu"></MenuItem>
+        <MenuItem link="accommodation" text="accommodationMenu"></MenuItem>
+        <MenuItem link="contactus" text="contactMenu"></MenuItem>
+        <MenuItem link="biraproject" text="biraProjectMenu"></MenuItem>
       </MenuControl>
     </NavControl>
   )

@@ -11,11 +11,20 @@ const FlexContainer = (props) =>{
     &.column{
       flex-direction: column;
     }
+    &.center{
+      align-items: center;
+      justify-content: center;
+    }
     `;
 
-  
+  const getClass = () => {
+    var direction = props.direction === "row" ? "row": "column",
+        align = props.align,
+        classes = [direction, align];
+    return classes.join(' ');
+  }
   return (
-    <Flex className={props.direction === "row" ? "row": "column"}>
+    <Flex className={getClass()}>
       {props.children}
     </Flex>
   )
