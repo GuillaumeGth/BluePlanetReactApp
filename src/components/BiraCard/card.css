@@ -1,0 +1,97 @@
+
+@media screen and (min-width: 480px) {
+  .blog-container {
+    background: #fff;
+      border-radius: 5px;
+      box-shadow: 3px 3px 20px 3px rgba(0, 0, 0, 0.1);
+      font-weight: 100;
+      margin: 48px auto;
+      width: 20rem;
+  }
+  .blog-title{
+      font-weight: 400;
+  }
+  .blog-cover {
+    /* background: url(../img/pinsi.jpg); */
+    border-radius: 5px 5px 0 0;
+    height: 35rem !important;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 50px 50px 16px;
+    background-size: cover !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-body{
+    width: 90%;
+  }
+}
+@media screen and (min-width: 480px) {
+  .blog-container {
+    width: 28rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .blog-container {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 959px) {
+  .blog-container {
+    width: 100%;
+  }
+}
+.blog-container .blog-cover{
+  background-position: center;
+  height: 300px;
+}
+.blog-container.cliff .blog-cover{
+  /* background: url(../img/cliff_jumping.jpg); */
+  background-position: center;
+}
+.blog-container.pinsi .blog-cover{
+  /* background: url(../img/pinsi.jpg); */
+}
+.blog-container.cave .blog-cover{
+  /* background: url(../img/cave.jpg); */
+  background-position: center;
+}
+.blog-container.liukanglu .blog-cover{
+  /* background: url(../img/liukanglu.jpg); */
+  background-position: center;
+}
+.blog-container.pua-janggo .blog-cover{
+  /* background: url(../img/pua_janggo.jpg); */
+  background-position: center;
+}
+
+.blog-body {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.blog-summary p {
+  color: #4d4d4d;
+}
+
+.horizontal-divider:before,
+.horizontal-divider:after{
+  content: "";
+  border-bottom: 0.1em solid #ccc;
+  display: block;
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+.horizontal-divider{
+  /*white-space: nowrap;*/
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.yellow{
+  color: #e5a900 !important;
+}
+.x-large{
+  font-size: x-large;
+}
