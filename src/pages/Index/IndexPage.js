@@ -10,6 +10,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import GoogleMap from '../../components/GoogleMap';
 import CardControl from '../../components/Card';
 import FlexContainer from '../../components/Layout/FlexContainer';
+import Instagram from '../../components/Instagram';
 
 const IndexPage = (props) => {  
   const DivImages = styled.div`
@@ -76,6 +77,7 @@ const IndexPage = (props) => {
             <Form></Form>
           </SectionContent>
         </Section>
+        <Instagram />
     </div>
   )
 }

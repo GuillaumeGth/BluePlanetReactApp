@@ -15,12 +15,16 @@ const FlexContainer = (props) =>{
       align-items: center;
       justify-content: center;
     }
+    &.full-width{
+      width: 100%;
+    }
     `;
 
   const getClass = () => {
     var direction = props.direction === "row" ? "row": "column",
         align = props.align,
-        classes = [direction, align];
+        fullWidth = props.fullWidth ? "full-width": null,
+        classes = [direction, align, fullWidth];
     return classes.join(' ');
   }
   return (

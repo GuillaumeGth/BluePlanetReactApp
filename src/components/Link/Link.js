@@ -5,11 +5,10 @@ import Text from "react-text";
 
 const LinkControl = (props) =>{ 
   const StyledLink = styled(Link)`
-  color: #e5a900;`;
-  return (
-    
-    <StyledLink to={props.to}><Text id={props.label}/></StyledLink>
-  )
+    color: #e5a900;
+    font-weight: bold;
+  `;
+  return (<StyledLink to={props.to}><Text id={props.label}/></StyledLink>)
 }
 
 export default LinkControl;
