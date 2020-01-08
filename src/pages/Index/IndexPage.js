@@ -1,10 +1,10 @@
 import React from 'react';
-import Section from '../../components/Section';
-import SectionParagraph from '../../components/Section/SectionParagraph';
+import Section from '../../components/Layout/Section';
+import SectionParagraph from '../../components/Layout/Section/SectionParagraph';
 import styled from 'styled-components';
 import Accordion from '../../components/Accordion';
-import SectionContent from '../../components/Section/SectionContent';
-import SectionContentTitle from '../../components/Section/SectionContentTitle';
+import SectionContent from '../../components/Layout/Section/SectionContent';
+import SectionContentTitle from '../../components/Layout/Section/SectionContentTitle';
 import Form from '../../components/Form';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import GoogleMap from '../../components/GoogleMap';
@@ -60,7 +60,7 @@ const IndexPage = (props) => {
             <SectionParagraph content="aboutUsSectionContentP2" />
           </SectionContent>
         </Section>
-        <GoogleMap />
+        {/* <GoogleMap /> */}
         <Section title="otherActivities" color="yellow">
           <SectionContent>
             <SectionContentTitle label="otherActivitiesSubTitle" />

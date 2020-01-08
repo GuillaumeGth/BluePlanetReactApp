@@ -14,7 +14,10 @@ const Diving = (props) => {
         <Paragraph label="biraDesc"/>
         <PageTitle label="whatToDoInBira"/>
         <Paragraph label="whatToDoInBiraDesc" />
-        <BiraCard />
+        <BiraCard image="pinsi.jpg" title="pinsi" content="pinsiDesc" link="http://www.unesco.org/archives/multimedia/?pg=33&amp;s=films_details&amp;id=4661" linkLabel="here"/>
+        <BiraCard title="pinsi" content="pinsiDesc" link="http://www.unesco.org/archives/multimedia/?pg=33&amp;s=films_details&amp;id=4661" linkLabel="here"/>
+        <BiraCard title="pinsi" content="pinsiDesc" link="http://www.unesco.org/archives/multimedia/?pg=33&amp;s=films_details&amp;id=4661" linkLabel="here"/>
+        
       </FlexContainer>
     </PageContent>
   )

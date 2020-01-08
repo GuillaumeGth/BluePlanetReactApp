@@ -5,7 +5,7 @@ import FlexContainer from '../../components/Layout/FlexContainer';
 import PageTitle from '../../components/Layout/PageTitle';
 import Paragraph from '../../components/Layout/Paragraph';
 import styled from 'styled-components';
-const Prices = (props) => {  
+const Bira = (props) => {  
   const Img = styled.img`
   width: 80px;`;
   return (
@@ -27,4 +27,4 @@ const Prices = (props) => {
   )
 }
 
-export default Prices;
+export default Bira;

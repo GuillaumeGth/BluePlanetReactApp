@@ -1,14 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import TextContent from './style';
 import Text from 'react-text';
 
 
 const SectionParagraph = (props) =>{
-  const TextContent = styled.div`
-    margin: 10px 150px 50px 40px;
-    text-align: justify;
-    font-size: 1.5rem;`
-
   return (
     <TextContent>
       <Text id={props.content}></Text>

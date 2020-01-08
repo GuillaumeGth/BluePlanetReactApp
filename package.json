@@ -23,6 +23,7 @@
     "react-scripts": "3.3.0",
     "react-stack-grid": "^0.7.1",
     "react-text": "^3.2.1",
+    "redux": "^4.0.5",
     "styled-components": "^4.4.1",
     "use-abortable-fetch": "^2.6.6"
   },

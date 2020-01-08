@@ -1,9 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import FlexContainer from '../../Layout/FlexContainer';
+import {CaptionContainer, Mask, InstagramUnitContainer, Video, Img} from './style'
 
 const InstagramUnit = (props) =>{
 const getStyleAttribute = () => {
-  debugger;
   var media = props.media.standard_resolution,
   width = media.width > 550 ? 550 : media.width,
   ratioWidth = width / media.width,
@@ -11,20 +13,30 @@ const getStyleAttribute = () => {
   return {width: width,
           height: height};
 }
- const Img = styled.img`
- width: 550px;`
- ;
- const Video = styled.video`
- width: 550px;`
- ;
-return (<div style={getStyleAttribute()}>    
-      {props.type ==='video' ? 
-        <Video controls>
-          <source src={props.src} />
-        </Video>          
-        : 
-        <Img src={props.src} /> }          
-      </div>);
+
+return (<InstagramUnitContainer style={getStyleAttribute()}>  
+          
+          {props.type ==='video' ? 
+          <Video controls>
+            <source src={props.src} />
+          </Video>          
+            :
+            <>
+              <Mask>
+                <FlexContainer justify="end" className="flex-unit">
+                  <CaptionContainer>
+                    <FontAwesomeIcon color="#e24b4b" icon={faHeart} />
+                    {props.like}
+                  </CaptionContainer>
+                  <CaptionContainer>
+                    {props.location ? props.location.name : null}
+                  </CaptionContainer>
+                </FlexContainer>
+              </Mask>
+              <Img src={props.src} /> 
+            </>
+          }          
+        </InstagramUnitContainer>);
 }
 
 export default InstagramUnit;

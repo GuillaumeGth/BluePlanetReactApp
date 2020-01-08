@@ -1,30 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import Flex from './style';
 
 const FlexContainer = (props) =>{
-  
-  const Flex = styled.div`
-    display: flex;
-    &.row{
-      flex-direction: row;
-    }
-    &.column{
-      flex-direction: column;
-    }
-    &.center{
-      align-items: center;
-      justify-content: center;
-    }
-    &.full-width{
-      width: 100%;
-    }
-    `;
-
   const getClass = () => {
     var direction = props.direction === "row" ? "row": "column",
         align = props.align,
+        justify = props.justify === 'end' ? 'flex-end' : 'flex-start',
         fullWidth = props.fullWidth ? "full-width": null,
-        classes = [direction, align, fullWidth];
+        classes = [direction, align, justify, fullWidth];
+        if (props.className){
+          debugger;
+         classes.push(props.className.split(' '));
+        }
     return classes.join(' ');
   }
   return (
