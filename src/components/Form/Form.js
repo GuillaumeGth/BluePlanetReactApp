@@ -1,17 +1,10 @@
 import React, {useState} from 'react';
 import TextBox from '../TextBox/TextBox';
 import Button from '../Button';
-import styled from 'styled-components';
+import FormControl from './style';
 
 const Form = (props) =>{
   const [values, setValues] = useState({});
-  const Form = styled.form`
-    width: 100%;
-    margin: 0 40px;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    background: #e1e1e16b;`;
 
   const sendMessage = (e) => {
     var data = new FormData();
@@ -36,14 +29,13 @@ const Form = (props) =>{
   }
 
   return (
-    <Form>
-      
+    <FormControl>
       <TextBox label="Name" icon="AccountCircle" id="txtName" onChange={(value) => onChangeHandler('name', value)}/>
       <TextBox label="Email" icon ="MailOutline" required={true} type="email" onChange={(value) => onChangeHandler('email', value)} />
       <TextBox label="Phone" icon="Phone" type="tel" onChange={(value) => onChangeHandler('phone', value)}/>
       <TextBox label="Message" multiline={true} icon="Message" required={true} onChange={(value) => onChangeHandler('message', value)}/>
       <Button onClick={sendMessage}/>
-    </Form>
+    </FormControl>
   )
 }
 

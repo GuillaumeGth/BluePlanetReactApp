@@ -1,13 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import Text from 'react-text';
 import './card.css';
-
-
+import Img from './style';
 
 const DivingCard = (props) =>{
-  const Img = styled.img`
-  height: 100%;`;
+  
   return (
     <div className={'blog-card' + (props.alt ? ' alt' : '')}>
       <div className="meta">

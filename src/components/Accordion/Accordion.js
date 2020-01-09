@@ -1,24 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import AccordionItem from '../AccordionItem';
+import {AccordionContainer, AccordionControl} from './style';
+import AccordionItem from './AccordionItem';
 
 const Accordion = (propr) =>{
-
-  const AccordionContainer = styled.div`
-    display: flex;
-    width: 100%;
-    padding: 0 0 100px 0;`;
-
-  const AccordionControl = styled.ul`
-    justify-content: center;
-    overflow: hidden;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    padding: 0 100px;`;
-
   return (
     <AccordionContainer>
       <AccordionControl>

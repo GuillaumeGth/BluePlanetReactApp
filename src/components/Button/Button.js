@@ -13,7 +13,6 @@ const Button = (props) =>{
     font-size: 1.2rem !important;
     `;
 
-  
   return (
     <MaterialButtonControl
         variant="contained"
