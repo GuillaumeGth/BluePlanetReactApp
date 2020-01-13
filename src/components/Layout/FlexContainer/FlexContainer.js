@@ -1,5 +1,6 @@
 import React from 'react';
 import Flex from './style';
+import PropTypes from 'prop-types';
 
 const FlexContainer = (props) =>{
   const getClass = () => {
@@ -9,7 +10,6 @@ const FlexContainer = (props) =>{
         fullWidth = props.fullWidth ? "full-width": null,
         wrap = props.wrap ? 'wrap'  : null,
         classes = [direction, align, justify, fullWidth, wrap];
-
         if (props.className){
          classes.push(props.className.split(' '));
         }
@@ -21,5 +21,14 @@ const FlexContainer = (props) =>{
     </Flex>
   )
 }
+FlexContainer.propTypes = {
+  className: PropTypes.string,
+  direction: PropTypes.string,
+  align: PropTypes.string,
+  justify: PropTypes.string,
+  wrap: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  children: PropTypes.object
+};
 
 export default FlexContainer;

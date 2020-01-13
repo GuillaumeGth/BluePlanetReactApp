@@ -46,5 +46,8 @@ const Header = (props) =>{
     </HeaderControl>
   )
 }
-
+Header.propTypes = {
+  langClickHandler: PropTypes.func,
+  lang: PropTypes.lang
+};
 export default Header;

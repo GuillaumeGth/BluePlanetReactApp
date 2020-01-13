@@ -2,6 +2,7 @@ import React from 'react';
 import FlexContainer from '../../../Layout/FlexContainer';
 import PageTitle from '../../../Layout/PageTitle';
 import PriceCard from '../PriceCard';
+import PropTypes from 'prop-types';
 
 const PriceCardContainer = (props) =>{
 
@@ -14,5 +15,7 @@ const PriceCardContainer = (props) =>{
     </FlexContainer>
   )
 }
-
+PriceCardContainer.propTypes = {
+  data: PropTypes.object
+};
 export default PriceCardContainer;

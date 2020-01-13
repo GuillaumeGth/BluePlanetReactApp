@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Text from 'react-text';
 import './card.css';
-import Paragraph from '../Layout/Paragraph';
-
-
+import Paragraph from '../../Layout/Paragraph';
 
 const BiraCard = (props) =>{
   const Img = styled.img`
@@ -30,5 +28,11 @@ const BiraCard = (props) =>{
     </div>
   )
 }
-
+BiraCard.propTypes = {
+  content: PropTypes.string,
+  linkLabel: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  link: PropTypes.string
+};
 export default BiraCard;

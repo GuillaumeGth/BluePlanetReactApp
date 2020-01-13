@@ -32,7 +32,9 @@ const MenuItem = (props) =>{
     justify-content: center;
     align-items: center;
     flex-direction: column;`;
-
+  if(props.hide){
+    return (<></>);
+  }
   return (
     <MenuItemControl>
       <StyledLink to={props.link}>
@@ -43,5 +45,10 @@ const MenuItem = (props) =>{
     </MenuItemControl>
   )
 }
-
+MenuItem.propTypes = {
+  link: PropTypes.string,
+  text: PropTypes.string,
+  children: PropTypes.object,
+  hide: PropTypes.bool
+};
 export default MenuItem;
