@@ -12,6 +12,7 @@ import IndexPage from './pages/Index';
 import Diving from './pages/Diving';
 import Bira from './pages/Bira';
 import Contact from './pages/Contact';
+import Prices from './pages/Prices';
 
 function App() {
   const changeLang = (lang) => {
@@ -69,6 +70,9 @@ function App() {
             </Route>
             <Route path="/contact" exact>
               <Contact />
+            </Route>
+            <Route path="/prices" exact>
+              <Prices />
             </Route>
           </Switch>
         </Router>   

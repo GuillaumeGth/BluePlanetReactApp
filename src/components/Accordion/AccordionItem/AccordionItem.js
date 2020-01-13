@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyledLazyLoadImage, Mask, AccordionItemControl, MaskImage} from './style';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './accordion-item-style.css';
 
 
