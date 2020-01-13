@@ -7,15 +7,17 @@ const Flex = styled.div`
     &.column{
       flex-direction: column;
     }
-    &.center{
-      align-items: center;
-      justify-content: center;
-    }
     &.full-width{
       width: 100%;
     }
-    &.flex-end{
+    &.justify-flex-end{
       justify-content: flex-end;
+    }
+    &.justify-center{
+      justify-content: center;
+    }
+    &.wrap{
+      flex-wrap: wrap;
     }
     `;
 export default Flex

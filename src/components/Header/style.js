@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import FlexContainer from '../Layout/FlexContainer';
 const AppName = styled.div`
+font-size: 1.5rem;
 margin: 0 25px;
-font-size: 1.2rem;
 letter-spacing: 2px;`;
 
 const HeaderControl = styled.div`  

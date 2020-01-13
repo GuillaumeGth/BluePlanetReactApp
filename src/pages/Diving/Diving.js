@@ -1,5 +1,5 @@
 import React from 'react';
-import DivingCard from '../../components/DivingCard';
+import DivingCard from '../../components/Card/DivingCard';
 import PageContent from '../../components/Layout/PageContent';
 import FlexContainer from '../../components/Layout/FlexContainer';
 import PageTitle from '../../components/Layout/PageTitle';

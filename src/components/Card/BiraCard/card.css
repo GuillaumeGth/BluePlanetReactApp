@@ -69,7 +69,6 @@
   margin: 0 auto;
   width: 80%;
   padding-bottom: 20px;
-  font-size: 1.4rem;
 }
 
 .blog-summary p {
@@ -95,4 +94,7 @@
 }
 .x-large{
   font-size: x-large;
+}
+.blog-title{
+  margin: 20px 0;
 }
