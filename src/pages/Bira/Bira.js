@@ -3,7 +3,7 @@ import PageContent from '../../components/Layout/PageContent';
 import FlexContainer from '../../components/Layout/FlexContainer';
 import PageTitle from '../../components/Layout/PageTitle';
 import Paragraph from '../../components/Layout/Paragraph';
-import BiraCard from '../../components/Card/BiraCard';
+import BiraCard from '../../components/BiraCard';
 
 
 const Diving = (props) => {  

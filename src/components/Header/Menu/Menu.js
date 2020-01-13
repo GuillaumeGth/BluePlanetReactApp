@@ -1,12 +1,6 @@
 import React from 'react';
 import MenuItem from './MenuItem';
 import styled from 'styled-components';
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
-} from "react-device-detect";
 
 const Menu = (propr) =>{
   const MenuControl = styled.ul`
@@ -37,7 +31,7 @@ const Menu = (propr) =>{
         <MenuItem link="" text="homeMenu"></MenuItem>
         <MenuItem link="diving" text="diveMenu"></MenuItem>
         <MenuItem link="bira" text="biraMenu"></MenuItem>
-        <MenuItem hide={isBrowser} link="gallery" text="galleryMenu"></MenuItem>
+        <MenuItem link="gallery" text="galleryMenu"></MenuItem>
         <MenuItem link="prices" text="pricesMenu"></MenuItem>
         <MenuItem link="accommodation" text="accommodationMenu"></MenuItem>
         <MenuItem link="contactus" text="contactMenu"></MenuItem>

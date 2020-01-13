@@ -4,6 +4,14 @@ import './accordion-item-style.css';
 
 
 const AccordionItem = (props) =>{
+    const AccordionItemMouseEnterHandler = function(e)
+    {
+      //setActiveState(true);
+    }
+    const AccordionItemMouseLeaveHandler = function(e)
+    {
+     //setActiveState(false);
+    }
     return (
     <AccordionItemControl tabindex="0" onMouseEnter={AccordionItemMouseEnterHandler} onMouseLeave={AccordionItemMouseLeaveHandler}>
       <Mask className="mask-container">
@@ -17,14 +25,11 @@ const AccordionItem = (props) =>{
       <StyledLazyLoadImage
         alt={props.alt}
         effect="blur"
+        // height={image.height}
         src={`img/${props.src}.jpg`} 
         />
     </AccordionItemControl>
   )
 }
-AccordionItem.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
-  logoAlt: PropTypes.string,
-};
+
 export default AccordionItem;

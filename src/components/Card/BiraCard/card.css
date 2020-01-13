@@ -49,6 +49,9 @@
   /* background: url(../img/cliff_jumping.jpg); */
   background-position: center;
 }
+.blog-container.pinsi .blog-cover{
+  /* background: url(../img/pinsi.jpg); */
+}
 .blog-container.cave .blog-cover{
   /* background: url(../img/cave.jpg); */
   background-position: center;
