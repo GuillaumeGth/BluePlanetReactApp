@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {ref} from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import Text from 'react-text';
+import { createStore } from 'redux'
+import ReduxApp from '../../../../Redux/reducers';
+import {setActiveMenu} from '../../../../Redux/actions';
 
 const MenuItem = (props) =>{
   const MenuItemControl = styled.li`
-    margin: 0 15px;  
+    padding: 0 15px;  
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    &.active{
+      background: #636363;
+      color: white;
+    }
   `;
 
   const Underline = styled.div`
@@ -33,8 +41,12 @@ const MenuItem = (props) =>{
     align-items: center;
     flex-direction: column;`;
 
+  const clickHandler = (e) => {
+    props.onClick(props.link);
+  }
+
   return (
-    <MenuItemControl>
+    <MenuItemControl className={`menu-item ${props.active ? 'active' : null}`} onClick={clickHandler} data-path={props.link}>
       <StyledLink to={props.link}>
         <MenuItemLabelControl className="menu-item-label"><Text id={props.text}></Text></MenuItemLabelControl>
         <Underline></Underline>
