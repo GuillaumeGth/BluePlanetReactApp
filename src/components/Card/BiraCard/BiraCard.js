@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Text from 'react-text';
 import './card.css';
-import Paragraph from '../Layout/Paragraph';
+import Paragraph from '../../Layout/Paragraph';
 
 
 
