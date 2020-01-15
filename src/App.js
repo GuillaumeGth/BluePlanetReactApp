@@ -14,6 +14,7 @@ import Bira from './pages/Bira';
 import Contact from './pages/Contact';
 import Prices from './pages/Prices';
 import Accommodation from './pages/Accommodation';
+import BiraProject from './pages/BiraProject';
 
 function App() {
   const changeLang = (lang) => {
@@ -77,6 +78,9 @@ function App() {
             </Route>
             <Route path="/accommodation" exact>
               <Accommodation />
+            </Route>
+            <Route path="/biraproject" exact>
+              <BiraProject />
             </Route>
           </Switch>
         </Router>   
