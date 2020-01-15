@@ -10,6 +10,7 @@ const Paragraph = (props) =>{
       <Div>
         <Text id={props.label} />
         {props.link ? <LinkControl to={props.link} label={props.linkLabel} /> : null}
+        {props.children}
       </Div>
     </FlexContainer>
   )

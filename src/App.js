@@ -13,6 +13,7 @@ import Diving from './pages/Diving';
 import Bira from './pages/Bira';
 import Contact from './pages/Contact';
 import Prices from './pages/Prices';
+import Accommodation from './pages/Accommodation';
 
 function App() {
   const changeLang = (lang) => {
@@ -73,6 +74,9 @@ function App() {
             </Route>
             <Route path="/prices" exact>
               <Prices />
+            </Route>
+            <Route path="/accommodation" exact>
+              <Accommodation />
             </Route>
           </Switch>
         </Router>   

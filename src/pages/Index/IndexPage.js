@@ -11,8 +11,15 @@ import GoogleMap from '../../components/GoogleMap';
 import CardControl from '../../components/Card';
 import FlexContainer from '../../components/Layout/FlexContainer';
 import Instagram from '../../components/Instagram';
+import { createStore } from 'redux'
+import ReduxApp from '../../Redux/reducers';
+import {
+  setActiveMenu
+} from '../../Redux/actions'
 
 const IndexPage = (props) => {  
+  const store = createStore(ReduxApp);
+  store.dispatch(setActiveMenu('index'));
   const DivImages = styled.div`
     display: flex;`;
     

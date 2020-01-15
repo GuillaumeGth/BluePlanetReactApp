@@ -19,5 +19,8 @@ const Flex = styled.div`
     &.wrap{
       flex-wrap: wrap;
     }
+    &.align-center{
+      align-items: center;
+    }
     `;
 export default Flex
