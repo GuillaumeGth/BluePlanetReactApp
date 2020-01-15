@@ -6,7 +6,7 @@ import Paragraph from '../../components/Layout/Paragraph';
 import BiraCard from '../../components/Card/BiraCard';
 
 
-const Diving = (props) => {  
+const Bira = (props) => {  
   return (
     <PageContent>
       <FlexContainer>
@@ -27,4 +27,4 @@ const Diving = (props) => {
   )
 }
 
-export default Diving;
+export default Bira;
