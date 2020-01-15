@@ -15,7 +15,7 @@ import { createStore } from 'redux'
 import ReduxApp from '../../Redux/reducers';
 import {
   setActiveMenu
-} from '../../Redux/actions'
+} from '../../Redux/actions';
 
 const IndexPage = (props) => {  
   const store = createStore(ReduxApp);
@@ -67,7 +67,7 @@ const IndexPage = (props) => {
             <SectionParagraph content="aboutUsSectionContentP2" />
           </SectionContent>
         </Section>
-        {/* <GoogleMap /> */}
+        <GoogleMap lat={-5.559116} lng={120.240000} zoom={12} markerLat={-5.60285} markerLng={120.4488}/>
         <Section title="otherActivities" color="yellow">
           <SectionContent>
             <SectionContentTitle label="otherActivitiesSubTitle" />

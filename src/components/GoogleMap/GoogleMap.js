@@ -12,13 +12,13 @@ const GoogleMap = (props) =>{
   
 
   const maps = {
-    lat: -5.559116,
-    lng: 120.240000
+    lat: props.lat,
+    lng: props.lng
   }
 
-  const zoom = 12;  
-  const lat = -5.60285;
-  const lng = 120.4488;
+  const zoom = props.zoom;  
+  const lat = props.markerLat;
+  const lng = props.markerLng;
   return (
     <MapContainer>
       <GoogleMapReact  
