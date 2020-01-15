@@ -27,7 +27,7 @@ const Menu = (props) =>{
     padding: 0 1em;
   `;
  
-  const [active, setActive] = useState(useLocation().pathname);
+  const [active, setActive] = useState(useLocation().pathname.substring(1));
   const clickHandler = (e) =>{
     window.scrollTo(0, 0);
     setActive(e);
