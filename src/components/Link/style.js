@@ -5,4 +5,9 @@ color: #e5a900;
 font-weight: bold;
 font-size: 1.5rem;
 `;
-export default StyledLink;
+const StyledALink = styled(Link)`
+color: #e5a900;
+font-weight: bold;
+font-size: 1.5rem;
+`;
+export  {StyledLink, StyledALink};

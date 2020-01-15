@@ -1,4 +1,5 @@
 export default {    
+    address: {en: 'Address', fr: 'Adresse'},
     lang: {en: 'Lang: ', fr: 'Langue: '},
     langEn: {en: 'en', fr: 'en'},
     langFr: {en: 'fr', fr: 'fr'},

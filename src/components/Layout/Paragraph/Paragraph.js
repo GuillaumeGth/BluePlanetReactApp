@@ -8,7 +8,7 @@ const Paragraph = (props) =>{
   return (
     <FlexContainer align="center" direction="row">
       <Div>
-        <Text id={props.label} />
+        {props.label? <Text id={props.label} /> : null}
         {props.link ? <LinkControl to={props.link} label={props.linkLabel} /> : null}
         {props.children}
       </Div>
