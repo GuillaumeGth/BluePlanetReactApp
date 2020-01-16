@@ -1,2 +1,2 @@
-import Marker from './Marker';
+import Marker from "./Marker";
 export default Marker;

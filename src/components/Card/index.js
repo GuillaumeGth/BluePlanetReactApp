@@ -1,2 +1,2 @@
-import CardControl  from './Card';
+import CardControl from "./Card";
 export default CardControl;

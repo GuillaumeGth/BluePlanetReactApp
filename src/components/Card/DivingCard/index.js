@@ -1,2 +1,2 @@
-import DivingCard  from './DivingCard';
+import DivingCard from "./DivingCard";
 export default DivingCard;

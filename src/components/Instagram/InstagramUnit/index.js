@@ -1,2 +1,2 @@
-import InstagramUnit from './InstagramUnit';
+import InstagramUnit from "./InstagramUnit";
 export default InstagramUnit;

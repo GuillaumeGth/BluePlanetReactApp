@@ -1,14 +1,13 @@
-import React from 'react';
-import './Marker.css';
+import React from "react";
+import "./Marker.css";
 
-
-const Marker = (props) =>{  
-
+const Marker = props => {
   return (
     <div>
       <div className="pin bounce" />
       <div className="pulse" />
-    </div>)
-}
+    </div>
+  );
+};
 
-export default (Marker);
+export default Marker;

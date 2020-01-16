@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 const SectionControl = styled.div`
-margin-bottom: 100px;
-display: flex;
-overflow: hidden;
-`
+  margin-bottom: 100px;
+  display: flex;
+  overflow: hidden;
+`;
 export default SectionControl;

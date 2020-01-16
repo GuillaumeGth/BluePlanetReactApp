@@ -1,2 +1,2 @@
-import SectionContentTitle from './SectionContentTitle';
+import SectionContentTitle from "./SectionContentTitle";
 export default SectionContentTitle;

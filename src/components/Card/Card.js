@@ -1,11 +1,10 @@
-import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Text from 'react-text';
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Text from "react-text";
 
 const useStyles = makeStyles({
   card: {
@@ -16,19 +15,19 @@ const useStyles = makeStyles({
     height: 410
   },
   media: {
-    height: 250,
+    height: 250
   }
 });
 
-const CardControl = (props) =>{
-
+const CardControl = props => {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
         image={"/img/" + props.image}
-        title={props.title} />
+        title={props.title}
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           <Text id={props.title}></Text>
@@ -38,7 +37,7 @@ const CardControl = (props) =>{
         </Typography>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
 export default CardControl;

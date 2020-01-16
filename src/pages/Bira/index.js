@@ -1,2 +1,2 @@
-import Bira from './Bira';
+import Bira from "./Bira";
 export default Bira;

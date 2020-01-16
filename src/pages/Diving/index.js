@@ -1,2 +1,2 @@
-import Diving from './Diving';
+import Diving from "./Diving";
 export default Diving;

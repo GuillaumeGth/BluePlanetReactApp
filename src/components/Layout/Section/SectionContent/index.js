@@ -1,2 +1,2 @@
-import SectionContent from './SectionContent';
+import SectionContent from "./SectionContent";
 export default SectionContent;

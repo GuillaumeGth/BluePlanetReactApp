@@ -1,2 +1,2 @@
-import PriceCardContainer from './PriceCardContainer';
+import PriceCardContainer from "./PriceCardContainer";
 export default PriceCardContainer;

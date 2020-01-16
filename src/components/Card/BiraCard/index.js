@@ -1,2 +1,2 @@
-import BiraCard  from './BiraCard';
+import BiraCard from "./BiraCard";
 export default BiraCard;

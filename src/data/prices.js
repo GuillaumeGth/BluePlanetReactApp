@@ -1,8 +1,7 @@
 export default {
-    funDive:{
-      title: 'funDive',
-      items:
-      [
+  funDive: {
+    title: "funDive",
+    items: [
       {
         title: "FUN DIVE",
         price: "490 000",
@@ -27,49 +26,48 @@ export default {
       }
     ]
   },
-  classes:{
+  classes: {
     title: "classes",
     items: [
-    {
-      title: "REFRESHER COURSE",
-      price: "650 000",
-      icon: "scuba_diver",
-      details: "halfDay"
-    },
-    {
-      title: "SCUBA DIVER COURSE",
-      price: "2 800 000",
-      icon: "refresher",
-      details: "twoDays"
-    },
-    {
-      title: "OPEN WATER COURSE",
-      price: "4 900 000",
-      icon: "open_water",
-      details: "3_4Days",
-      ribon: "bestSeller"
-    },
-    {
-      title: "SCUBA DIVER TO OPEN WATER COURSE",
-      price: "2 800 000",
-      icon: "scuba_to_open",
-      details: "twoDays"
-    },
-    {
-      title: "ADVANCED COURSE",
-      price: "3 900 000",
-      icon: "advanced",
-      details: "twoDays",
-      ribon: "bestSeller"
-    },
-    {
-      title: "adventureDive",
-      price: "900 000",
-      icon: "adventure"
-    }
-  ]
-  }
-  ,
+      {
+        title: "REFRESHER COURSE",
+        price: "650 000",
+        icon: "scuba_diver",
+        details: "halfDay"
+      },
+      {
+        title: "SCUBA DIVER COURSE",
+        price: "2 800 000",
+        icon: "refresher",
+        details: "twoDays"
+      },
+      {
+        title: "OPEN WATER COURSE",
+        price: "4 900 000",
+        icon: "open_water",
+        details: "3_4Days",
+        ribon: "bestSeller"
+      },
+      {
+        title: "SCUBA DIVER TO OPEN WATER COURSE",
+        price: "2 800 000",
+        icon: "scuba_to_open",
+        details: "twoDays"
+      },
+      {
+        title: "ADVANCED COURSE",
+        price: "3 900 000",
+        icon: "advanced",
+        details: "twoDays",
+        ribon: "bestSeller"
+      },
+      {
+        title: "adventureDive",
+        price: "900 000",
+        icon: "adventure"
+      }
+    ]
+  },
   advanceClasses: {
     title: "advancedClasses",
     items: [
@@ -102,12 +100,12 @@ export default {
   },
   activities: {
     title: "otherActivities",
-     items: [
-       {
-         title: "SNORKELING",
-         price: "50 000",
-         icon: "snorkeling"
-       },
+    items: [
+      {
+        title: "SNORKELING",
+        price: "50 000",
+        icon: "snorkeling"
+      },
       {
         title: "PADDLEBOARD",
         price: "150 000",
@@ -131,4 +129,4 @@ export default {
       }
     ]
   }
-}
+};

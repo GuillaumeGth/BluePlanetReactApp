@@ -1,2 +1,2 @@
-import BiraProject from './BiraProject';
+import BiraProject from "./BiraProject";
 export default BiraProject;

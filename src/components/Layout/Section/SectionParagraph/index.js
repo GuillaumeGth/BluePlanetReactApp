@@ -1,2 +1,2 @@
-import SectionParagraph from './SectionParagraph';
+import SectionParagraph from "./SectionParagraph";
 export default SectionParagraph;
