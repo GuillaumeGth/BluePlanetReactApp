@@ -16,6 +16,15 @@ const MenuItem = props => {
       background: #636363;
       color: white;
     }
+    ${HeaderControl}.transparent & {
+      background: transparent !important;
+    }
+    ${HeaderControl}.transparent.scrolled &.active {
+      background: #636363 !important;
+    }
+    ${HeaderControl}.transparent.scrolled &.active>a>span {
+      color: white !important;
+    }
   `;
 
   const Underline = styled.div`

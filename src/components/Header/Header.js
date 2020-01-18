@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Header = props => {
+  const location = useLocation();
   useEffect(() => {
     window.addEventListener("scroll", scrollhandler);
+    setFilled(location.pathname.substring(1) !== "");
   });
 
   const getNewLang = () => {
@@ -36,7 +38,7 @@ const Header = props => {
   const flagClickHandler = () => {
     props.langClickHandler(getNewLang());
   };
-  const [filled, setFilled] = useState(useLocation().pathname !== "");
+  const [filled, setFilled] = useState(null);
   const redirectionHandler = e => {
     setFilled(e);
   };
