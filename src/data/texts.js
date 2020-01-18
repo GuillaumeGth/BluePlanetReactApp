@@ -358,148 +358,185 @@ export default {
   courses: { en: "Courses", fr: "Cours" },
   welcomeToBira: { en: "Welcome To Bira", fr: "Welcome To Bira" },
   biraprojectMenu: { en: "The Bira Project", fr: "Le projet Bira" },
-  biraprojectTitle: { en: "Indo Ocean Project – Bira Project", fr: "" },
+  biraprojectTitle: {
+    en: "Indo Ocean Project – Bira Project",
+    fr: "Indo Ocean Project – Bira Project"
+  },
   biraprojectSubTitle: {
     en: "Dive Master and Research Diver Internship",
-    fr: "undefined"
+    fr: "Dive Master and Research Diver Internship"
   },
   biraprojectP1: {
     en:
       "Indo Ocean Project is an Indonesian NGO founded by marine biologists, dive professionals, and ocean enthusiasts from around the world in 2017. Our standardized training program includes Dive Master and multiple research specialty certification courses. We work together with government agencies, other NGO’s, local communities, and universities to carry out scientific research to address marine conservation issues in the Indo-Pacific region.",
-    fr: "undefined"
+    fr:
+      "Indo Ocean Project is an Indonesian NGO founded by marine biologists, dive professionals, and ocean enthusiasts from around the world in 2017. Our standardized training program includes Dive Master and multiple research specialty certification courses. We work together with government agencies, other NGO’s, local communities, and universities to carry out scientific research to address marine conservation issues in the Indo-Pacific region."
   },
   biraprojectP2: {
     en:
       "Our field expeditions across Indonesia host international and local research projects focused on marine mega fauna and coral reef conservation. Combining the dive master course with hands on underwater research techniques, interns have the ability to kick start their career in marine research or the professional diving industry. Interns play a crucial role in all that, being the ones that actually gather all the scientifics datas,making all of this possible.",
-    fr: "undefined"
+    fr:
+      "Our field expeditions across Indonesia host international and local research projects focused on marine mega fauna and coral reef conservation. Combining the dive master course with hands on underwater research techniques, interns have the ability to kick start their career in marine research or the professional diving industry. Interns play a crucial role in all that, being the ones that actually gather all the scientifics datas,making all of this possible."
   },
   biraprojectP3: {
     en:
       "Bira boasts some of the most diverse and abundant populations of shark and ray (elasmobranchs) in Indonesia. Elasmobranchs are some of the oldest living creatures on this planet and have survived multiple mass-extinction events. Today, however, critical habitat loss and increased fishing induced mortality have meant that many elasmobranch species are currently experiencing global population declines. A quarter of known species are threatened with extinction in our lifetime. The research in Bira is focused on the effects of marine reserves on shark and rays.",
-    fr: "undefined"
+    fr:
+      "Bira boasts some of the most diverse and abundant populations of shark and ray (elasmobranchs) in Indonesia. Elasmobranchs are some of the oldest living creatures on this planet and have survived multiple mass-extinction events. Today, however, critical habitat loss and increased fishing induced mortality have meant that many elasmobranch species are currently experiencing global population declines. A quarter of known species are threatened with extinction in our lifetime. The research in Bira is focused on the effects of marine reserves on shark and rays."
   },
   biraprojectP4: {
     en:
       "Marine reserves are one of the premiere conservation approaches to elasmobranch conservation and we need to thoroughly investigate their implementation on community function. The ocean surrounding Tanjung Bira are currently not protected and is this projects goal to identify and locate key habitat areas and together with the local community, create a marine park and shark sanctuary. We employ various techniques to examine questions regarding ecosystem dynamics and ecological and economic roles of sharks in rays such as BRUV’s, abundance survey dives, and biodiversity mapping.",
-    fr: "undefined"
+    fr:
+      "Marine reserves are one of the premiere conservation approaches to elasmobranch conservation and we need to thoroughly investigate their implementation on community function. The ocean surrounding Tanjung Bira are currently not protected and is this projects goal to identify and locate key habitat areas and together with the local community, create a marine park and shark sanctuary. We employ various techniques to examine questions regarding ecosystem dynamics and ecological and economic roles of sharks in rays such as BRUV’s, abundance survey dives, and biodiversity mapping."
   },
   biraprojectP5: {
     en:
       "BRUV’s are a non-invaisive and easily scalable survey technique that is perfect for implementation for use in marine reserve development. One of the leading problems facing conservation biologists is lack of data from remote regions. Indonesia sits in the highest region of the globe for shark and ray biodiversity, however they are one of the world’s leading shark fishing nations and many local populations are near collapse.",
-    fr: "undefined"
+    fr:
+      "BRUV’s are a non-invaisive and easily scalable survey technique that is perfect for implementation for use in marine reserve development. One of the leading problems facing conservation biologists is lack of data from remote regions. Indonesia sits in the highest region of the globe for shark and ray biodiversity, however they are one of the world’s leading shark fishing nations and many local populations are near collapse."
   },
-  lifeAsAnIntern: { en: "Life as an Intern", fr: "undefined" },
-  whyBecomeAnDM: { en: "Why become a Dive Master?", fr: "undefined" },
+  lifeAsAnIntern: { en: "Life as an Intern", fr: "Life as an Intern" },
+  whyBecomeAnDM: {
+    en: "Why become a Dive Master?",
+    fr: "Why become a Dive Master?"
+  },
   whyBecomeAnDMP1: {
     en:
       "The Divemaster course is your first level of professional training. Working closely with your mentoring Dive Instructor and Blue Planet’s team, you’ll fine tune your dive skills, like perfecting the effortless hover, and refine your rescue skills so you anticipate and easily solve common problems. You’ll gain dive knowledge, management and supervision abilities so you become a role model to divers everywhere.",
-    fr: "undefined"
+    fr:
+      "The Divemaster course is your first level of professional training. Working closely with your mentoring Dive Instructor and Blue Planet’s team, you’ll fine tune your dive skills, like perfecting the effortless hover, and refine your rescue skills so you anticipate and easily solve common problems. You’ll gain dive knowledge, management and supervision abilities so you become a role model to divers everywhere."
   },
   whyBecomeAnDMP2: {
     en:
       "As a Divemaster, you’ll lead others as you supervise scuba diving activities and assist with diver training. Divemasters are respected dive professionals who are aligned with the largest and one of the most respected dive organization in the world – SSI (Scuba School International).",
-    fr: "undefined"
+    fr:
+      "As a Divemaster, you’ll lead others as you supervise scuba diving activities and assist with diver training. Divemasters are respected dive professionals who are aligned with the largest and one of the most respected dive organization in the world – SSI (Scuba School International)."
   },
   whyBecomeAnDMP3: {
     en:
       "Before you can be a good research diver, you first must be a good diver. The Dive Master and Research Diver Internship will give you the skills needed to work either in marine conservation or the diving industry. You will meet like-minded individuals and be able to network with experienced and aspiring marine biologists and organizations from around the world.",
-    fr: "undefined"
+    fr:
+      "Before you can be a good research diver, you first must be a good diver. The Dive Master and Research Diver Internship will give you the skills needed to work either in marine conservation or the diving industry. You will meet like-minded individuals and be able to network with experienced and aspiring marine biologists and organizations from around the world."
   },
-  currentProject: { en: "Current Project", fr: "undefined" },
+  currentProject: { en: "Current Project", fr: "Current Project" },
   currentProjectListItem1: {
     en: "BRUV (Baited Remote Underwater Video)",
-    fr: "undefined"
+    fr: "BRUV (Baited Remote Underwater Video)"
   },
-  currentProjectListItem2: { en: "Roving Survey Dive", fr: "undefined" },
+  currentProjectListItem2: {
+    en: "Roving Survey Dive",
+    fr: "Roving Survey Dive"
+  },
   currentProjectListItem3: {
     en: "Marine Plastic Pollution Assessment (With Save The Plastic)",
-    fr: "undefined"
+    fr: "Marine Plastic Pollution Assessment (With Save The Plastic)"
   },
-  currentProjectListItem4: { en: "Unite Bira", fr: "undefined" },
+  currentProjectListItem4: { en: "Unite Bira", fr: "Unite Bira" },
   currentProjectListItem5: {
     en: "Shark & Turtle Photo Identification",
-    fr: "undefined"
+    fr: "Shark & Turtle Photo Identification"
   },
   currentProjectListItem6: {
     en: "Coral Biodiversity Mapping",
-    fr: "undefined"
+    fr: "Coral Biodiversity Mapping"
   },
   forMoreInfo: {
     en: "For more information on the research projects check out",
-    fr: "undefined"
+    fr: "For more information on the research projects check out"
   },
-  whoCanApply: { en: "Who Can Apply?", fr: "undefined" },
+  whoCanApply: { en: "Who Can Apply?", fr: "Who Can Apply?" },
   whoCanApplyP1: {
     en:
       "You don’t need to be a diver or a marine biologist to join the team! Diversity is what makes us strong and we accept applications from all countries with all types of backgrounds. All our programs have a minimum age requirement of 18 years old.",
-    fr: "undefined"
+    fr:
+      "You don’t need to be a diver or a marine biologist to join the team! Diversity is what makes us strong and we accept applications from all countries with all types of backgrounds. All our programs have a minimum age requirement of 18 years old."
   },
-  programFees: { en: "Program Fees", fr: "undefined" },
+  programFees: { en: "Program Fees", fr: "Program Fees" },
   programFeesP1: {
     en:
       "Projects like ours rely on the generosity of our partners and interns to develop and grow. In order to create an amazing adventure for you we do require a tuition to cover your expenses while on program.",
-    fr: "undefined"
+    fr:
+      "Projects like ours rely on the generosity of our partners and interns to develop and grow. In order to create an amazing adventure for you we do require a tuition to cover your expenses while on program."
   },
-  allPackageInclude: { en: "All packages include:", fr: "undefined" },
-  allPackageIncludeListItem1: { en: "Shared accommodation", fr: "undefined" },
+  allPackageInclude: {
+    en: "All packages include:",
+    fr: "All packages include:"
+  },
+  allPackageIncludeListItem1: {
+    en: "Shared accommodation",
+    fr: "Shared accommodation"
+  },
   allPackageIncludeListItem2: {
     en:
       "Airport pick up and transfer from Makasar to project headquarters at Blue Planet Dive Resort",
-    fr: "undefined"
+    fr:
+      "Airport pick up and transfer from Makasar to project headquarters at Blue Planet Dive Resort"
   },
   allPackageIncludeListItem3: {
     en: "Dive Master Course Fees",
-    fr: "undefined"
+    fr: "Dive Master Course Fees"
   },
   allPackageIncludeListItem4: {
     en: "5 ecology specialty courses",
-    fr: "undefined"
+    fr: "5 ecology specialty courses"
   },
-  allPackageIncludeListItem5: { en: "2 program shirts", fr: "undefined" },
-  allPackageIncludeListItem6: { en: "VISA assistance", fr: "undefined" },
+  allPackageIncludeListItem5: {
+    en: "2 program shirts",
+    fr: "2 program shirts"
+  },
+  allPackageIncludeListItem6: { en: "VISA assistance", fr: "VISA assistance" },
   allPackageIncludeListItem7: {
     en: "Pre arrival training materials and manuals",
-    fr: "undefined"
+    fr: "Pre arrival training materials and manuals"
   },
-  allPackageIncludeListItem8: { en: "Pre arrival support", fr: "undefined" },
-  doesNotnclude: { en: "Does Not Include:", fr: "undefined" },
+  allPackageIncludeListItem8: {
+    en: "Pre arrival support",
+    fr: "Pre arrival support"
+  },
+  doesNotnclude: { en: "Does Not Include:", fr: "Does Not Include:" },
   doesNotncludeListItem1: {
     en: "Return flights from your hometown to Makasar",
-    fr: "undefined"
+    fr: "Return flights from your hometown to Makasar"
   },
   doesNotncludeListItem2: {
     en:
       "VISA processing and any related transport required by Indonesian Immigration",
-    fr: "undefined"
+    fr:
+      "VISA processing and any related transport required by Indonesian Immigration"
   },
   doesNotncludeListItem3: {
     en:
       "Dive Master training materials and agency membership fees (3,800,000 IDR)",
-    fr: "undefined"
+    fr:
+      "Dive Master training materials and agency membership fees (3,800,000 IDR)"
   },
   doesNotncludeListItem4: {
     en: "Dive rental equipment (1,500,000 IDR/month)",
-    fr: "undefined"
+    fr: "Dive rental equipment (1,500,000 IDR/month)"
   },
   doesNotncludeListItem5: {
     en:
       "Meals (vegetarian lunches provided during double tank dive days and communal kitchen at headquarters)",
-    fr: "undefined"
+    fr:
+      "Meals (vegetarian lunches provided during double tank dive days and communal kitchen at headquarters)"
   },
   doesNotncludeListItem6: {
     en: "Bicycle or motorbike rental (60,000 IDR/day)",
-    fr: "undefined"
+    fr: "Bicycle or motorbike rental (60,000 IDR/day)"
   },
   forMoreInfoackage: {
     en:
       "For more information on the various packages offered check out our website here: ",
-    fr: "undefined"
+    fr:
+      "For more information on the various packages offered check out our website here: "
   },
   howToApply: { en: "How to Apply", fr: "undefined" },
   howToApplyP1: {
     en:
       "All potential interns are required to undergo a short application process including interview questionnaire and diver medical. During this process you will gain access to pre arrival information and study materials to help prepare you for your program.",
-    fr: "undefined"
+    fr:
+      "All potential interns are required to undergo a short application process including interview questionnaire and diver medical. During this process you will gain access to pre arrival information and study materials to help prepare you for your program."
   },
   applyOnline: { en: "Apply directly online at", fr: "undefined" },
   orContact: { en: "Or contact", fr: "ou contactez" }
