@@ -20,11 +20,11 @@ const DivingCard = props => {
         </ul>
       </div>
       <div className="description">
-        <h1 data-anchor="fun_dive" data-text-code="funDive">
+        <h1>
           <Text id={props.title} />
         </h1>
         {props.age ? <h2>({props.age})</h2> : null}
-        <p data-text-code="funDiveDesc">
+        <p>
           <Text id={props.desc} />
         </p>
       </div>
