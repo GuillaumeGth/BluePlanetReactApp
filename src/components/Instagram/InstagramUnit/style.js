@@ -1,5 +1,7 @@
 import styled from "styled-components";
-const Img = styled.img`
+import Image from "../../Image";
+
+const Img = styled(Image)`
   width: 550px;
 `;
 const Video = styled.video`

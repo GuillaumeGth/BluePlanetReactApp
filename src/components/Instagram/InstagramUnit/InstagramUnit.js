@@ -20,7 +20,7 @@ const InstagramUnit = props => {
   };
 
   return (
-    <InstagramUnitContainer style={getStyleAttribute()}>
+    <InstagramUnitContainer style={getStyleAttribute()} className="insta-unit">
       {props.type === "video" ? (
         <Video controls>
           <source src={props.src} />
@@ -38,7 +38,7 @@ const InstagramUnit = props => {
               </CaptionContainer>
             </FlexContainer>
           </Mask>
-          <Img src={props.src} />
+          <Img style={getStyleAttribute()} src={props.src} />
         </>
       )}
     </InstagramUnitContainer>
