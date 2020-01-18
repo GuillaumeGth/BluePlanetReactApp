@@ -7,16 +7,14 @@ const Form = props => {
   const [values, setValues] = useState({});
 
   const sendMessage = e => {
-    var data = new FormData();
-    data.append(
-      "params",
-      JSON.stringify({
-        values
-      })
-    );
+    values.message = values.message.replace(/\n/g, "<br />");
     fetch("http://localhost:3001/message", {
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json"
+      },
       method: "POST",
-      body: data
+      body: JSON.stringify(values)
     })
       .then(response => response.json())
       .then(result => {
