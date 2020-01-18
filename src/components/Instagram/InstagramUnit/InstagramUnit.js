@@ -38,7 +38,11 @@ const InstagramUnit = props => {
               </CaptionContainer>
             </FlexContainer>
           </Mask>
-          <Img style={getStyleAttribute()} src={props.src} />
+          <Img
+            style={getStyleAttribute()}
+            src={props.src}
+            alt={props.caption}
+          />
         </>
       )}
     </InstagramUnitContainer>
