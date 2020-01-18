@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import FlexContainer from "../Layout/FlexContainer";
+import { Link } from "react-router-dom";
+
 const AppName = styled.div`
   font-size: 1.5rem;
   margin: 0 25px;
   letter-spacing: 2px;
+`;
+const AppLink = styled(Link)`
+  color: #636363;
+  text-decoration: none;
 `;
 
 const HeaderControl = styled.div`
@@ -48,4 +54,4 @@ const Flag = styled.img`
 const LangContainer = styled(FlexContainer)`
   margin: 0 150px !important;
 `;
-export { AppName, HeaderControl, Flag, LangContainer };
+export { AppLink, AppName, HeaderControl, Flag, LangContainer };

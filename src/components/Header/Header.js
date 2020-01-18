@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
-import { AppName, HeaderControl, Flag, LangContainer } from "./style";
+import { AppName, HeaderControl, Flag, LangContainer, AppLink } from "./style";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -47,9 +47,9 @@ const Header = props => {
       className={filled ? "filled" : "transparent"}
       ref={headerElement}
     >
-      <Link to="/">
+      <AppLink to="/">
         <AppName>Blue Planet Dive Resort</AppName>
-      </Link>
+      </AppLink>
       <FontAwesomeIcon className="anchor-icon" icon={faAnchor} size="lg" />
       <LangContainer direction="row">
         <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" />
