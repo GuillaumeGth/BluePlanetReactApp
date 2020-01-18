@@ -26,6 +26,7 @@ const SectionTitleControl = styled.div`
 
   &.yellow {
     background: #e5a900;
+    color: white !important;
     & ${SectionChevron} {
       background: #252627;
     }

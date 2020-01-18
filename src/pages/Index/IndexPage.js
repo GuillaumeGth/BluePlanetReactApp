@@ -14,6 +14,7 @@ import Instagram from "../../components/Instagram";
 import { createStore } from "redux";
 import ReduxApp from "../../Redux/reducers";
 import { setActiveMenu } from "../../Redux/actions";
+import Paragraph from "../../components/Layout/Paragraph";
 
 const IndexPage = props => {
   const store = createStore(ReduxApp);
@@ -85,23 +86,25 @@ const IndexPage = props => {
       <Section title="otherActivities" color="yellow">
         <SectionContent>
           <SectionContentTitle label="otherActivitiesSubTitle" />
-          <FlexContainer direction="row">
-            <CardControl
-              image="paddle.jpg"
-              title="standUpPaddle"
-              content="standUpPaddleDesc"
-            />
-            <CardControl
-              image="snorkeling.jpg"
-              title="snorkeling"
-              content="snorkelingDesc"
-            />
-            <CardControl
-              image="scooter.jpg"
-              title="scooter"
-              content="scooterDesc"
-            />
-          </FlexContainer>
+          <Paragraph>
+            <FlexContainer direction="row">
+              <CardControl
+                image="paddle.jpg"
+                title="standUpPaddle"
+                content="standUpPaddleDesc"
+              />
+              <CardControl
+                image="snorkeling.jpg"
+                title="snorkeling"
+                content="snorkelingDesc"
+              />
+              <CardControl
+                image="scooter.jpg"
+                title="scooter"
+                content="scooterDesc"
+              />
+            </FlexContainer>
+          </Paragraph>
         </SectionContent>
       </Section>
       <Section title="contact">

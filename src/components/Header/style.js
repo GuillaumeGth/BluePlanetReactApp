@@ -44,6 +44,9 @@ const HeaderControl = styled.div`
       color: #252627 !important;
     }
   }
+  &.transparent ${AppName} {
+    color: white !important;
+  }
 `;
 const Flag = styled.img`
   width: 30px;
