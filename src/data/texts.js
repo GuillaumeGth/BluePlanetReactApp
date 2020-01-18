@@ -47,7 +47,10 @@ export default {
   },
   here: { en: "here", fr: "ici" },
   otherActivities: { en: "Other Activities", fr: "D’autres activités" },
-  otherActivitiesSubTitle: { en: "Enjoy Your Journey", fr: "" },
+  otherActivitiesSubTitle: {
+    en: "Enjoy Your Journey",
+    fr: "Enjoy Your Journey"
+  },
   standUpPaddle: { en: "STAND UP PADDLE", fr: "STAND UP PADDLE" },
   standUpPaddleDesc: {
     en:
