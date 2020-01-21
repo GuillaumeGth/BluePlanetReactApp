@@ -23,21 +23,29 @@ const SectionTitleControl = styled.div`
   font-weight: 900;
   letter-spacing: 3px;
   cursor: pointer;
-
-  &.yellow {
+  &.mobile {
+    width: auto;
+    height: auto;
+    min-width: auto;
+    font-size: 3rem;
+    font-weight: 400;
+    background: transparent;
+    color: #3d5aa0 !important;
+  }
+  &.bowser.yellow {
     background: #e5a900;
     color: white !important;
     & ${SectionChevron} {
       background: #252627;
     }
   }
-  &.blue {
+  &.bowser.blue {
     background: #008ae2;
     & ${SectionChevron} {
       background: #252627;
     }
   }
-  &.turquoise {
+  &.bowser.turquoise {
     background: #20c7ca;
     & ${SectionChevron} {
       background: #252627;

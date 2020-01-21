@@ -9,8 +9,11 @@ import Diving from "./pages/Diving";
 import Bira from "./pages/Bira";
 import Contact from "./pages/Contact";
 import Prices from "./pages/Prices";
+// import Footer from "./components/Layout/Footer";
 import Accommodation from "./pages/Accommodation";
 import BiraProject from "./pages/BiraProject";
+import { isMobile } from "react-device-detect";
+import "./mobile.scss";
 
 function App() {
   const changeLang = lang => {
@@ -55,7 +58,7 @@ function App() {
   const updateActivePage = () => {};
   updateActivePage();
   return (
-    <div className="App">
+    <div className={`App ${isMobile ? "mobile" : "browser"}`}>
       <Text language={getLang()} dictionary={dictionary}>
         <Router>
           <Header lang={getLang()} langClickHandler={changeLang}></Header>
@@ -82,6 +85,7 @@ function App() {
               <BiraProject />
             </Route>
           </Switch>
+          {/* <Footer /> */}
         </Router>
       </Text>
     </div>

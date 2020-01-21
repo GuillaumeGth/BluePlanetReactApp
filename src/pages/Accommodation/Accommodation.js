@@ -6,6 +6,7 @@ import Paragraph from "../../components/Layout/Paragraph";
 import styled from "styled-components";
 import LinkControl from "../../components/Link";
 import Text from "react-text";
+import { isMobile } from "react-device-detect";
 const Accommodation = props => {
   const Contact = styled.span`
     padding: 8px;
@@ -22,7 +23,13 @@ const Accommodation = props => {
       <FlexContainer justify="center" align="center" fullWidth>
         <PageTitle
           label="accommodationMenu"
-          icon={<img src="/img/icon/camping.svg" alt="accommodation icon" />}
+          icon={
+            isMobile ? (
+              false
+            ) : (
+              <img src="/img/icon/camping.svg" alt="accommodation icon" />
+            )
+          }
         />
         <Paragraph label="accommodationDesc" />
         <H2>Bara Beach Bungalows :</H2>

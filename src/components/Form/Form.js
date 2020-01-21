@@ -7,6 +7,9 @@ const Form = props => {
   const [values, setValues] = useState({});
 
   const sendMessage = e => {
+    if (!values.message) {
+      return;
+    }
     values.message = values.message.replace(/\n/g, "<br />");
     fetch("http://localhost:3001/message", {
       headers: {
@@ -18,7 +21,10 @@ const Form = props => {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        debugger;
+        if (result.success) {
+          setValues({});
+        }
       });
   };
 
@@ -33,13 +39,14 @@ const Form = props => {
       <TextBox
         label="Name"
         icon="AccountCircle"
-        id="txtName"
+        value={values["name"]}
         onChange={value => onChangeHandler("name", value)}
       />
       <TextBox
         label="Email"
         icon="MailOutline"
         required={true}
+        value={values["email"]}
         type="email"
         onChange={value => onChangeHandler("email", value)}
       />
@@ -47,6 +54,7 @@ const Form = props => {
         label="Phone"
         icon="Phone"
         type="tel"
+        value={values["phone"]}
         onChange={value => onChangeHandler("phone", value)}
       />
       <TextBox
@@ -54,6 +62,7 @@ const Form = props => {
         multiline={true}
         icon="Message"
         required={true}
+        value={values["message"]}
         onChange={value => onChangeHandler("message", value)}
       />
       <Button onClick={sendMessage} />

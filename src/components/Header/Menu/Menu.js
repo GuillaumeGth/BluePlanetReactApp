@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MenuItem from "./MenuItem";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 const Menu = props => {
   const MenuControl = styled.ul`
@@ -39,6 +40,7 @@ const Menu = props => {
         <MenuItem
           active={active === ""}
           onClick={clickHandler}
+          visible={isMobile}
           link=""
           text="homeMenu"
         ></MenuItem>
@@ -58,6 +60,7 @@ const Menu = props => {
           active={active === "gallery"}
           onClick={clickHandler}
           link="gallery"
+          visible={isMobile}
           text="galleryMenu"
         ></MenuItem>
         <MenuItem

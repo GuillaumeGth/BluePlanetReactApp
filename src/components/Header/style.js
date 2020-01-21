@@ -57,4 +57,15 @@ const Flag = styled.img`
 const LangContainer = styled(FlexContainer)`
   margin: 0 150px !important;
 `;
-export { AppLink, AppName, HeaderControl, Flag, LangContainer };
+const SocialNetwork = styled.div`
+  & img {
+    margin-right: 20px;
+    transition: 0.4s;
+  }
+  ${HeaderControl}.transparent:not(.scrolled) & {
+    img {
+      opacity: 0;
+    }
+  }
+`;
+export { AppLink, AppName, HeaderControl, Flag, LangContainer, SocialNetwork };

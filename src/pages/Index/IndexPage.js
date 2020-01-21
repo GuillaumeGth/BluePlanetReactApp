@@ -15,12 +15,17 @@ import { createStore } from "redux";
 import ReduxApp from "../../Redux/reducers";
 import { setActiveMenu } from "../../Redux/actions";
 import Paragraph from "../../components/Layout/Paragraph";
-
+import { isMobile, isBrowser } from "react-device-detect";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const IndexPage = props => {
   const store = createStore(ReduxApp);
   store.dispatch(setActiveMenu("index"));
   const DivImages = styled.div`
-    display: flex;
+    width: ${isMobile ? `${window.innerWidth}px` : "1300px"};
+    height: ${isMobile ? `400px` : "500px"};
+    display: block;
   `;
 
   const BackgroundImg = styled.img`
@@ -42,21 +47,47 @@ const IndexPage = props => {
     justify-content: center;
     align-items: center;
   `;
-
+  const params = {
+    dots: true,
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isBrowser ? 2 : 1,
+    autoplay: true
+  };
+  const params2 = {
+    dots: true,
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isBrowser ? 3 : 1,
+    autoplay: true
+  };
   return (
     <div>
       <WelcomeImages>
-        <LogoImg src="img/logo.png" alt="logo" />
-        <BackgroundImg src="img/background.jpg" alt="logo" />
+        <LogoImg src="img/logo.png" alt="logo" className="logo" />
+        <BackgroundImg
+          className="welcome-img"
+          src="img/background.jpg"
+          alt="logo"
+        />
       </WelcomeImages>
-      <Section title="diving">
+      <Section to="diving" title="diving">
         <SectionContent>
           <SectionContentTitle label="divingSectionTitle" />
           <SectionParagraph content="divingSectionContent"></SectionParagraph>
+          <DivImages>
+            <Slider {...params}>
+              <img alt="img" src="img/ray-mobile.jpg" />
+              <img alt="img" src="img/shark-mobile.jpg" />
+              <img alt="img" src="img/turtle-mobile.jpg" />
+            </Slider>
+          </DivImages>
         </SectionContent>
       </Section>
-      <Accordion></Accordion>
-      <Section title="bira" color="blue">
+      <Accordion visible={!isMobile}></Accordion>
+      <Section to="bira" title="bira" color="blue">
         <SectionContent>
           <SectionContentTitle label="biraSectionTitle" />
           <SectionParagraph
@@ -64,8 +95,10 @@ const IndexPage = props => {
             content="biraSectionContent"
           ></SectionParagraph>
           <DivImages>
-            <LazyLoadImage src="img/bira2.jpg" />
-            <LazyLoadImage src="img/bira.jpeg" />
+            <Slider {...params}>
+              <img alt="img" src="img/bira2.jpg" />
+              <img alt="img" src="img/bira.jpeg" />
+            </Slider>
           </DivImages>
         </SectionContent>
       </Section>
@@ -88,32 +121,42 @@ const IndexPage = props => {
           <SectionContentTitle label="otherActivitiesSubTitle" />
           <Paragraph>
             <FlexContainer direction="row">
-              <CardControl
-                image="paddle.jpg"
-                title="standUpPaddle"
-                content="standUpPaddleDesc"
-              />
-              <CardControl
-                image="snorkeling.jpg"
-                title="snorkeling"
-                content="snorkelingDesc"
-              />
-              <CardControl
-                image="scooter.jpg"
-                title="scooter"
-                content="scooterDesc"
-              />
+              <div
+                style={{
+                  display: "block",
+                  width: `${isMobile ? `${window.innerWidth}px` : "auto"}`,
+                  height: "500px"
+                }}
+              >
+                <Slider {...params2}>
+                  <CardControl
+                    image="paddle.jpg"
+                    title="standUpPaddle"
+                    content="standUpPaddleDesc"
+                  />
+                  <CardControl
+                    image="snorkeling.jpg"
+                    title="snorkeling"
+                    content="snorkelingDesc"
+                  />
+                  <CardControl
+                    image="scooter.jpg"
+                    title="scooter"
+                    content="scooterDesc"
+                  />
+                </Slider>
+              </div>
             </FlexContainer>
           </Paragraph>
         </SectionContent>
       </Section>
-      <Section title="contact">
-        <SectionContent>
+      <Section to="contact" title="contact">
+        <SectionContent fullWidth={isMobile}>
           <SectionContentTitle label="sendUsAMessage" />
           <Form></Form>
         </SectionContent>
       </Section>
-      <Instagram />
+      <Instagram visible={isBrowser} />
     </div>
   );
 };

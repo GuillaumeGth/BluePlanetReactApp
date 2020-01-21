@@ -5,5 +5,11 @@ const SectionContentControl = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 100px 0 0 0;
+  &.mobile {
+    padding: 0;
+  }
+  &.full-width {
+    width: 100%;
+  }
 `;
 export default SectionContentControl;

@@ -4,11 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
 import "./TextBoxStyle.css";
 import { withStyles } from "@material-ui/core/styles";
-
+import { isBrowser } from "react-device-detect";
 const styles = theme => ({
   label: {
     color: ["#252627", "!important"],
-    fontSize: ["1.2rem", "!important"]
+    fontSize: ["1.4rem", "!important"]
   },
   shrinkedLabel: {
     fontSize: ["1.4rem", "!important"],
@@ -31,12 +31,12 @@ const styles = theme => ({
     }
   },
   textField: {
-    width: "800px"
+    width: isBrowser ? "800px" : window.innerWidth - 80
   }
 });
 
 const TextBox = props => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(props.value || "");
   const [error, setError] = useState(false);
   // const [selected, setSelected] = useState(false);
   const { multiline, label, required, classes, type } = props;
@@ -95,8 +95,6 @@ const TextBox = props => {
             }
           }}
           InputProps={{
-            // key: `${props.id}_controlfield`,
-            // id: `${props.id}_controlfield`,
             classes: {
               underline: classes.underline,
               root: classes.textField

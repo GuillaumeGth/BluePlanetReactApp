@@ -5,10 +5,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Text from "react-text";
-
+import { isBrowser } from "react-device-detect";
 const useStyles = makeStyles({
   card: {
-    margin: 10,
+    margin: isBrowser ? 10 : "auto",
     maxWidth: 360,
     minWidth: 200,
     width: 350,

@@ -2,8 +2,25 @@ import React from "react";
 import FlexContainer from "../../../Layout/FlexContainer";
 import PageTitle from "../../../Layout/PageTitle";
 import PriceCard from "../PriceCard";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { isBrowser, isMobile } from "react-device-detect";
 const PriceCardContainer = props => {
+  const params = {
+    dots: true,
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: isBrowser ? props.data.items.length : 1,
+    autoplay: true
+  };
+  const browserWidth = props.data.items.length * 280;
+  const containerWidth = isMobile
+    ? window.innerWidth
+    : browserWidth > window.innerWidth
+    ? window.innerWidth
+    : browserWidth;
   return (
     <FlexContainer
       fullWidth
@@ -13,20 +30,30 @@ const PriceCardContainer = props => {
       wrap
     >
       <PageTitle label={props.data.title} />
-      {props.data
-        ? props.data.items.map((e, i) => {
-            return (
-              <PriceCard
-                details={e.details}
-                title={e.title}
-                price={e.price}
-                icon={e.icon}
-                ribon={e.ribon}
-                key={`funDivePriceCard_${i}`}
-              />
-            );
-          })
-        : null}
+      <div
+        className="slider-container"
+        style={{
+          display: "block",
+          width: containerWidth
+        }}
+      >
+        <Slider {...params}>
+          {props.data
+            ? props.data.items.map((e, i) => {
+                return (
+                  <PriceCard
+                    details={e.details}
+                    title={e.title}
+                    price={e.price}
+                    icon={e.icon}
+                    ribon={e.ribon}
+                    key={`funDivePriceCard_${i}`}
+                  />
+                );
+              })
+            : null}
+        </Slider>
+      </div>
     </FlexContainer>
   );
 };

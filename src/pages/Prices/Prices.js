@@ -2,6 +2,7 @@ import React from "react";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import prices from "../../data/prices";
 import PriceCardContainer from "../../components/Card/PriceCard/PriceCardContainer";
+
 const Prices = props => {
   return (
     // <PageContent>

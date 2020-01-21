@@ -1,5 +1,5 @@
 import React from "react";
-import InstagramContainer from "./style";
+import { InstagramContainer, InstaTitle } from "./style";
 import useAbortableFetch from "use-abortable-fetch";
 import InstagramUnit from "./InstagramUnit";
 import StackGrid from "react-stack-grid";
@@ -12,9 +12,16 @@ const Instagram = props => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
-
+  if (!props.visible) return <></>;
   return (
     <InstagramContainer>
+      <InstaTitle
+        href="https://www.instagram.com/blueplanetdiveresort_"
+        class="insta-title"
+        target="blank"
+      >
+        Follow Us On Instagram
+      </InstaTitle>
       <StackGrid columnWidth={550}>
         {data.data.map(function(e) {
           var caption = e.caption;

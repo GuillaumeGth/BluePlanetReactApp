@@ -2,6 +2,8 @@ import React from "react";
 import Flex from "./style";
 
 const FlexContainer = props => {
+  let visible = props.visible;
+  visible = typeof visible === "undefined" ? true : visible;
   const getClass = () => {
     var direction = props.direction === "row" ? "row" : "column",
       align = props.align === "center" ? "align-center" : null,
@@ -20,7 +22,8 @@ const FlexContainer = props => {
     }
     return classes.join(" ");
   };
-  return <Flex className={getClass()}>{props.children}</Flex>;
+  if (!visible) return <></>;
+  else return <Flex className={getClass()}>{props.children}</Flex>;
 };
 
 export default FlexContainer;

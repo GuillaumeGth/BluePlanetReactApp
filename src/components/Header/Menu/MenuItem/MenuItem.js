@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Text from "react-text";
 import { HeaderControl } from "../../style";
+import { isBrowser } from "react-device-detect";
 
 const MenuItem = props => {
+  let visible = props.visible;
+  visible = typeof visible === "undefined" ? true : visible;
   const MenuItemControl = styled.li`
     padding: 0 15px;
     height: 100%;
@@ -59,9 +62,16 @@ const MenuItem = props => {
   `;
 
   const clickHandler = e => {
+    if (isBrowser) return;
+    var header = e.target.closest(".header"),
+      hamburger = header.querySelector(".hamburger-menu");
+    // if (typeof header === "undefined") return;
+    // if (typeof hamburger === "undefined") return;
+    header.classList.toggle("open");
+    hamburger.classList.toggle("open");
     props.onClick(props.link);
   };
-
+  if (!visible) return <></>;
   return (
     <MenuItemControl
       className={`menu-item ${props.active ? "active" : null}`}
@@ -72,7 +82,7 @@ const MenuItem = props => {
         <MenuItemLabelControl className="menu-item-label">
           <Text id={props.text}></Text>
         </MenuItemLabelControl>
-        <Underline></Underline>
+        <Underline className="underline"></Underline>
       </StyledLink>
       {props.children}
     </MenuItemControl>

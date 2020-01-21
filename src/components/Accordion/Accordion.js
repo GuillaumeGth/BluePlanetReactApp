@@ -2,7 +2,8 @@ import React from "react";
 import { AccordionContainer, AccordionControl } from "./style";
 import AccordionItem from "./AccordionItem";
 
-const Accordion = () => {
+const Accordion = props => {
+  if (!props.visible) return <></>;
   return (
     <AccordionContainer>
       <AccordionControl>

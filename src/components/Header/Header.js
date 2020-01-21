@@ -2,8 +2,16 @@ import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
-import { AppName, HeaderControl, Flag, LangContainer, AppLink } from "./style";
+import {
+  AppName,
+  HeaderControl,
+  Flag,
+  LangContainer,
+  AppLink,
+  SocialNetwork
+} from "./style";
 import { useLocation } from "react-router-dom";
+import { isBrowser } from "react-device-detect";
 
 const Header = props => {
   const location = useLocation();
@@ -41,19 +49,55 @@ const Header = props => {
   const redirectionHandler = e => {
     setFilled(e);
   };
+  const hamburgerClickHandler = e => {
+    const target = e.target,
+      hamburger = target.closest(".hamburger-menu"),
+      header = target.closest(".header");
+    if (!hamburger) debugger;
+    if (!header) debugger;
+    hamburger.classList.toggle("open");
+    header.classList.toggle("open");
+  };
   return (
     <HeaderControl
-      className={filled ? "filled" : "transparent"}
+      className={`header ${filled ? "filled" : "transparent"}`}
       ref={headerElement}
     >
-      <AppLink to="/">
-        <AppName>Blue Planet Dive Resort</AppName>
-      </AppLink>
-      <FontAwesomeIcon className="anchor-icon" icon={faAnchor} size="lg" />
-      <LangContainer direction="row">
+      {isBrowser ? (
+        <>
+          <AppLink to="/">
+            <AppName>Blue Planet Dive Resort</AppName>
+          </AppLink>
+          <FontAwesomeIcon className="anchor-icon" icon={faAnchor} size="lg" />
+        </>
+      ) : (
+        <div className="header-mobile">
+          <div
+            onClick={hamburgerClickHandler}
+            className="mobile-menu-toggle hamburger-menu"
+          >
+            <span className="menu-item"></span>
+            <span className="menu-item"></span>
+            <span className="menu-item"></span>
+          </div>
+        </div>
+      )}
+
+      <LangContainer id="test" visible={isBrowser} direction="row">
         <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" />
       </LangContainer>
       <Menu onRedirection={redirectionHandler}></Menu>
+      <SocialNetwork>
+        <a
+          href="https://www.instagram.com/blueplanetdiveresort_"
+          target="blank"
+        >
+          <img alt="instagram" src="img/icon/insta.png" width="36px" />
+        </a>
+        <a href="https://www.facebook.com/BluePlanetDiveResort/" target="blank">
+          <img alt="facebook" src="img/icon/fb.png" width="36px" />
+        </a>
+      </SocialNetwork>
     </HeaderControl>
   );
 };
