@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { isBrowser, isMobile } from "react-device-detect";
+import styled from "styled-components";
 const PriceCardContainer = props => {
   const params = {
     dots: true,
@@ -21,40 +22,46 @@ const PriceCardContainer = props => {
     : browserWidth > window.innerWidth
     ? window.innerWidth
     : browserWidth;
+  const Content = styled.div`
+    padding-top: ${isBrowser ? "150" : "65"}px;
+  `;
+
   return (
-    <FlexContainer
-      fullWidth
-      direction="row"
-      align="center"
-      justify="center"
-      wrap
-    >
-      <PageTitle label={props.data.title} />
-      <div
-        className="slider-container"
-        style={{
-          display: "block",
-          width: containerWidth
-        }}
+    <Content>
+      <FlexContainer
+        width="full"
+        direction="row"
+        align="center"
+        justify="center"
+        wrap
       >
-        <Slider {...params}>
-          {props.data
-            ? props.data.items.map((e, i) => {
-                return (
-                  <PriceCard
-                    details={e.details}
-                    title={e.title}
-                    price={e.price}
-                    icon={e.icon}
-                    ribon={e.ribon}
-                    key={`funDivePriceCard_${i}`}
-                  />
-                );
-              })
-            : null}
-        </Slider>
-      </div>
-    </FlexContainer>
+        <PageTitle label={props.data.title} />
+        <div
+          className="slider-container"
+          style={{
+            display: "block",
+            width: containerWidth
+          }}
+        >
+          <Slider {...params}>
+            {props.data
+              ? props.data.items.map((e, i) => {
+                  return (
+                    <PriceCard
+                      details={e.details}
+                      title={e.title}
+                      price={e.price}
+                      icon={e.icon}
+                      ribon={e.ribon}
+                      key={`funDivePriceCard_${i}`}
+                    />
+                  );
+                })
+              : null}
+          </Slider>
+        </div>
+      </FlexContainer>
+    </Content>
   );
 };
 

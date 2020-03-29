@@ -6,7 +6,7 @@ import PriceCardContainer from "../../components/Card/PriceCard/PriceCardContain
 const Prices = props => {
   return (
     // <PageContent>
-    <FlexContainer fullWidth>
+    <FlexContainer width="full">
       <PriceCardContainer data={prices.funDive} />
       <PriceCardContainer data={prices.classes} />
       <PriceCardContainer data={prices.advanceClasses} />

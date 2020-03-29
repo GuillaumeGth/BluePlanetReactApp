@@ -87,17 +87,22 @@ const Header = props => {
         <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" />
       </LangContainer>
       <Menu onRedirection={redirectionHandler}></Menu>
-      <SocialNetwork>
-        <a
-          href="https://www.instagram.com/blueplanetdiveresort_"
-          target="blank"
-        >
-          <img alt="instagram" src="img/icon/insta.png" width="36px" />
-        </a>
-        <a href="https://www.facebook.com/BluePlanetDiveResort/" target="blank">
-          <img alt="facebook" src="img/icon/fb.png" width="36px" />
-        </a>
-      </SocialNetwork>
+      {isBrowser ? (
+        <SocialNetwork>
+          <a
+            href="https://www.instagram.com/blueplanetdiveresort_"
+            target="blank"
+          >
+            <img alt="instagram" src="img/icon/insta.png" width="36px" />
+          </a>
+          <a
+            href="https://www.facebook.com/BluePlanetDiveResort/"
+            target="blank"
+          >
+            <img alt="facebook" src="img/icon/fb.png" width="36px" />
+          </a>
+        </SocialNetwork>
+      ) : null}
     </HeaderControl>
   );
 };

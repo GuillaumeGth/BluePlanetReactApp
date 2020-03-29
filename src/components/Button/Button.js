@@ -13,13 +13,15 @@ const Button = props => {
   `;
 
   return (
-    <MaterialButtonControl
-      variant="contained"
-      endIcon={<SendIcon />}
-      onClick={props.onClick}
-    >
-      Send
-    </MaterialButtonControl>
+    <div className={`${props.state === "loading" ? props.state : ""}`}>
+      <MaterialButtonControl
+        variant="contained"
+        endIcon={<SendIcon />}
+        onClick={props.onClick}
+      >
+        Send
+      </MaterialButtonControl>
+    </div>
   );
 };
 

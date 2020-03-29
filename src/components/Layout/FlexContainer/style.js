@@ -11,6 +11,9 @@ const Flex = styled.div`
   &.full-width {
     width: 100%;
   }
+  &.half-width {
+    width: 50%;
+  }
   &.justify-flex-end {
     justify-content: flex-end;
   }

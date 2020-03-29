@@ -61,7 +61,12 @@
   border-bottom: 0.1em solid #ccc;
   display: block;
   flex-grow: 1;
+}
+.horizontal-divider:before {
   margin-right: 1rem;
+}
+.horizontal-divider:after {
+  margin-left: 1rem;
 }
 .horizontal-divider {
   /*white-space: nowrap;*/

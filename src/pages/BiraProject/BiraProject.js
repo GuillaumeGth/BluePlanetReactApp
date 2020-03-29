@@ -6,8 +6,13 @@ import Link from "../../components/Link";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import PageTitle from "../../components/Layout/PageTitle";
 import Paragraph from "../../components/Layout/Paragraph";
+import { isMobile } from "react-device-detect";
 
-const BiraProject = props => {
+const BiraProject = () => {
+  const ListTitle = styled.span`
+    font-size: 1.4rem;
+    padding: 0 35px;
+  `;
   const List = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +52,7 @@ const BiraProject = props => {
   `;
   return (
     <PageContent>
-      <FlexContainer fullWidth>
+      <FlexContainer width="full">
         <PageTitle label="biraprojectTitle" />
         <PageTitle isSubTitle label="biraprojectSubTitle" />
         <Paragraph label="biraprojectP1" />
@@ -89,8 +94,9 @@ const BiraProject = props => {
         <Paragraph label="whoCanApplyP1" />
         <PageTitle isSubTitle label="programFees" />
         <Paragraph label="programFeesP1" />
-        <FlexContainer direction="row">
-          <FlexContainer>
+        <FlexContainer direction={isMobile ? "column" : "row"}>
+          <FlexContainer width={isMobile ? "full" : "half"}>
+            <ListTitle>All packages include:</ListTitle>
             <List2>
               <ListItem2 data-text-code="allPackageIncludeListItem2">
                 Airport pick up and transfer from Makasar to project
@@ -119,7 +125,8 @@ const BiraProject = props => {
               </ListItem2>
             </List2>
           </FlexContainer>
-          <FlexContainer>
+          <FlexContainer width={isMobile ? "full" : "half"}>
+            <ListTitle>Does Not Include:</ListTitle>
             <List2 className="not-include">
               <ListItem2 data-text-code="allPackageIncludeListItem2">
                 Airport pick up and transfer from Makasar to project
@@ -154,7 +161,9 @@ const BiraProject = props => {
         <Paragraph label="howToApplyP1" />
         <Paragraph>
           <FlexContainer direction="row">
-            <Text id="applyOnline" />
+            <span style={{ paddingRight: "8px" }}>
+              <Text id="applyOnline" />
+            </span>
             <Link
               to="https://indooceanproject.org/apply-now/"
               noTranslate
@@ -163,8 +172,10 @@ const BiraProject = props => {
           </FlexContainer>
         </Paragraph>
         <Paragraph>
-          <FlexContainer direction="row">
-            <Text id="orContact" />
+          <FlexContainer direction="row" align="center">
+            <span style={{ paddingRight: "8px" }}>
+              <Text id="orContact" />
+            </span>
             <Link
               externalLink
               to="mailto:info@indooceanproject.org"

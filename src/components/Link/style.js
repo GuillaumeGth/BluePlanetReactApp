@@ -5,7 +5,7 @@ const StyledLink = styled(Link)`
   font-weight: bold;
   font-size: 1.5rem;
 `;
-const StyledALink = styled(Link)`
+const StyledALink = styled.a`
   color: #e5a900;
   font-weight: bold;
   font-size: 1.5rem;

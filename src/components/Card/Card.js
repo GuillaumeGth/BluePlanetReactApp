@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     maxWidth: 360,
     minWidth: 200,
     width: 350,
-    height: 460
+    height: 500
   },
   media: {
     height: 250

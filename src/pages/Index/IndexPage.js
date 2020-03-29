@@ -1,4 +1,5 @@
 import React from "react";
+import Text from "react-text";
 import Section from "../../components/Layout/Section";
 import SectionParagraph from "../../components/Layout/Section/SectionParagraph";
 import styled from "styled-components";
@@ -6,22 +7,18 @@ import Accordion from "../../components/Accordion";
 import SectionContent from "../../components/Layout/Section/SectionContent";
 import SectionContentTitle from "../../components/Layout/Section/SectionContentTitle";
 import Form from "../../components/Form";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import GoogleMap from "../../components/GoogleMap";
 import CardControl from "../../components/Card";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import Instagram from "../../components/Instagram";
-import { createStore } from "redux";
-import ReduxApp from "../../Redux/reducers";
-import { setActiveMenu } from "../../Redux/actions";
 import Paragraph from "../../components/Layout/Paragraph";
 import { isMobile, isBrowser } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./index.css";
+
 const IndexPage = props => {
-  const store = createStore(ReduxApp);
-  store.dispatch(setActiveMenu("index"));
   const DivImages = styled.div`
     width: ${isMobile ? `${window.innerWidth}px` : "1300px"};
     height: ${isMobile ? `400px` : "500px"};
@@ -47,6 +44,15 @@ const IndexPage = props => {
     justify-content: center;
     align-items: center;
   `;
+  const Legend = styled.div`
+    font-family: "Amatic SC";
+    font-size: 6em;
+    position: absolute;
+    top: 1.7em;
+    color: white;
+    text-align: center;
+    width: 100%;
+  `;
   const params = {
     dots: true,
     lazyLoad: true,
@@ -66,6 +72,9 @@ const IndexPage = props => {
   return (
     <div>
       <WelcomeImages>
+        <Legend className="welcome-text">
+          <Text id="welcomeToBira" />
+        </Legend>
         <LogoImg src="img/logo.png" alt="logo" className="logo" />
         <BackgroundImg
           className="welcome-img"
@@ -151,7 +160,7 @@ const IndexPage = props => {
         </SectionContent>
       </Section>
       <Section to="contact" title="contact">
-        <SectionContent fullWidth={isMobile}>
+        <SectionContent width={isMobile ? "full" : "auto"}>
           <SectionContentTitle label="sendUsAMessage" />
           <Form></Form>
         </SectionContent>

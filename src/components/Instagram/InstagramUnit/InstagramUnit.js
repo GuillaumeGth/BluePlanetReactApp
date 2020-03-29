@@ -27,7 +27,7 @@ const InstagramUnit = props => {
         </Video>
       ) : (
         <>
-          <Mask>
+          <Mask target="blank" href={props.instagram.link}>
             <FlexContainer justify="end" className="flex-unit">
               <CaptionContainer>
                 <FontAwesomeIcon color="#e24b4b" icon={faHeart} />

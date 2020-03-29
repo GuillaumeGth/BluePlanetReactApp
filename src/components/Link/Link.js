@@ -5,13 +5,13 @@ import { StyledLink, StyledALink } from "./style";
 const LinkControl = props => {
   if (props.externalLink) {
     return (
-      <StyledALink href={props.to}>
+      <StyledALink target="blank" className={props.className} href={props.to}>
         {props.noTranslate ? props.label : <Text id={props.label} />}
       </StyledALink>
     );
   }
   return (
-    <StyledLink to={props.to}>
+    <StyledLink className={props.className} to={props.to}>
       {props.noTranslate ? props.label : <Text id={props.label} />}
     </StyledLink>
   );

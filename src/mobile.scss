@@ -49,7 +49,7 @@ $grey: grey;
     }
     &:not(.open) {
       .nav-wrap {
-        margin-top: -410px;
+        margin-top: -456px;
       }
     }
     .nav-wrap {
@@ -85,6 +85,9 @@ $grey: grey;
   }
   .welcome-img {
     margin-top: 60px;
+  }
+  .welcome-text {
+    font-size: 4rem;
   }
   p {
     margin: 0;

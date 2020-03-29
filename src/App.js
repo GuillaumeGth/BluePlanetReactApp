@@ -8,14 +8,20 @@ import IndexPage from "./pages/Index";
 import Diving from "./pages/Diving";
 import Bira from "./pages/Bira";
 import Contact from "./pages/Contact";
+import Footer from "./components/Layout/Footer";
 import Prices from "./pages/Prices";
-// import Footer from "./components/Layout/Footer";
 import Accommodation from "./pages/Accommodation";
 import BiraProject from "./pages/BiraProject";
 import { isMobile } from "react-device-detect";
+import TagManager from "react-gtm-module";
 import "./mobile.scss";
 
 function App() {
+  const tagManagerArgs = {
+    gtmId: "GTM-5KP855G"
+  };
+  TagManager.initialize(tagManagerArgs);
+
   const changeLang = lang => {
     setLang(lang);
     setStateLang(lang);
@@ -85,7 +91,7 @@ function App() {
               <BiraProject />
             </Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </Text>
     </div>

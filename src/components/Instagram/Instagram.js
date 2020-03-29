@@ -17,7 +17,7 @@ const Instagram = props => {
     <InstagramContainer>
       <InstaTitle
         href="https://www.instagram.com/blueplanetdiveresort_"
-        class="insta-title"
+        className="insta-title"
         target="blank"
       >
         Follow Us On Instagram
@@ -37,7 +37,7 @@ const Instagram = props => {
                 src={e.videos.standard_resolution.url}
                 alt={e.caption}
                 media={e.videos}
-                fullObject={e}
+                instagram={e}
               />
             );
           } else {

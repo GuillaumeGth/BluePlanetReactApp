@@ -20,7 +20,7 @@ const Accommodation = props => {
   `;
   return (
     <PageContent>
-      <FlexContainer justify="center" align="center" fullWidth>
+      <FlexContainer justify="center" align="center" width="full">
         <PageTitle
           label="accommodationMenu"
           icon={
@@ -35,7 +35,7 @@ const Accommodation = props => {
         <H2>Bara Beach Bungalows :</H2>
         <Paragraph label="baraBeachBungalowsDesc">
           <FlexContainer
-            fullWidth
+            width="full"
             direction="row"
             align="center"
             justify="center"
@@ -60,7 +60,7 @@ const Accommodation = props => {
         <H2>Phinisi Hostel Bira :</H2>
         <Paragraph label="phinsiHostelBiraDesc">
           <FlexContainer
-            fullWidth
+            width="full"
             direction="row"
             align="center"
             justify="center"
@@ -85,7 +85,7 @@ const Accommodation = props => {
         <H2>Tevana House Reef :</H2>
         <Paragraph label="tevenaHouseReefDesc">
           <FlexContainer
-            fullWidth
+            width="full"
             direction="row"
             align="center"
             justify="center"

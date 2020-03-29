@@ -6,6 +6,7 @@ const AppName = styled.div`
   font-size: 1.5rem;
   margin: 0 25px;
   letter-spacing: 2px;
+  white-space: nowrap;
 `;
 const AppLink = styled(Link)`
   color: #636363;

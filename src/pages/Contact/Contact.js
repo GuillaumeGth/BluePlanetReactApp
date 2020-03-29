@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Paragraph from "../../components/Layout/Paragraph";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import PageTitle from "../../components/Layout/PageTitle";
@@ -17,6 +17,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = props => {
+  useEffect(() => {
+    setActiveMenu();
+  });
+  const setActiveMenu = () => {
+    const activeMenu = document.querySelector(".header-nav .menu-item.active"),
+      cssClass = activeMenu.classList,
+      contactMenu = document.querySelector('.menu-item[data-path="contact"]');
+
+    cssClass.remove("active");
+    contactMenu.classList.add("active");
+  };
+
   const Div = styled.div`
     font-size: 1.4em;
     margin: 3px 30px;
@@ -27,7 +39,7 @@ const Contact = props => {
   `;
   return (
     <PageContent>
-      <FlexContainer fullWidth>
+      <FlexContainer width="full">
         <PageTitle label="howToAccessBira" />
         <Paragraph label="howToAccessBiraDesc" />
         <Paragraph label="howToAccessBiraDesc2" />
@@ -60,6 +72,7 @@ const Contact = props => {
                 <Text id="address" />
                 <Link
                   noTranslate
+                  externalLink
                   label="jalang bara Bira, Sulawesi Selatan, Indonesia"
                   to="https://www.google.com/maps/search/jalang+bara+Bira,+Sulawesi+Selatan,+Indonesia/@-5.6117125,120.4433497,15z/data=!3m1!4b1"
                 />
@@ -69,13 +82,13 @@ const Contact = props => {
         </FlexContainer>
         <PageTitle label="sendUsAMessage" />
         <Form></Form>
-        <GoogleMap
+        {/* <GoogleMap
           lat={-5.559116}
           lng={118.24}
           zoom={12}
           markerLat={-5.60285}
           markerLng={120.4488}
-        />
+        /> */}
       </FlexContainer>
     </PageContent>
   );

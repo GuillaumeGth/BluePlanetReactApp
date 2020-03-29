@@ -3,7 +3,12 @@ https://codepen.io/ChynoDeluxe/pen/bdXeqQ*/
 * {
   box-sizing: border-box;
 }
-
+.info-container {
+  margin: 20px 0 0 0;
+}
+.date {
+  font-size: 1.3rem;
+}
 .blog-card {
   font-size: 1.5rem;
   display: flex;

@@ -13,9 +13,9 @@ const FlexContainer = props => {
           : props.justify === "center"
           ? "justify-center"
           : "justify-flex-start",
-      fullWidth = props.fullWidth ? "full-width" : null,
+      width = typeof props.width === "string" ? `${props.width}-width` : null,
       wrap = props.wrap ? "wrap" : null,
-      classes = [direction, align, justify, fullWidth, wrap];
+      classes = [direction, align, justify, width, wrap];
 
     if (props.className) {
       classes.push(props.className.split(" "));

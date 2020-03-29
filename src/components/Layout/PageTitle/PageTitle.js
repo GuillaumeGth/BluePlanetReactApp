@@ -5,7 +5,7 @@ import Title from "./style";
 
 const PageTitle = props => {
   return (
-    <FlexContainer align="center" direction="row" justify="center" fullWidth>
+    <FlexContainer align="center" direction="row" justify="center" width="full">
       {console.log(props.label)}
       <Title className={props.isSubTitle ? "subtitle" : null}>
         {props.noTranslate ? props.label : <Text id={props.label} />}

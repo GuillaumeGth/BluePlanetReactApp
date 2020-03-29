@@ -64,45 +64,54 @@ const TextBox = props => {
   };
 
   return (
-    <GridContainer
-      container
-      spacing={1}
-      alignItems="flex-end"
-      className="textfield-grid"
+    <div
+      className={`${
+        props.state === "loading" ? props.state : null
+      } textbox-container`}
     >
-      <Grid item className="textfield-icon">
-        {getIcon(props.icon)}
-      </Grid>
-      <Grid item>
-        <TextField
-          error={error}
-          type={type || "text"}
-          multiline={multiline ? true : false}
-          required={required ? true : false}
-          label={label}
-          defaultValue={value}
-          onBlur={e => {
-            setValue(e.target.value);
-            if (validate(e.target)) {
+      <GridContainer
+        container
+        spacing={1}
+        alignItems="flex-end"
+        className="textfield-grid"
+      >
+        <Grid item className="textfield-icon">
+          {getIcon(props.icon)}
+        </Grid>
+        <Grid item>
+          <TextField
+            error={error}
+            type={type || "text"}
+            multiline={multiline ? true : false}
+            required={required ? true : false}
+            label={label}
+            onChange={e => {
               props.onChange(e.target.value);
-            }
-          }}
-          InputLabelProps={{
-            classes: {
-              shrink: classes.shrinkedLabel,
-              root: classes.label,
-              focused: classes.focusedLabel
-            }
-          }}
-          InputProps={{
-            classes: {
-              underline: classes.underline,
-              root: classes.textField
-            }
-          }}
-        />
-      </Grid>
-    </GridContainer>
+            }}
+            // value={value}
+            // onBlur={e => {
+            //   setValue(e.target.value);
+            //   if (validate(e.target)) {
+            //     props.onChange(e.target.value);
+            //   }
+            // }}
+            InputLabelProps={{
+              classes: {
+                shrink: classes.shrinkedLabel,
+                root: classes.label,
+                focused: classes.focusedLabel
+              }
+            }}
+            InputProps={{
+              classes: {
+                underline: classes.underline,
+                root: classes.textField
+              }
+            }}
+          />
+        </Grid>
+      </GridContainer>
+    </div>
   );
 };
 

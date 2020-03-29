@@ -32,20 +32,20 @@ const SectionTitleControl = styled.div`
     background: transparent;
     color: #3d5aa0 !important;
   }
-  &.bowser.yellow {
+  &.browser.yellow {
     background: #e5a900;
     color: white !important;
     & ${SectionChevron} {
       background: #252627;
     }
   }
-  &.bowser.blue {
+  &.browser.blue {
     background: #008ae2;
     & ${SectionChevron} {
       background: #252627;
     }
   }
-  &.bowser.turquoise {
+  &.browser.turquoise {
     background: #20c7ca;
     & ${SectionChevron} {
       background: #252627;

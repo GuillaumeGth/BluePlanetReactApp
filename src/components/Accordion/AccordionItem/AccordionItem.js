@@ -5,6 +5,7 @@ import {
   AccordionItemControl,
   MaskImage
 } from "./style";
+import LazyLoad from "react-lazy-load";
 import "./accordion-item-style.css";
 
 const AccordionItem = props => {
@@ -18,11 +19,13 @@ const AccordionItem = props => {
           src={`img/icon/${props.src}.png`}
         />
       </Mask>
-      <StyledLazyLoadImage
-        alt={props.alt}
-        effect="blur"
-        src={`img/${props.src}.jpg`}
-      />
+      <LazyLoad debounce={false}>
+        <StyledLazyLoadImage
+          alt={props.alt}
+          effect="blur"
+          src={`img/${props.src}.jpg`}
+        />
+      </LazyLoad>
     </AccordionItemControl>
   );
 };

@@ -10,7 +10,8 @@ const Video = styled.video`
 const InstagramUnitContainer = styled.div`
   position: relative;
 `;
-const Mask = styled.div`
+const Mask = styled.a`
+  text-decoration: none;
   position: absolute;
   top: 0;
   left: 0;
