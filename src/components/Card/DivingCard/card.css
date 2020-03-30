@@ -3,10 +3,18 @@ https://codepen.io/ChynoDeluxe/pen/bdXeqQ*/
 * {
   box-sizing: border-box;
 }
+.blog-card.mobile .photo img {
+  height: auto !important;
+  width: 100%;
+}
+.age {
+  display: flex;
+}
 .info-container {
   margin: 20px 0 0 0;
 }
-.date {
+.date,
+.age {
   font-size: 1.3rem;
 }
 .blog-card {
@@ -103,7 +111,7 @@ https://codepen.io/ChynoDeluxe/pen/bdXeqQ*/
 .blog-card p:first-of-type {
   margin-top: 1.25rem;
 }
-.blog-card p:first-of-type:before {
+.blog-card:not(.mobile) p:first-of-type:before {
   content: "";
   position: absolute;
   height: 5px;

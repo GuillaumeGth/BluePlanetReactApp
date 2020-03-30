@@ -5,6 +5,7 @@ import Text from "react-text";
 import dictionary from "./data/texts";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import IndexPage from "./pages/Index";
+import Gallery from "./pages/Gallery";
 import Diving from "./pages/Diving";
 import Bira from "./pages/Bira";
 import Contact from "./pages/Contact";
@@ -89,6 +90,9 @@ function App() {
             </Route>
             <Route path="/biraproject" exact>
               <BiraProject />
+            </Route>
+            <Route path="/gallery" exact>
+              <Gallery />
             </Route>
           </Switch>
           <Footer />

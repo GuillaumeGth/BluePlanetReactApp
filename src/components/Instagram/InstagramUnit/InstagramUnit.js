@@ -9,9 +9,12 @@ import {
   Video,
   Img
 } from "./style";
-
+import { isMobile } from "react-device-detect";
 const InstagramUnit = props => {
   const getStyleAttribute = () => {
+    if (isMobile) {
+      return { width: "100%" };
+    }
     var media = props.media.standard_resolution,
       width = media.width > 550 ? 550 : media.width,
       ratioWidth = width / media.width,
@@ -22,22 +25,24 @@ const InstagramUnit = props => {
   return (
     <InstagramUnitContainer style={getStyleAttribute()} className="insta-unit">
       {props.type === "video" ? (
-        <Video controls>
+        <Video controls style={getStyleAttribute()}>
           <source src={props.src} />
         </Video>
       ) : (
         <>
-          <Mask target="blank" href={props.instagram.link}>
-            <FlexContainer justify="end" className="flex-unit">
-              <CaptionContainer>
-                <FontAwesomeIcon color="#e24b4b" icon={faHeart} />
-                {props.like}
-              </CaptionContainer>
-              <CaptionContainer>
-                {props.location ? props.location.name : null}
-              </CaptionContainer>
-            </FlexContainer>
-          </Mask>
+          {!isMobile ? (
+            <Mask target="blank" href={props.instagram.link}>
+              <FlexContainer justify="end" className="flex-unit">
+                <CaptionContainer>
+                  <FontAwesomeIcon color="#e24b4b" icon={faHeart} />
+                  {props.like}
+                </CaptionContainer>
+                <CaptionContainer>
+                  {props.location ? props.location.name : null}
+                </CaptionContainer>
+              </FlexContainer>
+            </Mask>
+          ) : null}
           <Img
             style={getStyleAttribute()}
             src={props.src}

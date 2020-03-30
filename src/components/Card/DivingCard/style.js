@@ -24,7 +24,7 @@ const Tag = styled.div`
   margin: 0 0.14285714em;
   background-color: #3f51b5;
   background-image: none;
-  padding: 0.5833em 1em;
+  padding: 0.5833em 1.5em;
   color: white;
   text-transform: none;
   font-weight: 700;

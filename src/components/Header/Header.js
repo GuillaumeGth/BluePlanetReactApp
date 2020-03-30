@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import {
   AppName,
   HeaderControl,
@@ -79,6 +80,28 @@ const Header = props => {
             <span className="menu-item"></span>
             <span className="menu-item"></span>
             <span className="menu-item"></span>
+          </div>
+          <div className="social-network-mobile">
+            <a
+              href="https://www.facebook.com/BluePlanetDiveResort/"
+              target="blank"
+            >
+              <FontAwesomeIcon
+                className="anchor-icon"
+                icon={faFacebook}
+                size="2x"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/blueplanetdiveresort_"
+              target="blank"
+            >
+              <FontAwesomeIcon
+                className="anchor-icon"
+                icon={faInstagram}
+                size="2x"
+              />
+            </a>
           </div>
         </div>
       )}

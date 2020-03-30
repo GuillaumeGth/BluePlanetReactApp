@@ -33,7 +33,7 @@ const Diving = props => {
           desc: "bubblemakerDesc",
           title: "bubblemaker",
           price: "750 000 Rp",
-          info: "8+9YRS",
+          age: "8+9YRS",
           image: "kids.jpg"
         },
         {
@@ -107,6 +107,8 @@ const Diving = props => {
                     title={c.title}
                     date={c.date}
                     price={c.price}
+                    info={c.info}
+                    age={c.age}
                     image={c.image}
                     alt={alt}
                   />

@@ -1,9 +1,20 @@
 $grey: grey;
 .App.mobile {
+  .gallery-page {
+    padding-top: 150px;
+    background: #252627;
+  }
   .header {
     background-color: white !important;
     margin: 4em 0 0 0;
     .header-mobile {
+      .social-network-mobile svg {
+        color: #26436b !important;
+        width: 3rem;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: absolute;
       width: 100%;
       height: 4em;
@@ -71,7 +82,7 @@ $grey: grey;
           background: white !important;
           border-bottom: 1px solid rgba($grey, 0.2);
           .menu-item-label {
-            color: $grey;
+            color: $grey !important;
           }
           .underline {
             display: none;

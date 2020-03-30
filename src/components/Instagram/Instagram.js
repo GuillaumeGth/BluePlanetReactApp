@@ -3,12 +3,46 @@ import { InstagramContainer, InstaTitle } from "./style";
 import useAbortableFetch from "use-abortable-fetch";
 import InstagramUnit from "./InstagramUnit";
 import StackGrid from "react-stack-grid";
-
+import { isBrowser } from "react-device-detect";
 const Instagram = props => {
   const { data, loading, error } = useAbortableFetch(
     "https://api.instagram.com/v1/users/self/media/recent/?access_token=12574986019.1677ed0.2340fa9c44144f5a99873908cf1f2d5a"
   );
-
+  const renderPictures = () => {
+    return data.data.map(function(e) {
+      var caption = e.caption;
+      if (caption) {
+        caption = caption.text;
+      }
+      if (e.type === "video") {
+        return (
+          <InstagramUnit
+            key={e.id}
+            caption={e.caption}
+            type={e.type}
+            src={e.videos.standard_resolution.url}
+            alt={e.caption}
+            media={e.videos}
+            instagram={e}
+          />
+        );
+      } else {
+        return (
+          <InstagramUnit
+            key={e.id}
+            caption={e.caption}
+            type={e.type}
+            src={e.images.standard_resolution.url}
+            alt={e.caption}
+            media={e.images}
+            like={e.likes.count}
+            location={e.location}
+            instagram={e}
+          />
+        );
+      }
+    });
+  };
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   if (!data) return null;
@@ -22,41 +56,11 @@ const Instagram = props => {
       >
         Follow Us On Instagram
       </InstaTitle>
-      <StackGrid columnWidth={550}>
-        {data.data.map(function(e) {
-          var caption = e.caption;
-          if (caption) {
-            caption = caption.text;
-          }
-          if (e.type === "video") {
-            return (
-              <InstagramUnit
-                key={e.id}
-                caption={e.caption}
-                type={e.type}
-                src={e.videos.standard_resolution.url}
-                alt={e.caption}
-                media={e.videos}
-                instagram={e}
-              />
-            );
-          } else {
-            return (
-              <InstagramUnit
-                key={e.id}
-                caption={e.caption}
-                type={e.type}
-                src={e.images.standard_resolution.url}
-                alt={e.caption}
-                media={e.images}
-                like={e.likes.count}
-                location={e.location}
-                instagram={e}
-              />
-            );
-          }
-        })}
-      </StackGrid>
+      {isBrowser ? (
+        <StackGrid columnWidth={550}>{renderPictures()}</StackGrid>
+      ) : (
+        renderPictures()
+      )}
     </InstagramContainer>
   );
 };

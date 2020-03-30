@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Text from "react-text";
 import "./card.css";
 import { Img, TitleContainer, Tag } from "./style";
 import Button from "@material-ui/core/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
+import { Redirect } from "react-router-dom";
 
 const DivingCard = props => {
+  const [redirect, setRedirect] = useState(false);
+  const renderRedirect = () => {
+    if (redirect) {
+      return <Redirect to="/contact" />;
+    }
+    return null;
+  };
+  const onClickHandler = () => {
+    setRedirect(true);
+  };
   return (
-    <div className={"blog-card" + (props.alt ? " alt" : "")}>
+    <div
+      className={`blog-card ${props.alt ? "alt" : null} ${
+        isMobile ? "mobile" : null
+      }`}
+    >
       <div className="meta">
         <div className="photo">
           <Img src={"/img/" + props.image} alt={props.title} />
@@ -20,11 +35,15 @@ const DivingCard = props => {
           <h1>
             <Text id={props.title} />
           </h1>
-          <Link to="contact">
-            <Button size="small" color="primary" variant="contained">
-              Book This Class
-            </Button>
-          </Link>
+          {renderRedirect()}
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            onClick={onClickHandler}
+          >
+            Book This Class
+          </Button>
         </TitleContainer>
         {props.age ? <h2>({props.age})</h2> : null}
         <p>

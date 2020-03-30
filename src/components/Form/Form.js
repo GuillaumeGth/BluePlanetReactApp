@@ -15,7 +15,7 @@ const Form = () => {
     }
     setState("loading");
     values.message = values.message.replace(/\n/g, "<br />");
-    fetch("/message", {
+    fetch("https://www.blueplanetdiveresort.com/mail.php", {
       headers: {
         "Content-type": "application/json",
         Accept: "application/json"

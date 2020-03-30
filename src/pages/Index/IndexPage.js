@@ -86,13 +86,15 @@ const IndexPage = props => {
         <SectionContent>
           <SectionContentTitle label="divingSectionTitle" />
           <SectionParagraph content="divingSectionContent"></SectionParagraph>
-          <DivImages>
-            <Slider {...params}>
-              <img alt="img" src="img/ray-mobile.jpg" />
-              <img alt="img" src="img/shark-mobile.jpg" />
-              <img alt="img" src="img/turtle-mobile.jpg" />
-            </Slider>
-          </DivImages>
+          {isMobile ? (
+            <DivImages>
+              <Slider {...params}>
+                <img alt="img" src="img/ray-mobile.jpg" />
+                <img alt="img" src="img/shark-mobile.jpg" />
+                <img alt="img" src="img/turtle-mobile.jpg" />
+              </Slider>
+            </DivImages>
+          ) : null}
         </SectionContent>
       </Section>
       <Accordion visible={!isMobile}></Accordion>

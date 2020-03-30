@@ -11,7 +11,17 @@ const MaskImage = styled(LazyLoadImage)`
   transition: 0.4s;
   border-radius: 50%;
 `;
-
+const DescContainer = styled.div`
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 325px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  display: none;
+`;
 const AccordionItemControl = styled.li`
   position: relative;
   transition: all 500ms ease;
@@ -29,6 +39,9 @@ const AccordionItemControl = styled.li`
     & ${MaskImage} {
       display: none;
     }
+    & ${DescContainer} {
+      display: flex !important;
+    }
   }
 `;
 
@@ -39,4 +52,10 @@ const Mask = styled.div`
   top: 0;
   left: 0;
 `;
-export { StyledLazyLoadImage, Mask, AccordionItemControl, MaskImage };
+export {
+  StyledLazyLoadImage,
+  Mask,
+  AccordionItemControl,
+  MaskImage,
+  DescContainer
+};
