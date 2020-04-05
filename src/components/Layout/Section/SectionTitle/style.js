@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { isMobile } from "react-device-detect";
 
 const SectionChevron = styled.div`
   align-self: flex-end;
@@ -17,7 +18,7 @@ const SectionTitleControl = styled.div`
   height: 500px;
   background: #252627;
   color: white;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   font-size: 5rem;
   font-weight: 900;
@@ -27,7 +28,7 @@ const SectionTitleControl = styled.div`
     width: auto;
     height: auto;
     min-width: auto;
-    font-size: 3rem;
+    font-size: ${isMobile ? "2.7rem" : "3rem"};
     font-weight: 400;
     background: transparent;
     color: #3d5aa0 !important;
