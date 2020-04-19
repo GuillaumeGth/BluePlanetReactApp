@@ -7,10 +7,10 @@ import {
   Mask,
   InstagramUnitContainer,
   Video,
-  Img
+  Img,
 } from "./style";
 import { isMobile } from "react-device-detect";
-const InstagramUnit = props => {
+const InstagramUnit = (props) => {
   const getStyleAttribute = () => {
     if (isMobile) {
       return { width: "100%" };
@@ -21,9 +21,11 @@ const InstagramUnit = props => {
       height = media.height * ratioWidth;
     return { width: width, height: height };
   };
-
   return (
-    <InstagramUnitContainer style={getStyleAttribute()} className="insta-unit">
+    <InstagramUnitContainer
+      style={getStyleAttribute()}
+      className={"insta-unit"}
+    >
       {props.type === "video" ? (
         <Video controls style={getStyleAttribute()}>
           <source src={props.src} />
