@@ -18,7 +18,7 @@ const SectionTitleControl = styled.div`
   height: 500px;
   background: #252627;
   color: white;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 5rem;
   font-weight: 900;
