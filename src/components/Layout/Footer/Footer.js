@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 
-const FlexContainer = props => {
+const FlexContainer = (props) => {
   return (
     <div className="footer">
       <span>
@@ -13,7 +13,10 @@ const FlexContainer = props => {
           Guillaume Z.
         </a>
       </span>
-      <span>© 2020 Blue Planet Dive Resort. All rights reserved.</span>
+      <span>
+        © {new Date().getFullYear()} Blue Planet Dive Resort. All rights
+        reserved.
+      </span>
       {props.children}
     </div>
   );
