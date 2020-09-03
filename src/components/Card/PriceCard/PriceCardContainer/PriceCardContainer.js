@@ -25,7 +25,22 @@ const PriceCardContainer = props => {
   const Content = styled.div`
     padding-top: ${isBrowser ? "150" : "65"}px;
   `;
-
+  const writeCards = () => {
+    return props.data
+      ? props.data.items.map((e, i) => {
+          return (
+            <PriceCard
+              details={e.details}
+              title={e.title}
+              price={e.price}
+              icon={e.icon}
+              ribon={e.ribon}
+              key={`funDivePriceCard_${i}`}
+            />
+          );
+        })
+      : null;
+  };
   return (
     <Content>
       <FlexContainer
@@ -36,30 +51,31 @@ const PriceCardContainer = props => {
         wrap
       >
         <PageTitle label={props.data.title} />
-        <div
-          className="slider-container"
-          style={{
-            display: "block",
-            width: containerWidth
-          }}
-        >
-          <Slider {...params}>
-            {props.data
-              ? props.data.items.map((e, i) => {
-                  return (
-                    <PriceCard
-                      details={e.details}
-                      title={e.title}
-                      price={e.price}
-                      icon={e.icon}
-                      ribon={e.ribon}
-                      key={`funDivePriceCard_${i}`}
-                    />
-                  );
-                })
-              : null}
-          </Slider>
-        </div>
+
+        {isMobile ? (
+          <div
+            className="slider-container"
+            style={{
+              display: "block",
+              width: containerWidth
+            }}
+          >
+            <Slider {...params}>{writeCards()}</Slider>
+          </div>
+        ) : (
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            {writeCards()}
+          </div>
+        )}
       </FlexContainer>
     </Content>
   );

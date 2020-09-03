@@ -161,6 +161,7 @@ const BiraProject = () => {
               <Text id="applyOnline" />
             </span>
             <Link
+              externalLink
               to="https://indooceanproject.org/apply-now/"
               noTranslate
               label="indooceanproject.org"

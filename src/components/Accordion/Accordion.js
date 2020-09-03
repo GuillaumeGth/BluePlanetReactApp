@@ -46,6 +46,7 @@ const Accordion = (props) => {
               logoSrc={e.logoSrc}
               logoAlt={e.logoAlt}
               fish={e.fish}
+              key={`accItem${e.fish}`}
             />
           );
         })}
