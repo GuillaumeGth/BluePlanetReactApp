@@ -3,7 +3,7 @@ import "./style.scss";
 
 const FlexContainer = (props) => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <span>
         powered by{" "}
         <a
@@ -18,7 +18,7 @@ const FlexContainer = (props) => {
         reserved.
       </span>
       {props.children}
-    </div>
+    </footer>
   );
 };
 

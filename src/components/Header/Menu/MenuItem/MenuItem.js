@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Text from "react-text";
 import { HeaderControl } from "../../style";
-import { isBrowser, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
-const MenuItem = props => {
+const MenuItem = (props) => {
   let visible = props.visible;
   visible = typeof visible === "undefined" ? true : visible;
   const MenuItemControl = styled.li`
@@ -36,12 +36,13 @@ const MenuItem = props => {
     border-bottom: 1px solid white;
     padding: 2px 0;
     ${MenuItemControl}:hover & {
-      width: 100%;
+      width: 80%;
+      opacity: 0.4;
     }
-    ${HeaderControl}.filled & {
+    ${HeaderControl}.scrolled & {
       border-color: #636363;
     }
-    ${HeaderControl}.filled .active & {
+    ${HeaderControl}.scrolled .active & {
       border-color: white;
     }
   `;
@@ -62,7 +63,7 @@ const MenuItem = props => {
     flex-direction: column;
   `;
 
-  const clickHandler = e => {
+  const clickHandler = (e) => {
     if (isMobile) {
       var header = e.target.closest(".header"),
         hamburger = header.querySelector(".hamburger-menu");

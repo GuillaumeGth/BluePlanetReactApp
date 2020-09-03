@@ -9,22 +9,24 @@ const Form = () => {
   const [values, setValues] = useState({});
   const [state, setState] = useState("normal");
 
-  const sendMessage = e => {
+  const sendMessage = (e) => {
     if (!values.message) {
       return;
     }
     setState("loading");
     values.message = values.message.replace(/\n/g, "<br />");
     fetch("https://www.blueplanetdiveresort.com/mail.php", {
+      // fetch(`${process.env.REACT_APP_API_URL}/message`, {
+      // fetch(`http://localhost:4000/message`, {
       headers: {
-        "Content-type": "application/json",
-        Accept: "application/json"
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
       method: "POST",
-      body: JSON.stringify(values)
+      body: JSON.stringify(values),
     })
-      .then(response => response.json())
-      .then(result => {
+      .then((response) => response.json())
+      .then((result) => {
         if (result.success) {
           setValues({});
         }
@@ -49,7 +51,7 @@ const Form = () => {
         label="Name"
         icon="AccountCircle"
         value={values["name"]}
-        onChange={value => onChangeHandler("name", value)}
+        onChange={(value) => onChangeHandler("name", value)}
       />
       <TextBox
         state={state}
@@ -58,7 +60,7 @@ const Form = () => {
         required={true}
         value={values["email"]}
         type="email"
-        onChange={value => onChangeHandler("email", value)}
+        onChange={(value) => onChangeHandler("email", value)}
       />
       <TextBox
         state={state}
@@ -66,7 +68,7 @@ const Form = () => {
         icon="Phone"
         type="tel"
         value={values["phone"]}
-        onChange={value => onChangeHandler("phone", value)}
+        onChange={(value) => onChangeHandler("phone", value)}
       />
       <TextBox
         state={state}
@@ -75,7 +77,7 @@ const Form = () => {
         icon="Message"
         required={true}
         value={values["message"]}
-        onChange={value => onChangeHandler("message", value)}
+        onChange={(value) => onChangeHandler("message", value)}
       />
       <Button onClick={sendMessage} state={state} />
       {state === "success" ? (

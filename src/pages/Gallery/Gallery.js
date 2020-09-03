@@ -1,8 +1,7 @@
 import React from "react";
 import Instagram from "../../components/Instagram";
-import PageContent from "../../components/Layout/PageContent";
 
-const Gallery = props => {
+const Gallery = (props) => {
   return (
     <div className="gallery-page">
       <Instagram visible />

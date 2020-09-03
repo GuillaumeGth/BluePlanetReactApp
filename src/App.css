@@ -6,8 +6,10 @@
   font-family: "Segoe UI";
   src: local("Segoe UI Light"), url(./fonts/segoeuil.ttf) format("ttf");
 }
-.App {
+body,
+html {
   font-size: 14px;
+  font-family: "Segoe UI";
 }
 
 .App-logo {
@@ -43,12 +45,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-body,
-html {
-  font-size: 16px;
-  font-family: "Segoe UI";
 }
 
 .box {

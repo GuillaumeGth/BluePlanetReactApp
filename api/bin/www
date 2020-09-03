@@ -7,18 +7,19 @@
 var app = require("../app");
 var debug = require("debug")("api:server");
 var http = require("http");
+const dotenv = require("dotenv");
+dotenv.config();
 
 /**
  * Get port from environment and store in Express.
  */
-console.log("port " + process.env.PORT);
-var port = normalizePort(process.env.PORT || "3001");
+var port = normalizePort(process.env.SERVERPORT);
 app.set("port", port);
 
 /**
  * Create HTTP server.
  */
-
+console.log(port);
 var server = http.createServer(app);
 
 /**

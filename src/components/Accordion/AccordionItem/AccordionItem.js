@@ -4,25 +4,25 @@ import {
   Mask,
   AccordionItemControl,
   MaskImage,
-  DescContainer
+  DescContainer,
 } from "./style";
 import LazyLoad from "react-lazy-load";
 import "./accordion-item-style.css";
 import Text from "react-text";
 
-const AccordionItem = props => {
+const AccordionItem = (props) => {
   return (
     <AccordionItemControl tabindex="0">
       <Mask className="mask-container">
         <MaskImage
           className="mask-image"
-          alt={props.logoAlt}
+          alt={props.logoAlt || ""}
           effect="blur"
           src={`img/icon/${props.src}.png`}
         />
         <DescContainer className="desc">
           {props.fish ? (
-            <span>
+            <span className="acc-item-title">
               <Text id={props.fish} />
             </span>
           ) : null}
@@ -35,7 +35,7 @@ const AccordionItem = props => {
       </Mask>
       <LazyLoad debounce={false}>
         <StyledLazyLoadImage
-          alt={props.alt}
+          alt={props.alt || ""}
           effect="blur"
           src={`img/${props.src}.jpg`}
         />

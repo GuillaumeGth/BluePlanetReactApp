@@ -1,9 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Text from "react-text";
 import Section from "../../components/Layout/Section";
 import SectionParagraph from "../../components/Layout/Section/SectionParagraph";
 import styled from "styled-components";
-import Accordion from "../../components/Accordion";
+//import Accordion from "../../components/Accordion";
 import SectionContent from "../../components/Layout/Section/SectionContent";
 import SectionContentTitle from "../../components/Layout/Section/SectionContentTitle";
 import Form from "../../components/Form";
@@ -12,37 +12,20 @@ import CardControl from "../../components/Card";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import Instagram from "../../components/Instagram";
 import Paragraph from "../../components/Layout/Paragraph";
+
 import { isMobile, isBrowser } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
+const WelcomeImages = lazy(() => import("./WelcomeImages"));
+const Accordion = lazy(() => import("../../components/Accordion"));
 
-const IndexPage = props => {
+const IndexPage = () => {
   const DivImages = styled.div`
     width: ${isMobile ? `${window.innerWidth}px` : "1300px"};
     height: ${isMobile ? `400px` : "500px"};
     display: block;
-  `;
-
-  const BackgroundImg = styled.img`
-    top: 0;
-    left: 0;
-    width: 100%;
-  `;
-
-  const LogoImg = styled.img`
-    position: absolute;
-    z-index: 1;
-    margin: auto;
-    width: 20%;
-    top: 220px;
-  `;
-
-  const WelcomeImages = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
   `;
   const Legend = styled.div`
     font-family: "Amatic SC";
@@ -57,9 +40,10 @@ const IndexPage = props => {
     dots: true,
     lazyLoad: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: isBrowser ? 2 : 1,
-    autoplay: true
+    autoplay: true,
+    accessibility: true,
   };
   const params2 = {
     dots: true,
@@ -67,21 +51,13 @@ const IndexPage = props => {
     infinite: true,
     speed: 500,
     slidesToShow: isBrowser ? 3 : 1,
-    autoplay: true
+    autoplay: true,
   };
   return (
     <div>
-      <WelcomeImages>
-        <Legend className="welcome-text">
-          <Text id="welcomeToBira" />
-        </Legend>
-        <LogoImg src="img/logo.png" alt="logo" className="logo" />
-        <BackgroundImg
-          className="welcome-img"
-          src="img/background.jpg"
-          alt="logo"
-        />
-      </WelcomeImages>
+      <Suspense fallback={() => <div />}>
+        <WelcomeImages />
+      </Suspense>
       <Section to="diving" title="diving">
         <SectionContent>
           <SectionContentTitle label="divingSectionTitle" />
@@ -91,13 +67,16 @@ const IndexPage = props => {
               <Slider {...params}>
                 <img alt="img" src="img/ray-mobile.jpg" />
                 <img alt="img" src="img/shark-mobile.jpg" />
-                <img alt="img" src="img/turtle-mobile.jpg" />
+                <img alt="img" src="img/turtle.jpg" />
               </Slider>
             </DivImages>
           ) : null}
         </SectionContent>
       </Section>
-      <Accordion visible={!isMobile}></Accordion>
+      <Suspense fallback={() => <div />}>
+        <Accordion visible={!isMobile}></Accordion>
+      </Suspense>
+
       <Section to="bira" title="bira" color="blue">
         <SectionContent>
           <SectionContentTitle label="biraSectionTitle" />
@@ -107,8 +86,8 @@ const IndexPage = props => {
           ></SectionParagraph>
           <DivImages>
             <Slider {...params}>
-              <img alt="img" src="img/bira2.jpg" />
-              <img alt="img" src="img/bira.jpeg" />
+              <img alt="bira" src="img/bira2.jpg" />
+              <img alt="bira 2" src="img/bira.jpeg" />
             </Slider>
           </DivImages>
         </SectionContent>
@@ -120,6 +99,25 @@ const IndexPage = props => {
           <SectionParagraph content="aboutUsSectionContentP2" />
         </SectionContent>
       </Section>
+      {isMobile ? (
+        <DivImages>
+          <Slider {...params}>
+            <img alt="dive center" src="img/dive-center-1.jpg" />
+            <img alt="dive center" src="img/dive-center-2.jpg" />
+            <img alt="dive center" src="img/dive-center-3.jpg" />
+            <img alt="dive center" src="img/dive-center-4.jpg" />
+          </Slider>
+        </DivImages>
+      ) : (
+        <div className="dive-center" style={{ padding: "50px 100px" }}>
+          <Slider {...params}>
+            <img alt="dive center" src="img/dive-center-1.jpg" />
+            <img alt="dive center" src="img/dive-center-2.jpg" />
+            <img alt="dive center" src="img/dive-center-3.jpg" />
+            <img alt="dive center" src="img/dive-center-4.jpg" />
+          </Slider>
+        </div>
+      )}
       <GoogleMap
         lat={-5.559116}
         lng={120.24}
@@ -136,7 +134,7 @@ const IndexPage = props => {
                 style={{
                   display: "block",
                   width: `${isMobile ? `${window.innerWidth}px` : "auto"}`,
-                  height: "500px"
+                  height: "500px",
                 }}
               >
                 <Slider {...params2}>
@@ -167,7 +165,7 @@ const IndexPage = props => {
           <Form></Form>
         </SectionContent>
       </Section>
-      <Instagram visible={isBrowser} />
+      {/* <Instagram visible={isBrowser} /> */}
     </div>
   );
 };

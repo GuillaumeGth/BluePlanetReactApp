@@ -3,7 +3,7 @@ import Text from "react-text";
 import { Title, SectionTitleControl, SectionChevron } from "./style";
 import { isMobile } from "react-device-detect";
 
-const SectionTitle = props => {
+const SectionTitle = (props) => {
   return (
     <SectionTitleControl
       className={`${props.color} ${isMobile ? "mobile" : "browser"}`}
@@ -15,6 +15,7 @@ const SectionTitle = props => {
         <img
           style={{ width: 35, marginTop: 10 }}
           src="img/icon/chevron_right.svg"
+          alt=""
         />
       ) : (
         <SectionChevron>

@@ -3,15 +3,24 @@ import Text from "react-text";
 import "./card.css";
 import { Redirect } from "react-router-dom";
 
-const PriceCard = props => {
+const PriceCard = (props) => {
   const [redirect, setRedirect] = useState(false);
 
   const renderRedirect = () => {
     if (redirect) {
-      return <Redirect to="/contact" />;
+      return (
+        <Redirect
+          push
+          exact
+          to={{
+            pathname: "/contact",
+            search: `?course=${props.title}`,
+          }}
+        />
+      );
     }
   };
-  const buttonClickHandler = e => {
+  const buttonClickHandler = (e) => {
     setRedirect(true);
   };
   return (

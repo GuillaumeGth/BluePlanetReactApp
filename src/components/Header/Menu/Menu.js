@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
-const Menu = props => {
+const Menu = (props) => {
   const MenuControl = styled.ul`
     list-style-type: none;
     display: flex;
@@ -29,7 +29,8 @@ const Menu = props => {
   `;
 
   const [active, setActive] = useState(useLocation().pathname.substring(1));
-  const clickHandler = e => {
+
+  const clickHandler = (e) => {
     window.scrollTo(0, 0);
     setActive(e);
     props.onRedirection(e !== "");
@@ -56,13 +57,13 @@ const Menu = props => {
           link="bira"
           text="biraMenu"
         ></MenuItem>
-        <MenuItem
+        {/* <MenuItem
           active={active === "gallery"}
           onClick={clickHandler}
           link="gallery"
           visible={isMobile}
           text="galleryMenu"
-        ></MenuItem>
+        ></MenuItem> */}
         <MenuItem
           active={active === "prices"}
           onClick={clickHandler}
@@ -86,6 +87,12 @@ const Menu = props => {
           onClick={clickHandler}
           link="biraproject"
           text="biraProjectMenu"
+        ></MenuItem>
+        <MenuItem
+          active={active === "insurance"}
+          onClick={clickHandler}
+          link="insurance"
+          text="insuranceMenu"
         ></MenuItem>
       </MenuControl>
     </NavControl>

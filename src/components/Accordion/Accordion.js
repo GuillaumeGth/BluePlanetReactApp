@@ -2,44 +2,45 @@ import React from "react";
 import { AccordionContainer, AccordionControl } from "./style";
 import AccordionItem from "./AccordionItem";
 
-const Accordion = props => {
+const Accordion = (props) => {
   const accordionItems = [
     {
       src: "turtle",
       alt: "Turtle",
-      fish: "greenTurtle"
+      fish: "greenTurtle",
     },
     {
       src: "acc-ray",
       alt: "Ray",
-      fish: "rays"
+      fish: "rays",
     },
     {
       src: "acc-shark",
       alt: "Shark",
-      fish: "sharksWTBT"
+      fish: "sharksWTBT",
     },
     {
       src: "triggerfish",
       alt: "Triggerfish",
-      fish: "redToothTriggerfish"
+      fish: "redToothTriggerfish",
     },
     {
       src: "acc-hammerhead",
       alt: "Hammerhead Shark",
-      fish: "hammerheadShark"
+      fish: "hammerheadShark",
     },
     { src: "octopus", alt: "Octopus", fish: "coconutOctopus" },
     { src: "frogfish", alt: "Frogfish", fish: "frogfish" },
-    { src: "barracuda", alt: "Barracuda", fish: "barracuda" }
+    { src: "barracuda", alt: "Barracuda", fish: "barracuda" },
   ];
   if (!props.visible) return <></>;
   return (
     <AccordionContainer>
       <AccordionControl>
-        {accordionItems.map(e => {
+        {accordionItems.map((e) => {
           return (
             <AccordionItem
+              key={`acc-item-${e.fish}`}
               src={e.src}
               alt={e.alt}
               logoSrc={e.logoSrc}

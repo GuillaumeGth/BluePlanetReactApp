@@ -129,29 +129,25 @@ const BiraProject = () => {
             <ListTitle>Does Not Include:</ListTitle>
             <List2 className="not-include">
               <ListItem2 data-text-code="allPackageIncludeListItem2">
-                Airport pick up and transfer from Makasar to project
-                headquarters at Blue Planet Dive Resort
+                Return flights from your hometown to Makasar
               </ListItem2>
               <ListItem2 data-text-code="allPackageIncludeListItem1">
-                Shared accommodation
+                VISA processing and any related transport required by Indonesian
+                Immigration
               </ListItem2>
               <ListItem2 data-text-code="allPackageIncludeListItem3">
-                Dive Master Course Fees
+                Dive Master training materials and agency membership fees
+                (3,800,000 IDR)
               </ListItem2>
               <ListItem2 data-text-code="allPackageIncludeListItem4">
-                5 ecology specialty courses
+                Dive rental equipment (1,500,000 IDR/month)
               </ListItem2>
               <ListItem2 data-text-code="allPackageIncludeListItem5">
-                2 program shirts
+                Meals (vegetarian lunches provided during double tank dive days
+                and communal kitchen at headquarters)
               </ListItem2>
               <ListItem2 data-text-code="allPackageIncludeListItem6">
-                VISA assistance
-              </ListItem2>
-              <ListItem2 data-text-code="allPackageIncludeListItem7">
-                Pre arrival training materials and manuals
-              </ListItem2>
-              <ListItem2 data-text-code="allPackageIncludeListItem8">
-                Pre arrival support
+                Bicycle or motorbike rental (60,000 IDR/day)
               </ListItem2>
             </List2>
           </FlexContainer>

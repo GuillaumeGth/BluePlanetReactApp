@@ -12,18 +12,30 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Layout/Footer";
 import Prices from "./pages/Prices";
 import Accommodation from "./pages/Accommodation";
+import Insurance from "./pages/Insurance";
 import BiraProject from "./pages/BiraProject";
 import { isMobile } from "react-device-detect";
 import TagManager from "react-gtm-module";
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
 import "./mobile.scss";
+const history = createBrowserHistory();
+// Initialize google analytics page view tracking
+history.listen((location) => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
+
+const trackingId = "UA-135953670-1"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
 
 function App() {
   const tagManagerArgs = {
-    gtmId: "GTM-5KP855G"
+    gtmId: "GTM-5KP855G",
   };
   TagManager.initialize(tagManagerArgs);
 
-  const changeLang = lang => {
+  const changeLang = (lang) => {
     setLang(lang);
     setStateLang(lang);
   };
@@ -35,10 +47,10 @@ function App() {
     setLang(lang);
     return lang;
   };
-  const setLang = lang => {
+  const setLang = (lang) => {
     return setCookie("AppLang", lang, 60);
   };
-  const getCookie = name => {
+  const getCookie = (name) => {
     var nameEQ = name + "=";
     var ca = document.cookie.split(";");
     for (var i = 0; i < ca.length; i++) {
@@ -67,7 +79,7 @@ function App() {
   return (
     <div className={`App ${isMobile ? "mobile" : "browser"}`}>
       <Text language={getLang()} dictionary={dictionary}>
-        <Router>
+        <Router history={history}>
           <Header lang={getLang()} langClickHandler={changeLang}></Header>
           <Switch>
             <Route path="/" exact>
@@ -93,6 +105,9 @@ function App() {
             </Route>
             <Route path="/gallery" exact>
               <Gallery />
+            </Route>
+            <Route path="/insurance" exact>
+              <Insurance />
             </Route>
           </Switch>
           <Footer />

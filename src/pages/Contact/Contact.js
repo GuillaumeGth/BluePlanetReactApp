@@ -8,15 +8,14 @@ import PageContent from "../../components/Layout/PageContent";
 import Text from "react-text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import GoogleMap from "../../components/GoogleMap";
 import {
   faAt,
   faPhone,
   faHourglassHalf,
-  faMapMarkerAlt
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Contact = props => {
+const Contact = (props) => {
   useEffect(() => {
     setActiveMenu();
   });

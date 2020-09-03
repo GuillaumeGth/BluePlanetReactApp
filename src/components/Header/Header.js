@@ -9,16 +9,16 @@ import {
   Flag,
   LangContainer,
   AppLink,
-  SocialNetwork
+  SocialNetwork,
 } from "./style";
 import { useLocation } from "react-router-dom";
 import { isBrowser } from "react-device-detect";
 
-const Header = props => {
+const Header = (props) => {
   const location = useLocation();
   useEffect(() => {
     window.addEventListener("scroll", scrollhandler);
-    setFilled(location.pathname.substring(1) !== "");
+    _setFilled(location.pathname.substring(1) !== "");
   });
 
   const getNewLang = () => {
@@ -29,7 +29,7 @@ const Header = props => {
     return "/img/icon/flags/" + getNewLang() + ".svg";
   };
 
-  const scrollhandler = e => {
+  const scrollhandler = (e) => {
     var top = document.documentElement.scrollTop,
       el = headerElement.current;
     if (el) {
@@ -46,16 +46,14 @@ const Header = props => {
   const flagClickHandler = () => {
     props.langClickHandler(getNewLang());
   };
-  const [filled, setFilled] = useState(null);
-  const redirectionHandler = e => {
-    setFilled(e);
+  const [filled, _setFilled] = useState(null);
+  const redirectionHandler = (e) => {
+    _setFilled(e);
   };
-  const hamburgerClickHandler = e => {
+  const hamburgerClickHandler = (e) => {
     const target = e.target,
       hamburger = target.closest(".hamburger-menu"),
       header = target.closest(".header");
-    if (!hamburger) debugger;
-    if (!header) debugger;
     hamburger.classList.toggle("open");
     header.classList.toggle("open");
   };

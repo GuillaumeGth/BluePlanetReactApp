@@ -2,3 +2,14 @@
   font-family: "Amatic SC";
   src: local("Amatic SC Regular"), url(../../fonts/AmaticSC.ttf) format("ttf");
 }
+.dive-center {
+  padding: 50px 100px;
+}
+.slick-arrow {
+  z-index: 1;
+}
+.slick-arrow:before {
+  font-size: 30px;
+  color: #d0d0d0;
+  z-index: 1;
+}

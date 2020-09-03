@@ -3,7 +3,7 @@ import MaterialButton from "@material-ui/core/Button";
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
 
-const Button = props => {
+const Button = (props) => {
   const MaterialButtonControl = styled(MaterialButton)`
     background-color: #e5a900 !important;
     width: 150px;

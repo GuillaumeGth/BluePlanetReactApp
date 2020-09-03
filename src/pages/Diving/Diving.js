@@ -1,11 +1,11 @@
-import React from "react";
-import DivingCard from "../../components/Card/DivingCard";
+import React, { lazy, Suspense } from "react";
 import PageContent from "../../components/Layout/PageContent";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import PageTitle from "../../components/Layout/PageTitle";
 import Paragraph from "../../components/Layout/Paragraph";
 import styled from "styled-components";
-const Diving = props => {
+const DivingCard = lazy(() => import("../../components/Card/DivingCard"));
+const Diving = (props) => {
   const cards = [
     {
       cards: [
@@ -14,9 +14,9 @@ const Diving = props => {
           title: "funDive",
           info: "10off5+dive",
           price: "490 000 Rp",
-          image: "fundive.jpg"
-        }
-      ]
+          image: "fundive.jpg",
+        },
+      ],
     },
     {
       category: "courses",
@@ -27,14 +27,14 @@ const Diving = props => {
           date: "oneDay",
           price: "750 000 Rp",
           age: "10YRS+",
-          image: "discover.jpg"
+          image: "discover.jpg",
         },
         {
           desc: "bubblemakerDesc",
           title: "bubblemaker",
           price: "750 000 Rp",
           age: "8+9YRS",
-          image: "kids.jpg"
+          image: "kids.jpg",
         },
         {
           desc: "openWaterDesc",
@@ -42,7 +42,7 @@ const Diving = props => {
           price: "4 900 000 Rp",
           date: "3_4Days",
           age: "10+YRS",
-          image: "openwater.jpg"
+          image: "openwater.jpg",
         },
         {
           desc: "scubaDiverDesc",
@@ -50,7 +50,7 @@ const Diving = props => {
           price: "2 800 000 Rp",
           date: "twoDays",
           age: "10+YRS",
-          image: "sccubadiver.jpg"
+          image: "sccubadiver.jpg",
         },
         {
           desc: "advanceAdventurerDesc",
@@ -58,7 +58,7 @@ const Diving = props => {
           price: "3 900 000 Rp",
           date: "twoDays",
           age: "12+YRS",
-          image: "sccubadiver.jpg"
+          image: "sccubadiver.jpg",
         },
         {
           desc: "reactRightRescueDesc",
@@ -66,17 +66,17 @@ const Diving = props => {
           price: "6 400 000 Rp",
           date: "3_4Days",
           age: "12+YRS",
-          image: "reactright.jpg"
+          image: "reactright.jpg",
         },
         {
           desc: "divemasterDesc",
           title: "divemaster",
           date: "4weeksMin",
           age: "18+YRS",
-          image: "divemaster.jpg"
-        }
-      ]
-    }
+          image: "divemaster.jpg",
+        },
+      ],
+    },
   ];
   const Img = styled.img`
     width: 80px;
@@ -93,25 +93,27 @@ const Diving = props => {
           link="prices"
           linkLabel="here"
         />
-        {cards.map(e => {
+        {cards.map((e) => {
           let alt = false;
           return (
             <div key={`diving_card_category_${e.category}`}>
               {e.category ? <PageTitle label={e.category} /> : null}
-              {e.cards.map(c => {
+              {e.cards.map((c) => {
                 alt = !alt;
                 return (
-                  <DivingCard
-                    key={`diving_card_${c.desc}`}
-                    desc={c.desc}
-                    title={c.title}
-                    date={c.date}
-                    price={c.price}
-                    info={c.info}
-                    age={c.age}
-                    image={c.image}
-                    alt={alt}
-                  />
+                  <Suspense fallback={() => <div />}>
+                    <DivingCard
+                      key={`diving_card_${c.desc}`}
+                      desc={c.desc}
+                      title={c.title}
+                      date={c.date}
+                      price={c.price}
+                      info={c.info}
+                      age={c.age}
+                      image={c.image}
+                      alt={alt}
+                    />
+                  </Suspense>
                 );
               })}
             </div>

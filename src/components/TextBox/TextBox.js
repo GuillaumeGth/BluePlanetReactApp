@@ -5,42 +5,40 @@ import styled from "styled-components";
 import "./TextBoxStyle.css";
 import { withStyles } from "@material-ui/core/styles";
 import { isBrowser } from "react-device-detect";
-const styles = theme => ({
+const styles = (theme) => ({
   label: {
     color: ["#252627", "!important"],
-    fontSize: ["1.4rem", "!important"]
+    fontSize: ["1.4rem", "!important"],
   },
   shrinkedLabel: {
     fontSize: ["1.4rem", "!important"],
-    fontWeight: "600"
+    fontWeight: "600",
   },
   focusedLabel: {
     color: ["#e5a900", "!important"],
     fontWeight: "bold",
-    fontSize: ["1.4rem", "!important"]
+    fontSize: ["1.4rem", "!important"],
   },
   underline: {
     "&:before": {
-      borderBottomColor: "#252627"
+      borderBottomColor: "#252627",
     },
     "&:after": {
-      borderBottomColor: "#e5a900"
+      borderBottomColor: "#e5a900",
     },
     "&:hover:before": {
-      borderBottomColor: ["#252627", "!important"]
-    }
+      borderBottomColor: ["#252627", "!important"],
+    },
   },
   textField: {
-    width: isBrowser ? "800px" : window.innerWidth - 80
-  }
+    width: isBrowser ? "800px" : window.innerWidth - 80,
+  },
 });
 
-const TextBox = props => {
-  const [value, setValue] = useState(props.value || "");
-  const [error, setError] = useState(false);
-  // const [selected, setSelected] = useState(false);
+const TextBox = (props) => {
+  const [error] = useState(false);
   const { multiline, label, required, classes, type } = props;
-  const getIcon = icon => {
+  const getIcon = (icon) => {
     if (icon) {
       const resolvedIcon = require(`@material-ui/icons/${props.icon}`).default;
       return React.createElement(resolvedIcon);
@@ -51,17 +49,17 @@ const TextBox = props => {
     margin: 10px 0 !important;
   `;
 
-  const validate = input => {
-    if (
-      input.getAttribute("required") !== null &&
-      input.value.trim().length === 0
-    ) {
-      setError(true);
-      return false;
-    }
-    setError(false);
-    return true;
-  };
+  // const validate = (input) => {
+  //   if (
+  //     input.getAttribute("required") !== null &&
+  //     input.value.trim().length === 0
+  //   ) {
+  //     setError(true);
+  //     return false;
+  //   }
+  //   setError(false);
+  //   return true;
+  // };
 
   return (
     <div
@@ -85,7 +83,7 @@ const TextBox = props => {
             multiline={multiline ? true : false}
             required={required ? true : false}
             label={label}
-            onChange={e => {
+            onChange={(e) => {
               props.onChange(e.target.value);
             }}
             // value={value}
@@ -99,14 +97,14 @@ const TextBox = props => {
               classes: {
                 shrink: classes.shrinkedLabel,
                 root: classes.label,
-                focused: classes.focusedLabel
-              }
+                focused: classes.focusedLabel,
+              },
             }}
             InputProps={{
               classes: {
                 underline: classes.underline,
-                root: classes.textField
-              }
+                root: classes.textField,
+              },
             }}
           />
         </Grid>
