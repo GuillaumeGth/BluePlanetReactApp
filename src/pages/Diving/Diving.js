@@ -101,7 +101,7 @@ const Diving = (props) => {
               {e.cards.map((c) => {
                 alt = !alt;
                 return (
-                  <Suspense fallback={() => <div />}>
+                  <Suspense fallback={<div></div>}>
                     <DivingCard
                       key={`diving_card_${c.desc}`}
                       desc={c.desc}

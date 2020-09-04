@@ -24,28 +24,28 @@ const Bira = (props) => {
             linkLabel="here"
           />
         </Suspense>
-        <Suspense fallback={() => <div />}>
+        <Suspense fallback={<div></div>}>
           <BiraCard
             title="cliffJumping"
             image="cliff_jumping.jpg"
             content="cliffJumpingDesc"
           />
         </Suspense>
-        <Suspense fallback={() => <div />}>
+        <Suspense fallback={<div></div>}>
           <BiraCard
             title="mandalaRia"
             content="mandalaRiaDesc"
             image="cave.jpg"
           />
         </Suspense>
-        <Suspense fallback={() => <div />}>
+        <Suspense fallback={<div></div>}>
           <BiraCard
             title="liukangIsland"
             content="liukangIslandDesc"
             image="liukanglu.jpg"
           />
         </Suspense>
-        <Suspense fallback={() => <div />}>
+        <Suspense fallback={<div></div>}>
           <BiraCard
             title="puaJangoViewpoint"
             content="puaJangoViewpointDesc"

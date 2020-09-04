@@ -1,26 +1,34 @@
-import React, { lazy, Suspense } from "react";
-import Text from "react-text";
+import React, { Suspense } from "react";
 import Section from "../../components/Layout/Section";
 import SectionParagraph from "../../components/Layout/Section/SectionParagraph";
 import styled from "styled-components";
-//import Accordion from "../../components/Accordion";
 import SectionContent from "../../components/Layout/Section/SectionContent";
 import SectionContentTitle from "../../components/Layout/Section/SectionContentTitle";
-import Form from "../../components/Form";
-import GoogleMap from "../../components/GoogleMap";
-import CardControl from "../../components/Card";
 import FlexContainer from "../../components/Layout/FlexContainer";
-import Instagram from "../../components/Instagram";
 import Paragraph from "../../components/Layout/Paragraph";
-
 import { isMobile, isBrowser } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
-const WelcomeImages = lazy(() => import("./WelcomeImages"));
-const Accordion = lazy(() => import("../../components/Accordion"));
-
+const GoogleMap = React.lazy(() => import("../../components/GoogleMap"));
+const Accordion = React.lazy(() => import("../../components/Accordion"));
+const CardControl = React.lazy(() => import("../../components/Card"));
+const WelcomeImages = React.lazy(() => import("./WelcomeImages"));
+const Form = React.lazy(() => import("../../components/Form"));
+const Loader = () => {
+  return (
+    <div
+    // style={{
+    //   width: "100%",
+    //   height: "100%",
+    //   position: "absolute",
+    //   background: "red",
+    //   overflow: "hidden",
+    // }}
+    ></div>
+  );
+};
 const IndexPage = () => {
   const DivImages = styled.div`
     width: ${isMobile ? `${window.innerWidth}px` : "1300px"};
@@ -55,7 +63,7 @@ const IndexPage = () => {
   };
   return (
     <div>
-      <Suspense fallback={() => <div />}>
+      <Suspense fallback={Loader()}>
         <WelcomeImages />
       </Suspense>
       <Section to="diving" title="diving">
@@ -73,7 +81,7 @@ const IndexPage = () => {
           ) : null}
         </SectionContent>
       </Section>
-      <Suspense fallback={() => <div />}>
+      <Suspense fallback={Loader()}>
         <Accordion visible={!isMobile}></Accordion>
       </Suspense>
 
@@ -118,13 +126,15 @@ const IndexPage = () => {
           </Slider>
         </div>
       )}
-      <GoogleMap
-        lat={-5.559116}
-        lng={120.24}
-        zoom={12}
-        markerLat={-5.60285}
-        markerLng={120.4488}
-      />
+      <Suspense fallback={Loader()}>
+        <GoogleMap
+          lat={-5.559116}
+          lng={120.24}
+          zoom={12}
+          markerLat={-5.60285}
+          markerLng={120.4488}
+        />
+      </Suspense>
       <Section title="otherActivities" color="yellow">
         <SectionContent>
           <SectionContentTitle label="otherActivitiesSubTitle" />
@@ -138,21 +148,27 @@ const IndexPage = () => {
                 }}
               >
                 <Slider {...params2}>
-                  <CardControl
-                    image="paddle.jpg"
-                    title="standUpPaddle"
-                    content="standUpPaddleDesc"
-                  />
-                  <CardControl
-                    image="snorkeling.jpg"
-                    title="snorkeling"
-                    content="snorkelingDesc"
-                  />
-                  <CardControl
-                    image="scooter.jpg"
-                    title="scooter"
-                    content="scooterDesc"
-                  />
+                  <Suspense fallback={Loader()}>
+                    <CardControl
+                      image="paddle.jpg"
+                      title="standUpPaddle"
+                      content="standUpPaddleDesc"
+                    />
+                  </Suspense>
+                  <Suspense fallback={Loader()}>
+                    <CardControl
+                      image="snorkeling.jpg"
+                      title="snorkeling"
+                      content="snorkelingDesc"
+                    />
+                  </Suspense>
+                  <Suspense fallback={Loader()}>
+                    <CardControl
+                      image="scooter.jpg"
+                      title="scooter"
+                      content="scooterDesc"
+                    />
+                  </Suspense>
                 </Slider>
               </div>
             </FlexContainer>
@@ -162,7 +178,9 @@ const IndexPage = () => {
       <Section to="contact" title="contact">
         <SectionContent width={isMobile ? "full" : "auto"}>
           <SectionContentTitle label="sendUsAMessage" />
-          <Form></Form>
+          <Suspense fallback={Loader()}>
+            <Form></Form>
+          </Suspense>
         </SectionContent>
       </Section>
       {/* <Instagram visible={isBrowser} /> */}

@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Text from "react-text";
 import styled from "styled-components";
-import "./index.css";
-
 const WelcomeImages = () => {
   const BackgroundImg = styled.img`
     top: 0;
@@ -32,18 +30,43 @@ const WelcomeImages = () => {
     text-align: center;
     width: 100%;
   `;
+  const [loaded, setLoaded] = useState(false);
   return (
-    <WelcomeImages>
-      <Legend className="welcome-text">
-        <Text id="welcomeToBira" />
-      </Legend>
-      <LogoImg src="img/logo.png" alt="logo" className="logo" />
-      <BackgroundImg
-        className="welcome-img"
-        src="img/background.jpg"
-        alt="logo"
-      />
-    </WelcomeImages>
+    <div>
+      {!loaded ? (
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: "10",
+          }}
+        />
+      ) : null}
+      <WelcomeImages>
+        {loaded && (
+          <>
+            <Legend className="welcome-text">
+              <Text id="welcomeToBira" />
+            </Legend>
+            <LogoImg src="img/logo.png" alt="logo" className="logo" />
+          </>
+        )}
+        <BackgroundImg
+          onLoad={() => {
+            console.log("test");
+            setLoaded(true);
+          }}
+          className="welcome-img"
+          src="img/background.jpg"
+          alt="logo"
+        />
+      </WelcomeImages>
+    </div>
   );
 };
 

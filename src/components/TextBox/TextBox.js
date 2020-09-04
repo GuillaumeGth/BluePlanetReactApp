@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "./TextBoxStyle.css";
 import { withStyles } from "@material-ui/core/styles";
 import { isBrowser } from "react-device-detect";
-const styles = (theme) => ({
+const styles = () => ({
   label: {
     color: ["#252627", "!important"],
     fontSize: ["1.4rem", "!important"],

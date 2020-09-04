@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import "./App.css";
-import Header from "./components/Header";
 import Text from "react-text";
 import dictionary from "./data/texts";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import IndexPage from "./pages/Index";
-import Gallery from "./pages/Gallery";
-import Diving from "./pages/Diving";
-import Bira from "./pages/Bira";
-import Contact from "./pages/Contact";
+// import Gallery from "./pages/Gallery";
 import Footer from "./components/Layout/Footer";
-import Prices from "./pages/Prices";
-import Accommodation from "./pages/Accommodation";
-import Insurance from "./pages/Insurance";
-import BiraProject from "./pages/BiraProject";
 import { isMobile } from "react-device-detect";
 import TagManager from "react-gtm-module";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import "./mobile.scss";
+const Diving = React.lazy(() => import("./pages/Diving"));
+const Header = React.lazy(() => import("./components/Header"));
+const Insurance = React.lazy(() => import("./pages/Insurance"));
+const IndexPage = React.lazy(() => import("./pages/Index"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const Accommodation = React.lazy(() => import("./pages/Accommodation"));
+const BiraProject = React.lazy(() => import("./pages/BiraProject"));
+const Bira = React.lazy(() => import("./pages/Bira"));
+const Prices = React.lazy(() => import("./pages/Prices"));
 const history = createBrowserHistory();
 // Initialize google analytics page view tracking
 history.listen((location) => {
@@ -80,36 +80,21 @@ function App() {
     <div className={`App ${isMobile ? "mobile" : "browser"}`}>
       <Text language={getLang()} dictionary={dictionary}>
         <Router history={history}>
-          <Header lang={getLang()} langClickHandler={changeLang}></Header>
-          <Switch>
-            <Route path="/" exact>
-              <IndexPage />
-            </Route>
-            <Route path="/diving" exact>
-              <Diving />
-            </Route>
-            <Route path="/bira" exact>
-              <Bira />
-            </Route>
-            <Route path="/contact" exact>
-              <Contact />
-            </Route>
-            <Route path="/prices" exact>
-              <Prices />
-            </Route>
-            <Route path="/accommodation" exact>
-              <Accommodation />
-            </Route>
-            <Route path="/biraproject" exact>
-              <BiraProject />
-            </Route>
-            <Route path="/gallery" exact>
-              <Gallery />
-            </Route>
-            <Route path="/insurance" exact>
-              <Insurance />
-            </Route>
-          </Switch>
+          <Suspense fallback={<div></div>}>
+            <Header lang={getLang()} langClickHandler={changeLang}></Header>
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              <Route path="/" exact component={IndexPage} />
+              <Route path="/diving" exact component={Diving} />
+              <Route path="/bira" exact component={Bira} />
+              <Route path="/contact" exact component={Contact} />
+              <Route path="/prices" exact component={Prices} />
+              <Route path="/accommodation" exact component={Accommodation} />
+              <Route path="/biraproject" exact component={BiraProject} />
+              <Route path="/insurance" exact component={Insurance} />
+            </Switch>
+          </Suspense>
           <Footer />
         </Router>
       </Text>
