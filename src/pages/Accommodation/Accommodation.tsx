@@ -7,7 +7,7 @@ import styled from "styled-components";
 import LinkControl from "../../components/Link";
 import Text from "react-text";
 import { isMobile } from "react-device-detect";
-const Accommodation = props => {
+const Accommodation = () => {
   const Contact = styled.span`
     padding: 8px;
     font-size: 1.5rem;

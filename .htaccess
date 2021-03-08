@@ -4,3 +4,6 @@ RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|webp|gif|html|htm|xml|txt|xsl|css)$">
+Header set Cache-Control "max-age=31536050"
+</FilesMatch>

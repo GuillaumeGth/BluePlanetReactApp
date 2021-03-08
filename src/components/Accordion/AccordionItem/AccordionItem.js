@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledLazyLoadImage,
   Mask,
@@ -11,15 +11,18 @@ import "./accordion-item-style.css";
 import Text from "react-text";
 
 const AccordionItem = (props) => {
+  const [loaded, setLoaded] = useState(false);
   return (
     <AccordionItemControl tabindex="0">
       <Mask className="mask-container">
-        <MaskImage
-          className="mask-image"
-          alt={props.logoAlt || ""}
-          effect="blur"
-          src={`img/icon/${props.src}.png`}
-        />
+        {loaded && (
+          <MaskImage
+            className="mask-image"
+            alt={props.logoAlt || ""}
+            effect="blur"
+            src={`img/icon/${props.src}.png`}
+          />
+        )}
         <DescContainer className="desc">
           {props.fish ? (
             <span className="acc-item-title">
@@ -33,7 +36,11 @@ const AccordionItem = (props) => {
           ) : null}
         </DescContainer>
       </Mask>
-      <LazyLoad debounce={false}>
+      <LazyLoad
+        onContentVisible={() => {
+          setLoaded(true);
+        }}
+      >
         <StyledLazyLoadImage
           alt={props.alt || ""}
           effect="blur"

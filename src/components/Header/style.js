@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import FlexContainer from "../Layout/FlexContainer";
 import { Link } from "react-router-dom";
 
 const AppName = styled.div`
@@ -54,10 +53,6 @@ const Flag = styled.img`
   cursor: pointer !important;
   margin: 0 150px;
 `;
-
-const LangContainer = styled(FlexContainer)`
-  margin: 0 150px !important;
-`;
 const SocialNetwork = styled.div`
   & img {
     margin-right: 20px;
@@ -69,4 +64,4 @@ const SocialNetwork = styled.div`
     }
   }
 `;
-export { AppLink, AppName, HeaderControl, Flag, LangContainer, SocialNetwork };
+export { AppLink, AppName, HeaderControl, Flag, SocialNetwork };

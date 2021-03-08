@@ -5,13 +5,13 @@ import dictionary from "./data/texts";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Gallery from "./pages/Gallery";
 import Footer from "./components/Layout/Footer";
+import Header from "./components/Header";
 import { isMobile } from "react-device-detect";
 import TagManager from "react-gtm-module";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import "./mobile.scss";
 const Diving = React.lazy(() => import("./pages/Diving"));
-const Header = React.lazy(() => import("./components/Header"));
 const Insurance = React.lazy(() => import("./pages/Insurance"));
 const IndexPage = React.lazy(() => import("./pages/Index"));
 const Contact = React.lazy(() => import("./pages/Contact"));
@@ -77,28 +77,30 @@ function App() {
   const updateActivePage = () => {};
   updateActivePage();
   return (
-    <div className={`App ${isMobile ? "mobile" : "browser"}`}>
-      <Text language={getLang()} dictionary={dictionary}>
-        <Router history={history}>
-          <Suspense fallback={<div></div>}>
-            <Header lang={getLang()} langClickHandler={changeLang}></Header>
-          </Suspense>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Switch>
-              <Route path="/" exact component={IndexPage} />
-              <Route path="/diving" exact component={Diving} />
-              <Route path="/bira" exact component={Bira} />
-              <Route path="/contact" exact component={Contact} />
-              <Route path="/prices" exact component={Prices} />
-              <Route path="/accommodation" exact component={Accommodation} />
-              <Route path="/biraproject" exact component={BiraProject} />
-              <Route path="/insurance" exact component={Insurance} />
-            </Switch>
-          </Suspense>
-          <Footer />
-        </Router>
-      </Text>
-    </div>
+    <>
+      <div className={`App ${isMobile ? "mobile" : "browser"}`}>
+        <Text language={getLang()} dictionary={dictionary}>
+          <Router history={history}>
+            <Suspense fallback={<div></div>}>
+              <Header lang={getLang()} langClickHandler={changeLang}></Header>
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route path="/" exact component={IndexPage} />
+                <Route path="/diving" exact component={Diving} />
+                <Route path="/bira" exact component={Bira} />
+                <Route path="/contact" exact component={Contact} />
+                <Route path="/prices" exact component={Prices} />
+                <Route path="/accommodation" exact component={Accommodation} />
+                <Route path="/biraproject" exact component={BiraProject} />
+                <Route path="/insurance" exact component={Insurance} />
+              </Switch>
+            </Suspense>
+          </Router>
+        </Text>
+      </div>
+      <Footer />
+    </>
   );
 }
 

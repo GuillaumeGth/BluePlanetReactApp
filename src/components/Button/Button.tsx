@@ -1,9 +1,12 @@
-import React from "react";
+import React, { FunctionComponent, MouseEventHandler } from "react";
 import MaterialButton from "@material-ui/core/Button";
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
-
-const Button = (props) => {
+type Props = {
+  state: string,
+  onClick: MouseEventHandler<HTMLButtonElement>
+}
+const Button: FunctionComponent<Props> = ({state, onClick}) => {
   const MaterialButtonControl = styled(MaterialButton)`
     background-color: #e5a900 !important;
     width: 150px;
@@ -13,11 +16,11 @@ const Button = (props) => {
   `;
 
   return (
-    <div className={`${props.state === "loading" ? props.state : ""}`}>
+    <div className={`${state === "loading" ? state : ""}`}>
       <MaterialButtonControl
         variant="contained"
         endIcon={<SendIcon />}
-        onClick={props.onClick}
+        onClick={onClick}
       >
         Send
       </MaterialButtonControl>

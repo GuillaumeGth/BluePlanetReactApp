@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Text from "react-text";
 import styled from "styled-components";
-const WelcomeImages = () => {
+const WelcomeImages = (props) => {
   const BackgroundImg = styled.img`
     top: 0;
     left: 0;
@@ -58,8 +58,10 @@ const WelcomeImages = () => {
         )}
         <BackgroundImg
           onLoad={() => {
-            console.log("test");
             setLoaded(true);
+            if (props.loadingCallback) {
+              props.loadingCallback();
+            }
           }}
           className="welcome-img"
           src="img/background.jpg"

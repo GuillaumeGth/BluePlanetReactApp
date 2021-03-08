@@ -3,14 +3,8 @@ import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import {
-  AppName,
-  HeaderControl,
-  Flag,
-  LangContainer,
-  AppLink,
-  SocialNetwork,
-} from "./style";
+import { AppName, HeaderControl, Flag, AppLink, SocialNetwork } from "./style";
+import FlexContainer from "../Layout/FlexContainer";
 import { useLocation } from "react-router-dom";
 import { isBrowser } from "react-device-detect";
 
@@ -104,9 +98,9 @@ const Header = (props) => {
         </div>
       )}
 
-      <LangContainer id="test" visible={isBrowser} direction="row">
+      <FlexContainer id="test" visible={isBrowser} direction="row">
         <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" />
-      </LangContainer>
+      </FlexContainer>
       <Menu onRedirection={redirectionHandler}></Menu>
       {isBrowser ? (
         <SocialNetwork>
