@@ -13,9 +13,9 @@ const Title = styled.p`
 
 const SectionTitleControl = styled.div`
   display: flex;
-  min-width: 500px;
-  width: 500px;
-  height: 500px;
+  min-width: 450px;
+  width: 450px;
+  height: 450px;
   background: #252627;
   color: white;
   justify-content: flex-end;

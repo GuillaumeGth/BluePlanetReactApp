@@ -9,7 +9,7 @@ const MenuItem = (props) => {
   let visible = props.visible;
   visible = typeof visible === "undefined" ? true : visible;
   const MenuItemControl = styled.li`
-    padding: 0 15px;
+    padding: 0 10px;
     height: 100%;
     display: flex;
     justify-content: center;

@@ -32,9 +32,13 @@ const Loader = () => {
 };
 const IndexPage = () => {
   const DivImages = styled.div`
-    width: ${isMobile ? `${window.innerWidth}px` : "1300px"};
+    
+    width: ${isMobile ? `${window.innerWidth}px` : "100%"};
     height: ${isMobile ? `400px` : "500px"};
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   `;
   const Legend = styled.div`
     font-family: "Amatic SC";
@@ -100,7 +104,9 @@ const IndexPage = () => {
             title="biraSectionTitle"
             content="biraSectionContent"
           ></SectionParagraph>
-          {mainImagesLoaded && (
+        </SectionContent>
+      </Section>
+      {mainImagesLoaded && (
             <DivImages>
               <Slider {...params}>
                 <img alt="bira" src="img/bira2.jpg" />
@@ -108,8 +114,6 @@ const IndexPage = () => {
               </Slider>
             </DivImages>
           )}
-        </SectionContent>
-      </Section>
       <Section title="aboutUsMenu" color="turquoise">
         <SectionContent>
           <SectionContentTitle label="aboutUsSectionSubTitle" />

@@ -9,10 +9,10 @@ import { isBrowser } from "react-device-detect";
 const useStyles = makeStyles({
   card: {
     margin: isBrowser ? 10 : "auto",
-    maxWidth: 360,
+    maxWidth: 300,
     minWidth: 200,
     width: 350,
-    height: 500
+    height: 450
   },
   media: {
     height: 250

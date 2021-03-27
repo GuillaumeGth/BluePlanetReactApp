@@ -51,9 +51,10 @@ const HeaderControl = styled.div`
 const Flag = styled.img`
   width: 30px;
   cursor: pointer !important;
-  margin: 0 150px;
+  margin: 0 20px;
 `;
 const SocialNetwork = styled.div`
+  display: flex;
   & img {
     margin-right: 20px;
     transition: 0.4s;
