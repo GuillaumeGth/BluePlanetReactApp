@@ -1,8 +1,17 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { AccordionContainer, AccordionControl } from "./style";
 import AccordionItem from "./AccordionItem";
-
-const Accordion = (props) => {
+type Props = {
+  visible?: boolean
+}
+type AccordionItemProps = {
+  alt?: string,
+  src: string,
+  fish: string,
+  logoAlt?: string,
+  logoSrc?: string
+}
+const Accordion : FunctionComponent<Props>= ({visible}) => {
   const accordionItems = [
     {
       src: "turtle",
@@ -33,11 +42,11 @@ const Accordion = (props) => {
     { src: "frogfish", alt: "Frogfish", fish: "frogfish" },
     { src: "barracuda", alt: "Barracuda", fish: "barracuda" },
   ];
-  if (!props.visible) return <></>;
+  if (visible) return <></>;
   return (
     <AccordionContainer>
       <AccordionControl>
-        {accordionItems.map((e) => {
+        {accordionItems.map((e: AccordionItemProps) => {
           return (
             <AccordionItem
               key={`acc-item-${e.fish}`}
@@ -45,8 +54,7 @@ const Accordion = (props) => {
               alt={e.alt}
               logoSrc={e.logoSrc}
               logoAlt={e.logoAlt}
-              fish={e.fish}
-              key={`accItem${e.fish}`}
+              fish={e.fish}              
             />
           );
         })}
