@@ -7,7 +7,7 @@ import { AppName, HeaderControl, Flag, AppLink, SocialNetwork } from "./style";
 import FlexContainer from "../Layout/FlexContainer";
 import { useLocation } from "react-router-dom";
 import { isBrowser } from "react-device-detect";
-
+//test
 const Header = (props) => {
   const location = useLocation();
   useEffect(() => {
