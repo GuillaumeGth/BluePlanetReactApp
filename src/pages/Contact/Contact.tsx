@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import Paragraph from "../../components/Layout/Paragraph";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import PageTitle from "../../components/Layout/PageTitle";
@@ -15,17 +15,16 @@ import {
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Contact = (props) => {
+const Contact: FunctionComponent = () => {
   useEffect(() => {
     setActiveMenu();
   });
   const setActiveMenu = () => {
     const activeMenu = document.querySelector(".header-nav .menu-item.active"),
-      cssClass = activeMenu.classList,
+      cssClass = activeMenu?.classList,
       contactMenu = document.querySelector('.menu-item[data-path="contact"]');
-
-    cssClass.remove("active");
-    contactMenu.classList.add("active");
+    cssClass?.remove("active");
+    contactMenu?.classList.add("active");
   };
 
   const Div = styled.div`

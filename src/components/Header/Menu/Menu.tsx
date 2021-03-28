@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import MenuItem from "./MenuItem";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 
-const Menu = (props) => {
+type Props = {
+  onRedirection: Function
+}
+const Menu: FunctionComponent<Props> = ({onRedirection}) => {
   const MenuControl = styled.ul`
     list-style-type: none;
     display: flex;
@@ -30,10 +33,10 @@ const Menu = (props) => {
 
   const [active, setActive] = useState(useLocation().pathname.substring(1));
 
-  const clickHandler = (e) => {
+  const clickHandler = (link: string, e: React.MouseEvent) => {
     window.scrollTo(0, 0);
-    setActive(e);
-    props.onRedirection(e !== "");
+    setActive(link);
+    onRedirection(e);
   };
   return (
     <NavControl className="nav-wrap" role="navigation">

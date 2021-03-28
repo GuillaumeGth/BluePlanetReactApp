@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
-const GoogleMap = React.lazy(() => import("../../components/GoogleMap"));
+// const GoogleMap = React.lazy(() => import("../../components/GoogleMap"));
 const Accordion = React.lazy(() => import("../../components/Accordion"));
 const WelcomeImages = React.lazy(() => import("./WelcomeImages"));
 const Form = React.lazy(() => import("../../components/Form"));

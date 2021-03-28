@@ -1,13 +1,17 @@
-import React from "react";
+import React, { FunctionComponent, MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Text from "react-text";
 import { HeaderControl } from "../../style";
 import { isMobile } from "react-device-detect";
-
-const MenuItem = (props) => {
-  let visible = props.visible;
-  visible = typeof visible === "undefined" ? true : visible;
+import Text from "react-text";
+type Props = {
+  visible?: boolean,
+  onClick: Function,
+  link: string,
+  active?: boolean,
+  text: string
+}
+const MenuItem: FunctionComponent<Props> = ({visible = true, onClick, link, active, text, children}) => {
   const MenuItemControl = styled.li`
     padding: 0 10px;
     height: 100%;
@@ -63,29 +67,29 @@ const MenuItem = (props) => {
     flex-direction: column;
   `;
 
-  const clickHandler = (e) => {
+  const clickHandler: MouseEventHandler<HTMLLIElement> = (event: React.MouseEvent): void => {
     if (isMobile) {
-      var header = e.target.closest(".header"),
-        hamburger = header.querySelector(".hamburger-menu");
-      header.classList.toggle("open");
-      hamburger.classList.toggle("open");
+      var header = (event.target as Element)?.closest(".header"),
+        hamburger = header?.querySelector(".hamburger-menu");
+      header?.classList.toggle("open");
+      hamburger?.classList.toggle("open");
     }
-    props.onClick(props.link);
+    onClick(link, event);
   };
   if (!visible) return <></>;
   return (
     <MenuItemControl
-      className={`menu-item ${props.active ? "active" : ""}`}
+      className={`menu-item ${active ? "active" : ""}`}
       onClick={clickHandler}
-      data-path={props.link}
+      data-path={link}
     >
-      <StyledLink to={props.link}>
+      <StyledLink to={link}>
         <MenuItemLabelControl className="menu-item-label">
-          <Text id={props.text}></Text>
+          <Text id={text}></Text>
         </MenuItemLabelControl>
         <Underline className="underline"></Underline>
       </StyledLink>
-      {props.children}
+      {children}
     </MenuItemControl>
   );
 };

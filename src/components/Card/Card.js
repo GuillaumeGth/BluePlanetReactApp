@@ -11,14 +11,14 @@ const useStyles = makeStyles({
     margin: isBrowser ? 10 : "auto",
     maxWidth: 300,
     minWidth: 200,
-    width: 350,
-    height: 450
+    width: 260,
+    height: 430
   },
   media: {
     height: 250
   },
   content: {
-    fontSize: "1.2rem"
+    fontSize: "1.1rem"
   }
 });
 
