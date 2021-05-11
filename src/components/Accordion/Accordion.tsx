@@ -8,10 +8,9 @@ type AccordionItemProps = {
   alt?: string,
   src: string,
   fish: string,
-  logoAlt?: string,
-  logoSrc?: string
+  logoAlt?: string
 }
-const Accordion : FunctionComponent<Props>= ({visible}) => {
+const Accordion : FunctionComponent<Props>= ({visible = true}) => {
   const accordionItems = [
     {
       src: "turtle",
@@ -42,7 +41,7 @@ const Accordion : FunctionComponent<Props>= ({visible}) => {
     { src: "frogfish", alt: "Frogfish", fish: "frogfish" },
     { src: "barracuda", alt: "Barracuda", fish: "barracuda" },
   ];
-  if (visible) return <></>;
+  if (!visible) return <></>;
   return (
     <AccordionContainer>
       <AccordionControl>
@@ -52,7 +51,6 @@ const Accordion : FunctionComponent<Props>= ({visible}) => {
               key={`acc-item-${e.fish}`}
               src={e.src}
               alt={e.alt}
-              logoSrc={e.logoSrc}
               logoAlt={e.logoAlt}
               fish={e.fish}              
             />

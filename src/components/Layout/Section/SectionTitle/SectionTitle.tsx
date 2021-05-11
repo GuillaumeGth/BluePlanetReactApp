@@ -1,15 +1,18 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Text from "react-text";
 import { Title, SectionTitleControl, SectionChevron } from "./style";
 import { isMobile } from "react-device-detect";
-
-const SectionTitle = (props) => {
+type Props = {
+  color: string,
+  label: string
+}
+const SectionTitle: FunctionComponent<Props> = ({color, label}) => {
   return (
     <SectionTitleControl
-      className={`${props.color} ${isMobile ? "mobile" : "browser"}`}
+      className={`${color} ${isMobile ? "mobile" : "browser"}`}
     >
       <Title>
-        <Text id={props.label} />
+        <Text id={label} />
       </Title>
       {isMobile ? (
         <img

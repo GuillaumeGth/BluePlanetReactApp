@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FunctionComponent, MouseEventHandler, useEffect, useState } from "react";
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnchor } from "@fortawesome/free-solid-svg-icons";
@@ -7,25 +7,28 @@ import { AppName, HeaderControl, Flag, AppLink, SocialNetwork } from "./style";
 import FlexContainer from "../Layout/FlexContainer";
 import { useLocation } from "react-router-dom";
 import { isBrowser } from "react-device-detect";
-//test
-const Header = (props) => {
+type Props = {
+  lang: string, 
+  langClickHandler: Function
+}
+const Header: FunctionComponent<Props> = ({lang, langClickHandler}) => {
   const location = useLocation();
   useEffect(() => {
     window.addEventListener("scroll", scrollhandler);
-    _setFilled(location.pathname.substring(1) !== "");
+    _setFilled(location.pathname.substring(1));
   });
 
   const getNewLang = () => {
-    return props.lang === "en" ? "fr" : "en";
+    return lang === "en" ? "fr" : "en";
   };
 
   const getFlag = () => {
     return "/img/icon/flags/" + getNewLang() + ".svg";
   };
 
-  const scrollhandler = (e) => {
+  const scrollhandler = (e: Event) => {
     var top = document.documentElement.scrollTop,
-      el = headerElement.current;
+      el = headerElement.current as Element;
     if (el) {
       if (top > 1200) {
         el.classList.add("scrolled");
@@ -35,21 +38,21 @@ const Header = (props) => {
     }
   };
 
-  const headerElement = React.createRef();
+  const headerElement = React.createRef<HTMLDivElement>();
 
   const flagClickHandler = () => {
-    props.langClickHandler(getNewLang());
+    langClickHandler(getNewLang());
   };
-  const [filled, _setFilled] = useState(null);
-  const redirectionHandler = (e) => {
+  const [filled, _setFilled] = useState<string>('');
+  const redirectionHandler = (e: string) => {
     _setFilled(e);
   };
-  const hamburgerClickHandler = (e) => {
-    const target = e.target,
-      hamburger = target.closest(".hamburger-menu"),
-      header = target.closest(".header");
-    hamburger.classList.toggle("open");
-    header.classList.toggle("open");
+  const hamburgerClickHandler: MouseEventHandler<HTMLDivElement> = (event) => {
+    const target = event.target as Element,
+      hamburger = target?.closest(".hamburger-menu"),
+      header = target?.closest(".header");
+    hamburger?.classList.toggle("open");
+    header?.classList.toggle("open");    
   };
   return (
     <HeaderControl
@@ -98,8 +101,8 @@ const Header = (props) => {
         </div>
       )}
 
-      <FlexContainer id="test" visible={isBrowser} direction="row">
-        <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" />
+      <FlexContainer visible={isBrowser} direction="row">
+        <Flag onClick={flagClickHandler} src={getFlag()} alt="language flag" style={{margin: "0 10px"}}/>
       </FlexContainer>
       <Menu onRedirection={redirectionHandler}></Menu>
       {isBrowser ? (

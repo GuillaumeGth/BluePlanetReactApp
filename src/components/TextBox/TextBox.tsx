@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
@@ -34,13 +34,20 @@ const styles = () => ({
     width: isBrowser ? "800px" : window.innerWidth - 80,
   },
 });
-
-const TextBox = (props) => {
+type Props = {
+  multiline?: boolean,
+  required?: boolean,
+  label?: string,
+  icon?: string,
+  type?: string,
+  state?: string,
+  onChange?: Function
+}
+const TextBox: FunctionComponent<Props>= ({onChange, multiline, label, required, type, icon, state}) => {
   const [error] = useState(false);
-  const { multiline, label, required, classes, type } = props;
-  const getIcon = (icon) => {
+  const getIcon = () => {
     if (icon) {
-      const resolvedIcon = require(`@material-ui/icons/${props.icon}`).default;
+      const resolvedIcon = require(`@material-ui/icons/${icon}`).default;
       return React.createElement(resolvedIcon);
     }
     return null;
@@ -49,22 +56,11 @@ const TextBox = (props) => {
     margin: 10px 0 !important;
   `;
 
-  // const validate = (input) => {
-  //   if (
-  //     input.getAttribute("required") !== null &&
-  //     input.value.trim().length === 0
-  //   ) {
-  //     setError(true);
-  //     return false;
-  //   }
-  //   setError(false);
-  //   return true;
-  // };
 
   return (
     <div
       className={`${
-        props.state === "loading" ? props.state : null
+        state === "loading" ? state : null
       } textbox-container`}
     >
       <GridContainer
@@ -74,7 +70,7 @@ const TextBox = (props) => {
         className="textfield-grid"
       >
         <Grid item className="textfield-icon">
-          {getIcon(props.icon)}
+          {getIcon()}
         </Grid>
         <Grid item>
           <TextField
@@ -84,28 +80,22 @@ const TextBox = (props) => {
             required={required ? true : false}
             label={label}
             onChange={(e) => {
-              props.onChange(e.target.value);
+              if (onChange)
+                onChange(e.target.value);
             }}
-            // value={value}
-            // onBlur={e => {
-            //   setValue(e.target.value);
-            //   if (validate(e.target)) {
-            //     props.onChange(e.target.value);
-            //   }
+            // InputLabelProps={{
+            //   classes: {
+            //     shrink: classes?.shrinkedLabel,
+            //     root: classes?.label,
+            //     focused: classes?.focusedLabel,
+            //   },
             // }}
-            InputLabelProps={{
-              classes: {
-                shrink: classes.shrinkedLabel,
-                root: classes.label,
-                focused: classes.focusedLabel,
-              },
-            }}
-            InputProps={{
-              classes: {
-                underline: classes.underline,
-                root: classes.textField,
-              },
-            }}
+            // InputProps={{
+            //   classes: {
+            //     underline: classes.underline,
+            //     root: classes.textField,
+            //   },
+            // }}
           />
         </Grid>
       </GridContainer>
@@ -113,4 +103,4 @@ const TextBox = (props) => {
   );
 };
 
-export default withStyles(styles)(TextBox);
+export default TextBox;

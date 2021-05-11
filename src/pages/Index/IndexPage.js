@@ -6,7 +6,7 @@ import SectionContent from "../../components/Layout/Section/SectionContent";
 import SectionContentTitle from "../../components/Layout/Section/SectionContentTitle";
 import FlexContainer from "../../components/Layout/FlexContainer";
 import Paragraph from "../../components/Layout/Paragraph";
-import CardControl from "../../components/Card";
+import ActivitySlider from "../../components/Card/ActivitySlider";
 import { isMobile, isBrowser } from "react-device-detect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -58,14 +58,7 @@ const IndexPage = () => {
     autoplay: true,
     accessibility: true,
   };
-  const params2 = {
-    dots: true,
-    lazyLoad: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: isBrowser ? 3 : 1,
-    autoplay: true,
-  };
+ 
   const [mainImagesLoaded, setMainImagesLoaded] = useState(false);
   return (
     <div>
@@ -158,33 +151,7 @@ const IndexPage = () => {
           <SectionContentTitle label="otherActivitiesSubTitle" />
           <Paragraph>
             <FlexContainer direction="row">
-              <div
-                style={{
-                  display: "block",
-                  width: `${isMobile ? `${window.innerWidth}px` : "auto"}`,
-                  height: "500px",
-                }}
-              >
-                <Slider {...params2}>
-                  <CardControl
-                    image="paddle.jpg"
-                    title="standUpPaddle"
-                    content="standUpPaddleDesc"
-                  />
-
-                  <CardControl
-                    image="snorkeling.jpg"
-                    title="snorkeling"
-                    content="snorkelingDesc"
-                  />
-
-                  <CardControl
-                    image="scooter.jpg"
-                    title="scooter"
-                    content="scooterDesc"
-                  />
-                </Slider>
-              </div>
+              <ActivitySlider/>
             </FlexContainer>
           </Paragraph>
         </SectionContent>

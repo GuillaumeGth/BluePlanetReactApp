@@ -8,11 +8,10 @@ import Text from "react-text";
 import { isBrowser } from "react-device-detect";
 const useStyles = makeStyles({
   card: {
+    flex: 1,
     margin: isBrowser ? 10 : "auto",
     maxWidth: 300,
     minWidth: 200,
-    width: 260,
-    height: 430
   },
   media: {
     height: 250

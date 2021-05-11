@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import TextBox from "../TextBox/TextBox";
 import Button from "../Button";
 import { FormControl, LoadingMask, SuccessMessage } from "./style";
 import Text from "react-text";
 import BeatLoader from "react-spinners/BeatLoader";
 
-const Form = () => {
-  const [values, setValues] = useState({});
+type Props = {}
+type FormKeys = "message" | "name" | "email" | "phone";
+type FormValues = {
+  message?: string,
+  name?: string,
+  email?: string,
+  phone?: string
+}
+const Form: FunctionComponent<Props> = ({}) => {
+  const [values, setValues] = useState<FormValues>({});
   const [state, setState] = useState("normal");
 
-  const sendMessage = (e) => {
+  const sendMessage = () => {
     if (!values.message) {
       return;
     }
@@ -34,7 +42,7 @@ const Form = () => {
       });
   };
 
-  const onChangeHandler = (fieldId, value) => {
+  const onChangeHandler = (fieldId: FormKeys, value: string) => {
     values[fieldId] = value;
   };
 
@@ -50,25 +58,25 @@ const Form = () => {
         state={state}
         label="Name"
         icon="AccountCircle"
-        value={values["name"]}
-        onChange={(value) => onChangeHandler("name", value)}
+        // value={values["name"]}
+        onChange={(value: string) => onChangeHandler("name", value)}
       />
       <TextBox
         state={state}
         label="Email"
         icon="MailOutline"
         required={true}
-        value={values["email"]}
+        // value={values["email"]}
         type="email"
-        onChange={(value) => onChangeHandler("email", value)}
+        onChange={(value: string) => onChangeHandler("email", value)}
       />
       <TextBox
         state={state}
         label="Phone"
         icon="Phone"
         type="tel"
-        value={values["phone"]}
-        onChange={(value) => onChangeHandler("phone", value)}
+        // value={values["phone"]}
+        onChange={(value: string) => onChangeHandler("phone", value)}
       />
       <TextBox
         state={state}
@@ -76,8 +84,8 @@ const Form = () => {
         multiline={true}
         icon="Message"
         required={true}
-        value={values["message"]}
-        onChange={(value) => onChangeHandler("message", value)}
+        // value={values["message"]}
+        onChange={(value : string) => onChangeHandler("message", value)}
       />
       <Button onClick={sendMessage} state={state} />
       {state === "success" ? (

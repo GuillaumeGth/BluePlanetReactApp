@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import {
   StyledLazyLoadImage,
   Mask,
@@ -9,29 +9,30 @@ import {
 import LazyLoad from "react-lazy-load";
 import "./accordion-item-style.css";
 import Text from "react-text";
-
-const AccordionItem = (props) => {
+type Props = {logoAlt?: string, src: string,
+alt?:string,fish:string}
+const AccordionItem: FunctionComponent<Props> = ({logoAlt, src, alt, fish}) => {
   const [loaded, setLoaded] = useState(false);
   return (
-    <AccordionItemControl tabindex="0">
+    <AccordionItemControl tabindex={0}>
       <Mask className="mask-container">
         {loaded && (
           <MaskImage
             className="mask-image"
-            alt={props.logoAlt || ""}
+            alt={logoAlt || ""}
             effect="blur"
-            src={`img/icon/${props.src}.png`}
+            src={`img/icon/${src}.png`}
           />
         )}
         <DescContainer className="desc">
-          {props.fish ? (
+          {fish ? (
             <span className="acc-item-title">
-              <Text id={props.fish} />
+              <Text id={fish} />
             </span>
           ) : null}
-          {props.fish ? (
+          {fish ? (
             <span>
-              <Text id={`${props.fish}Desc`} />
+              <Text id={`${fish}Desc`} />
             </span>
           ) : null}
         </DescContainer>
@@ -42,9 +43,8 @@ const AccordionItem = (props) => {
         }}
       >
         <StyledLazyLoadImage
-          alt={props.alt || ""}
-          effect="blur"
-          src={`img/${props.src}.jpg`}
+          alt={alt || ""}        
+          src={`img/${src}.jpg`}
         />
       </LazyLoad>
     </AccordionItemControl>
