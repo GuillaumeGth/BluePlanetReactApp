@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Segoe UI";
+  /* src: url(fonts/segoeuil.ttf) format("ttf"); */
+}
+@font-face {
+  font-family: "Birada";
+  src: url(fonts/birada/Birada.ttf) format("ttf");
+}
+.ancher-font {
+  font-family: "Birada" !important;
+}
 body {
   margin: 0;
   font-family: "Segoe UI", "sans-serif";

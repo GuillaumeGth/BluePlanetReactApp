@@ -9,7 +9,7 @@ export default {
   biraMenu: { en: "Bira", fr: "Bira" },
   pricesMenu: { en: "Prices", fr: "Tarifs" },
   accommodationMenu: { en: "Accommodation", fr: "Hébergement" },
-  contactMenu: { en: "Contact Us / Booking", fr: "Contact / Réservation" },
+  contactMenu: { en: "Contact Us", fr: "Contact" },
   galleryMenu: { en: "Gallery", fr: "Gallerie" },
   biraProjectMenu: { en: "The Bira Project", fr: "The Bira Project" },
   diving: { en: "Diving", fr: "Plongée" },
@@ -295,9 +295,13 @@ export default {
   },
   accommodationDesc: {
     en:
-      "As our facilities are currently under construction, we will happily recommend alternative accommodation and restaurant options in the Bira area :",
+      "We finished the construction of this villa in April 2021, which is now available to rent ! There are 2 rooms under one big roof with large communal areas and an outside kitchen. Each room can be rented separately, but the villa is best suited for large groups. Both rooms are equipped with AC, bathrooms and king size beds. Communal areas include the outdoor kitchen and a large 2nd floor with comfortable seatings. We can easily add single beds if needed. Please contact us for rates and availabilities",
     fr:
-      "La construction de notre centre de plongée se termine prochainement, mais en attendant nous souhaitons vous recommander d’autres lieux d’hébergement, ainsi que des restaurants, à Bira :",
+      "Nous avons fini la construction de cette villa en avril 2021, et elle est donc disponible à la location ! La villa est composée de 2 chambres sous un même toit, avec de larges espaces communs dont une cuisine extérieure. Les chambres peuvent être louées indépendamment, mais la villa est plus adaptée pour de grands groupes. Chaque chambre possède climatisation, salle de bain, et un lit King size. Les espaces communs comprennent la cuisine extérieure, ainsi qu’un grand second étage avec canapés. Nous pouvons rajouter des lits simples si nécessaire. Merci de nous contacter pour toutes demandes de prix ou disponibilités. La construction de notre centre de plongée se termine prochainement, mais en attendant nous souhaitons vous recommander d’autres lieux d’hébergement, ainsi que des restaurants, à Bira :",
+  },
+  accommodationMore: {
+    en: "Our partners in Bira for further accommodations",
+    fr: "Nos partenaires hôteliers à Bira si nécessaire"  
   },
   baraBeachBungalowsDesc: {
     en:

@@ -72,7 +72,6 @@ function App() {
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
   };
-  // eslint-disable-next-line no-unused-vars
   const [lang, setStateLang] = useState(getLang());
   const updateActivePage = () => {};
   updateActivePage();

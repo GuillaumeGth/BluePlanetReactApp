@@ -6,8 +6,21 @@ import Paragraph from "../../components/Layout/Paragraph";
 import styled from "styled-components";
 import LinkControl from "../../components/Link";
 import Text from "react-text";
-import { isMobile } from "react-device-detect";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { isBrowser } from "react-device-detect";
+import Image from "../../components/Image";
 const Accommodation = () => {
+  
+  const params = {
+    dots: true,
+    lazyLoad: "ondemand",
+    infinite: true,
+    speed: 1000,
+    slidesToShow: isBrowser ? 2 : 1,
+    autoplay: true
+  };
   const Contact = styled.span`
     padding: 8px;
     font-size: 1.5rem;
@@ -18,20 +31,32 @@ const Accommodation = () => {
     font-size: 2rem;
     font-weight: 400;
   `;
+  const StyledSlider = styled(Slider)`
+
+    width: 100%;
+  `;
+  function importAll(r: __WebpackModuleApi.RequireContext) {
+
+    return r.keys().map((e: string) => 
+      <Image key={e} src={`img/accomodation/${e}`}/>
+    );
+  }
+
   return (
     <PageContent>
       <FlexContainer justify="center" align="center" width="full">
         <PageTitle
           label="accommodationMenu"
           icon={
-            isMobile ? (
-              false
-            ) : (
+            isBrowser &&
               <img src="/img/icon/camping.svg" alt="accommodation icon" />
-            )
           }
-        />
+        />      
+          <StyledSlider autoplay={true} speed={1000} lazyLoad="progressive" dots={true} infinite={true} slidesToShow={isBrowser ? 2 : 1}>
+            {importAll(require.context('../../../public/img/accomodation', false, /\.(png|jpe?g|svg)$/))}
+          </StyledSlider>
         <Paragraph label="accommodationDesc" />
+        <Paragraph label="accommodationMore" />
         <H2>Bara Beach Bungalows :</H2>
         <Paragraph label="baraBeachBungalowsDesc">
           <FlexContainer

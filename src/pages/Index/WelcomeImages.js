@@ -50,7 +50,7 @@ const WelcomeImages = (props) => {
       <WelcomeImages>
         {loaded && (
           <>
-            <Legend className="welcome-text">
+            <Legend className="welcome-text ancher-font">
               <Text id="welcomeToBira" />
             </Legend>
             <LogoImg src="img/logo.png" alt="logo" className="logo" />
