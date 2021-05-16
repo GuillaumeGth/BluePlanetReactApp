@@ -331,6 +331,30 @@ export default {
     fr:
       "La plupart des gens ne font que rêver de renoncer à leur travail en ville pour partir dans un pays tropical, faire de la plongée tous les jours, et voir la faune et la flore parmi les plus belles de la planète. Mais nous, nous l’avons vraiment fait !",
   },
+  aboutUsMission: {
+    en:
+      "Our Mission",
+    fr:
+      "Notre mission",
+  },
+  aboutUsP2: {
+    en:
+      "One of the main direct problems that we can easily try to address  is plastic pollution. Indonesia is the second-largest contributor to marine plastic pollution after China. We can’t solve the problem on our own, but we can start small and act locally at  our dive center and within the Bira  community.",
+    fr:
+      "One of the main direct problems that we can easily try to address  is plastic pollution. Indonesia is the second-largest contributor to marine plastic pollution after China. We can’t solve the problem on our own, but we can start small and act locally at  our dive center and within the Bira  community.",
+  },
+  aboutUsPlasticTitle: {
+    en:
+      "The virtuous cycle of plastic :",
+    fr:
+      "The virtuous cycle of plastic :",
+  },
+  aboutUsPlastic: {
+    en:
+      "Collecting : maybe the easiest thing we can do with a direct effect. “While some may have been dropped directly, and other plastics may have been washed up, there is a ‘flux’ of litter between beaches and the sea. By removing beach litter, we are therefore cleaning the oceans.”",
+    fr:
+      "Collecting : maybe the easiest thing we can do with a direct effect. “While some may have been dropped directly, and other plastics may have been washed up, there is a ‘flux’ of litter between beaches and the sea. By removing beach litter, we are therefore cleaning the oceans.”",
+  },
   aboutUsTitle: {
     en: "This is Bastien, Robin & Sylvain",
     fr: "Nous sommes Bastien, Robin & Sylvain",

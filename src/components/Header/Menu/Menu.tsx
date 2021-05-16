@@ -92,6 +92,12 @@ const Menu: FunctionComponent<Props> = ({onRedirection}) => {
           text="biraProjectMenu"
         ></MenuItem>
         <MenuItem
+          active={active === "aboutus"}
+          onClick={clickHandler}
+          link="aboutus"
+          text="aboutUsMenu"
+        ></MenuItem>
+        <MenuItem
           active={active === "insurance"}
           onClick={clickHandler}
           link="insurance"

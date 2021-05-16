@@ -17,6 +17,7 @@ const IndexPage = React.lazy(() => import("./pages/Index"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 const Accommodation = React.lazy(() => import("./pages/Accommodation"));
 const BiraProject = React.lazy(() => import("./pages/BiraProject"));
+const AboutUs = React.lazy(() => import("./pages/AboutUs"));
 const Bira = React.lazy(() => import("./pages/Bira"));
 const Prices = React.lazy(() => import("./pages/Prices"));
 const history = createBrowserHistory();
@@ -91,6 +92,7 @@ function App() {
                 <Route path="/contact" exact component={Contact} />
                 <Route path="/prices" exact component={Prices} />
                 <Route path="/accommodation" exact component={Accommodation} />
+                <Route path="/aboutus" exact component={AboutUs} />
                 <Route path="/biraproject" exact component={BiraProject} />
                 <Route path="/insurance" exact component={Insurance} />
               </Switch>
