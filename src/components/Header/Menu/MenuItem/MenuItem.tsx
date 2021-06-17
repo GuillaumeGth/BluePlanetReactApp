@@ -19,29 +19,21 @@ const MenuItem: FunctionComponent<Props> = ({visible = true, onClick, link, acti
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    &.active {
-      background: #636363;
-      color: white;
-    }
-    ${HeaderControl}.transparent & {
-      background: transparent !important;
-    }
-    ${HeaderControl}.transparent.scrolled &.active {
-      background: #636363 !important;
-    }
-    ${HeaderControl}.transparent.scrolled &.active>a>span {
-      color: white !important;
-    }
+    &.active
   `;
 
   const Underline = styled.div`
     transition: 0.6s;
     width: 0px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
     padding: 2px 0;
     ${MenuItemControl}:hover & {
       width: 80%;
       opacity: 0.4;
+    }
+    ${MenuItemControl}.active & {
+      width: 80%;
+      opacity: 1;
     }
     ${HeaderControl}.scrolled & {
       border-color: #636363;
@@ -52,8 +44,8 @@ const MenuItem: FunctionComponent<Props> = ({visible = true, onClick, link, acti
   `;
 
   const MenuItemLabelControl = styled.span`
-    font-size: 1.4em;
-    color: white;
+    font-size: 1.1em;
+    color: black;
     letter-spacing: 1px;
     text-decoration: none;
     white-space: nowrap;
@@ -68,12 +60,12 @@ const MenuItem: FunctionComponent<Props> = ({visible = true, onClick, link, acti
   `;
 
   const clickHandler: MouseEventHandler<HTMLLIElement> = (event: React.MouseEvent): void => {
-    if (isMobile) {
-      var header = (event.target as Element)?.closest(".header"),
-        hamburger = header?.querySelector(".hamburger-menu");
-      header?.classList.toggle("open");
-      hamburger?.classList.toggle("open");
-    }
+    // if (isMobile) {
+    //   var header = (event.target as Element)?.closest(".header"),
+    //     hamburger = header?.querySelector(".hamburger-menu");
+    //   header?.classList.toggle("open");
+    //   hamburger?.classList.toggle("open");
+    // }
     onClick(link, event);
   };
   if (!visible) return <></>;

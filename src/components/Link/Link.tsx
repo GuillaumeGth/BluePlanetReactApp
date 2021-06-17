@@ -1,10 +1,9 @@
 import Text from "react-text";
 import { StyledLink, StyledALink } from "./style";
 import { CSSProperties, FunctionComponent } from "react";
-import React from "react";
 type Propes = {
   externalLink?: boolean,
-  style?: CSSProperties
+  style?: CSSProperties,
   className?: string,
   to?: string,
   label?: string,
