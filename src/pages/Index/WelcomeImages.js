@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Text from "react-text";
 import styled from "styled-components";
 const WelcomeImages = (props) => {
   const BackgroundImg = styled.img`
@@ -7,28 +6,11 @@ const WelcomeImages = (props) => {
     left: 0;
     width: 100%;
   `;
-
-  const LogoImg = styled.img`
-    position: absolute;
-    z-index: 1;
-    margin: auto;
-    width: 20%;
-    top: 220px;
-  `;
-
   const WelcomeImages = styled.div`
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
-  `;
-  const Legend = styled.div`
-    font-family: "Amatic SC";
-    font-size: 6em;
-    position: absolute;
-    top: 1.7em;
-    color: white;
-    text-align: center;
-    width: 100%;
   `;
   const [loaded, setLoaded] = useState(false);
   return (
@@ -48,14 +30,6 @@ const WelcomeImages = (props) => {
         />
       ) : null}
       <WelcomeImages>
-        {loaded && (
-          <>
-            <Legend className="welcome-text ancher-font">
-              <Text id="welcomeToBira" />
-            </Legend>
-            <LogoImg src="img/logo.png" alt="logo" className="logo" />
-          </>
-        )}
         <BackgroundImg
           onLoad={() => {
             setLoaded(true);
